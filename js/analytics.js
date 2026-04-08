@@ -145,6 +145,9 @@
             var clinic = (document.getElementById('df-clinic') || {}).value || '';
             var email = (document.getElementById('df-email') || {}).value || '';
             var phone = (document.getElementById('df-phone') || {}).value || '';
+            var submitBtn = demoForm.querySelector('.demo-submit-btn');
+            var successMsg = document.getElementById('df-success');
+            var errorMsg = document.getElementById('df-error');
 
             if (!name.trim() || !clinic.trim() || !email.trim()) {
                 return;
@@ -153,6 +156,16 @@
             if (!emailOk) {
                 return;
             }
+
+            // Prevent spam double-submits and show clear feedback.
+            if (submitBtn && submitBtn.classList.contains('is-sending')) return;
+            if (errorMsg) errorMsg.classList.add('hidden');
+            if (successMsg) successMsg.classList.add('hidden');
+            if (submitBtn) {
+                submitBtn.classList.remove('is-sent');
+                submitBtn.classList.add('is-sending');
+            }
+            demoForm.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
 
             // GA4 conversion event
             track('demo_form_submitted', {
@@ -165,18 +178,29 @@
             //     gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXXX' });
             // }
 
-            // Show success state
-            var successMsg = document.getElementById('df-success');
-            if (successMsg) successMsg.classList.remove('hidden');
-            demoForm.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
+            var minDelay = new Promise(function (resolve) { setTimeout(resolve, 650); });
 
-            // Send lead to Formspree
-            fetch(demoForm.action, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ name: name.trim(), clinic: clinic.trim(), email: email.trim(), phone: phone.trim() })
+            Promise.all([
+                minDelay,
+                fetch(demoForm.action, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ name: name.trim(), clinic: clinic.trim(), email: email.trim(), phone: phone.trim() })
+                })
+            ]).then(function (results) {
+                var resp = results[1];
+                if (!resp || !resp.ok) throw new Error('bad response');
+
+                if (submitBtn) {
+                    submitBtn.classList.remove('is-sending');
+                    submitBtn.classList.add('is-sent');
+                }
+                if (successMsg) successMsg.classList.remove('hidden');
             }).catch(function () {
-                // Analytics + UI already updated; ignore network errors.
+                // Re-enable inputs so user can retry.
+                demoForm.querySelectorAll('input, button').forEach(function (el) { el.disabled = false; });
+                if (submitBtn) submitBtn.classList.remove('is-sending');
+                if (errorMsg) errorMsg.classList.remove('hidden');
             });
         });
     }
