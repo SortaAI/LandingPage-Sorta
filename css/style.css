@@ -1438,6 +1438,7 @@ h1, h2, h3, h4 { color: var(--color-navy); }
 
 /* Submit feedback (fast submit → obvious state change) */
 .demo-submit-btn { position: relative; overflow: hidden; }
+.demo-submit-btn:disabled { opacity: 1; cursor: default; }
 .demo-submit-btn .submit-label,
 .demo-submit-btn .submit-sending,
 .demo-submit-btn .submit-sent { display: none; align-items: center; gap: 10px; }
@@ -1446,6 +1447,17 @@ h1, h2, h3, h4 { color: var(--color-navy); }
 .demo-submit-btn.is-sending .submit-sending { display: inline-flex; }
 .demo-submit-btn.is-sent .submit-label { display: none; }
 .demo-submit-btn.is-sent .submit-sent { display: inline-flex; }
+
+.demo-submit-btn.is-sending {
+  background: linear-gradient(135deg, var(--color-electric), #0d1bb8);
+}
+.demo-submit-btn.is-sent {
+  background: linear-gradient(135deg, #059669, #34d399);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+.demo-submit-btn.is-sent .btn-check {
+  background: rgba(255,255,255,0.26);
+}
 
 .btn-spinner {
   width: 16px;
@@ -1484,9 +1496,58 @@ h1, h2, h3, h4 { color: var(--color-navy); }
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* Confetti burst */
+.demo-submit-btn::before,
+.demo-submit-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+}
+.demo-submit-btn.is-sent.confetti::before {
+  opacity: 1;
+  animation: confetti-left 900ms ease-out both;
+  box-shadow:
+    -18px -10px 0 #66bdff,
+    -26px 2px 0 #02e3d3,
+    -10px 14px 0 #ffffff,
+    -34px 18px 0 #2740fc,
+    -6px -22px 0 #02e3d3,
+    -30px -18px 0 #66bdff;
+}
+.demo-submit-btn.is-sent.confetti::after {
+  opacity: 1;
+  animation: confetti-right 900ms ease-out both;
+  box-shadow:
+    18px -12px 0 #ffffff,
+    28px 0 0 #66bdff,
+    12px 16px 0 #02e3d3,
+    36px 18px 0 #2740fc,
+    8px -24px 0 #66bdff,
+    30px -18px 0 #02e3d3;
+}
+@keyframes confetti-left {
+  0% { transform: translate(-50%, -50%) scale(0.8); filter: blur(0px); }
+  30% { transform: translate(-62%, -86%) scale(1); }
+  100% { transform: translate(-78%, 20%) scale(0.9); opacity: 0; }
+}
+@keyframes confetti-right {
+  0% { transform: translate(-50%, -50%) scale(0.8); filter: blur(0px); }
+  30% { transform: translate(-38%, -90%) scale(1); }
+  100% { transform: translate(-22%, 24%) scale(0.9); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn-spinner { animation: none !important; }
   .btn-check { animation: none !important; }
+  .demo-submit-btn::before,
+  .demo-submit-btn::after { display: none !important; }
 }
 @media (max-width: 768px) {
   .demo-form-inner { grid-template-columns: 1fr; padding: 28px; gap: 32px; }

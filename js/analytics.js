@@ -194,6 +194,10 @@
                 if (submitBtn) {
                     submitBtn.classList.remove('is-sending');
                     submitBtn.classList.add('is-sent');
+                    submitBtn.classList.add('confetti');
+                    setTimeout(function () {
+                        try { submitBtn.classList.remove('confetti'); } catch (e) {}
+                    }, 950);
                 }
                 if (successMsg) successMsg.classList.remove('hidden');
             }).catch(function () {
