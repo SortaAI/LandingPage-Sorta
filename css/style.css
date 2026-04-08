@@ -171,6 +171,7 @@ h1, h2, h3, h4 { color: var(--color-navy); }
   -webkit-backdrop-filter: blur(3px);
   z-index: 200;
 }
+.mobile-drawer-overlay[hidden] { display: none !important; }
 .mobile-drawer {
   position: fixed;
   top: 0;
