@@ -2,6 +2,36 @@
 (function () {
     var embedPromise = null;
     var instanceByEl = new WeakMap();
+    var prefersReducedMotion = false;
+    var canHover = true;
+
+    try {
+        prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        // Treat phones/tablets as "no hover" (tap-only). This covers iOS Safari well.
+        canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    } catch (e) {
+        // Defaults above are fine.
+    }
+
+    var viewportObserver = null;
+    if (!canHover && !prefersReducedMotion && typeof IntersectionObserver !== 'undefined') {
+        viewportObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                var el = entry.target;
+                var i = instanceByEl.get(el);
+                if (!i) return;
+
+                try {
+                    if (entry.isIntersecting) {
+                        i.play();
+                    } else {
+                        i.stop();
+                        i.goToAndStop(0, true);
+                    }
+                } catch (_) {}
+            });
+        }, { threshold: 0.35 });
+    }
 
     function loadEmbedScript() {
         if (!embedPromise) {
@@ -60,22 +90,29 @@
                 });
                 instanceByEl.set(el, instance);
 
-                // Only play on hover for performance.
-                el.addEventListener('mouseenter', function () {
-                    var i = instanceByEl.get(el);
-                    if (!i) return;
-                    try {
-                        i.play();
-                    } catch (_) {}
-                });
-                el.addEventListener('mouseleave', function () {
-                    var i = instanceByEl.get(el);
-                    if (!i) return;
-                    try {
-                        i.stop();
-                        i.goToAndStop(0, true);
-                    } catch (_) {}
-                });
+                // Desktop: play on hover. Mobile/touch: play when in viewport.
+                if (prefersReducedMotion) {
+                    // Do nothing (stays on first frame).
+                    return;
+                }
+
+                if (canHover) {
+                    el.addEventListener('mouseenter', function () {
+                        var i = instanceByEl.get(el);
+                        if (!i) return;
+                        try { i.play(); } catch (_) {}
+                    });
+                    el.addEventListener('mouseleave', function () {
+                        var i = instanceByEl.get(el);
+                        if (!i) return;
+                        try {
+                            i.stop();
+                            i.goToAndStop(0, true);
+                        } catch (_) {}
+                    });
+                } else if (viewportObserver) {
+                    viewportObserver.observe(el);
+                }
             })
             .catch(function () {
                 el.classList.add('lottie-failed');
