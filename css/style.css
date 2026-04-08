@@ -1373,6 +1373,9 @@ h1, h2, h3, h4 { color: var(--color-navy); }
   /* Headings */
   .section-title { font-size: 2.05rem; }
   .large-text { font-size: 1.05rem; }
+
+  /* Remove hero background “blue blur” blobs on mobile */
+  .hero-ui-blobs { display: none; }
 }
 
 @media (max-width: 420px) {
