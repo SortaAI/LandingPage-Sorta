@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorta | Paperwork Automation for Outpatient Clinics</title>
+    <meta name="description" content="Enter patient information once, auto-fill every form. Sorta saves independent clinics 30–60 minutes a day — no switching systems, no retyping. Works on top of any EHR.">
+    <link rel="canonical" href="https://getsorta.io/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sorta | Paperwork Automation for Outpatient Clinics" />
+    <meta property="og:description" content="Enter patient information once, auto-fill every form. Sorta saves independent clinics 30–60 minutes a day — no switching systems, no retyping." />
+    <meta property="og:url" content="https://getsorta.io/" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Sorta" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sorta | Paperwork Automation for Outpatient Clinics" />
+    <meta name="twitter:description" content="Enter patient information once, auto-fill every form. Sorta saves independent clinics 30–60 minutes a day." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon (vector mark — crisp at any size) -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <!-- Google Search Console — replace content value with actual token from GSC -->
+    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_TOKEN" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preload" as="style" href="css/style.css" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+
+    <!-- 1. Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFK1NFMBLZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-DFK1NFMBLZ', {
+            // Strip URL query params to avoid logging any patient-adjacent data
+            page_path: window.location.pathname
+        });
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "w56rlqwwuk");
+    </script>
+
+    <!-- Facebook Pixel — uncomment and replace YOUR_PIXEL_ID when Ads account is ready -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://getsorta.io/#organization",
+          "name": "Sorta",
+          "url": "https://getsorta.io",
+          "logo": "https://getsorta.io/assets/sorta-logo.svg",
+          "foundingDate": "2024",
+          "founders": [{ "@type": "Person", "name": "Emi Rodriguez" }],
+          "areaServed": "US",
+          "description": "Sorta automates paperwork for independent outpatient clinics. Enter patient information once and auto-fill every form."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://getsorta.io/#software",
+          "name": "Sorta",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "url": "https://getsorta.io",
+          "offers": {
+            "@type": "Offer",
+            "price": "300.00",
+            "priceCurrency": "USD",
+            "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
+          },
+          "description": "Patient paperwork automation for independent outpatient clinics. Upload your existing forms, enter patient data once, and every PDF fills itself.",
+          "featureList": [
+            "Enter once, fill everywhere across all clinic forms",
+            "Works on top of your existing EHR and workflow",
+            "AI-powered form parsing and reusable templates",
+            "Clean, print-ready PDF output every time",
+            "30–60 minutes saved for front desk staff daily",
+            "Built for independent clinics with 1–50 staff"
+          ]
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to replace my current EHR or practice management system?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Sorta is not an EHR. It lives entirely outside your existing software and automates the paperwork layer. Your current system stays exactly as-is — nothing changes for your clinical team." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does setup take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Upload your existing clinic forms once and you're ready. Most clinics are running on the same day they sign up. There's no IT department required and no migration process." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is patient data secure?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Patient data is processed securely and never stored beyond the active session. Sorta is built with HIPAA-appropriate data handling practices. Each visit generates a timestamped, frozen chart snapshot for your audit trail." }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of clinics is Sorta for?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sorta is built for independent outpatient clinics of all specialties — physical therapy, occupational therapy, mental health, family medicine, ENT, optometry, and more. If you have 1–50 staff and deal with repetitive patient paperwork, Sorta is for you." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with scanned paper forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta works with both digital AcroForm PDFs and scanned paper forms. Upload any PDF you already use — Sorta's AI reads the form, identifies all the fields, and converts it into a fillable template automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I want to cancel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No contracts, no cancellation fees. $300/month, cancel any time. We're confident you'll stick around once your front desk sees 40 minutes back in their day." }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="assets/sorta-logo.svg" alt="Sorta" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="#how">How it Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#origin">Story</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://app.getsorta.io" class="btn btn-ghost" data-track="nav_login_click">Log In</a>
+                <a href="#demo-form" class="btn btn-primary pill" data-track="nav_cta_start_automation">Start Automation</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="hero-section">
+            <div class="hero-content animate-on-scroll fade-right">
+                <div class="pill-badge">
+                    <span class="emoji">📍</span>
+                    <span class="text">Now onboarding FREE pilot clinics — limited spots</span>
+                </div>
+                <h1 class="hero-heading">
+                    <span class="fw-light">Keep your forms.</span><br>
+                    <span class="fw-light">Staff enters</span>
+                    <span class="fw-bold">data once.</span><br>
+                    <span class="fw-light">We fill the rest.</span>
+                </h1>
+                <p class="hero-subtext">Sorta is the paperwork engine for independent outpatient clinics. Stop typing patient names 18 times per visit. Upload your existing clinic forms, type data once, and every PDF fills itself.</p>
+                <div class="hero-actions">
+                    <a href="#demo-form" class="btn btn-primary btn-large pill" data-track="hero_cta_cut_paperwork">
+                        Cut the paperwork <i class="ph-bold ph-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual animate-on-scroll fade-left">
+              <div class="hero-ui-shell" aria-hidden="true">
+                <div class="hero-ui-blobs"></div>
+                <div class="hero-ui-inner">
+                  <div class="hero-ui-window">
+                    <div class="hero-ui-titlebar">
+                      <span class="hero-ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                      <span class="hero-ui-title">Sorta — Visit workspace</span>
+                      <span class="hero-ui-spacer"></span>
+                    </div>
+                    <div class="hero-ui-body">
+                      <aside class="hero-ui-sidebar">
+                        <div class="hero-ui-side-h">Patients</div>
+                        <div class="hero-ui-patient hero-ui-patient-active">
+                          <span class="hero-ui-avatar">MT</span>
+                          <span class="hero-ui-patient-meta">
+                            <span class="hero-ui-name">Maria Torres</span>
+                            <span class="hero-ui-sub">Today · 9:20 AM</span>
+                          </span>
+                        </div>
+                        <div class="hero-ui-side-h hero-ui-side-h-mt">Forms for this visit</div>
+                        <ul class="hero-ui-formlist">
+                          <li><span class="hero-ui-check"></span> Intake packet</li>
+                          <li><span class="hero-ui-check"></span> Consent &amp; HIPAA</li>
+                          <li><span class="hero-ui-check"></span> PHQ-9 / GAD-7</li>
+                        </ul>
+                      </aside>
+                      <div class="hero-ui-main">
+                        <div class="hero-ui-main-head">
+                          <span class="hero-ui-badge">Live template</span>
+                          <h4 class="hero-ui-doc-title">New patient intake</h4>
+                          <p class="hero-ui-doc-sub">One entry updates every mapped field below.</p>
+                        </div>
+                        <div class="hero-ui-fields">
+                          <div class="hero-ui-field hero-ui-field-1">
+                            <span class="hero-ui-label">Patient name</span>
+                            <span class="hero-ui-value">Maria Torres</span>
+                          </div>
+                          <div class="hero-ui-field hero-ui-field-2">
+                            <span class="hero-ui-label">Date of birth</span>
+                            <span class="hero-ui-value">03 / 14 / 1988</span>
+                          </div>
+                          <div class="hero-ui-field hero-ui-field-3">
+                            <span class="hero-ui-label">Phone</span>
+                            <span class="hero-ui-value">(915) 555-0142</span>
+                          </div>
+                          <div class="hero-ui-field hero-ui-field-4">
+                            <span class="hero-ui-label">Insurance member ID</span>
+                            <span class="hero-ui-value">UHD‑884‑221‑09</span>
+                          </div>
+                        </div>
+                        <div class="hero-ui-footer">
+                          <span class="hero-ui-status">
+                            <span class="hero-ui-dot"></span>
+                            Synced to 6 fields across 3 forms
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- Demo Request Form (soft CTA — after hero) -->
+        <section id="demo-form" class="demo-form-section">
+          <div class="container">
+            <div class="demo-form-wrap animate-on-scroll fade-up">
+              <div class="demo-form-inner ui-card">
+                <div class="demo-form-left">
+                  <span class="eyebrow" style="color: var(--color-electric); font-weight: 700;">NOW ONBOARDING PILOTS</span>
+                  <h2 class="demo-form-heading">Book a 15-minute demo</h2>
+                  <p class="demo-form-sub">We'll show you how Sorta works with your actual forms — no generic demo, no sales pitch. Clinics in El Paso are already live. Spots are limited.</p>
+                  <ul class="demo-trust-list">
+                    <li><span class="trust-check">✓</span> Works on top of your current system</li>
+                    <li><span class="trust-check">✓</span> Up and running the same day</li>
+                    <li><span class="trust-check">✓</span> No IT department required</li>
+                    <li><span class="trust-check">✓</span> $300/month flat — no contracts</li>
+                  </ul>
+                </div>
+                <div class="demo-form-right">
+                  <form id="sorta-demo-form" class="sorta-form" action="https://formspree.io/f/mvzvyrge" method="POST" novalidate>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="df-name">Your name</label>
+                        <input type="text" id="df-name" name="name" placeholder="Maria Torres" required autocomplete="name" />
+                      </div>
+                      <div class="form-group">
+                        <label for="df-clinic">Clinic name</label>
+                        <input type="text" id="df-clinic" name="clinic" placeholder="El Paso PT Clinic" required autocomplete="organization" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="df-email">Work email</label>
+                      <input type="email" id="df-email" name="email" placeholder="you@yourclinic.com" required autocomplete="email" />
+                    </div>
+                    <div class="form-group">
+                      <label for="df-phone">Phone <span class="optional">(optional)</span></label>
+                      <input type="tel" id="df-phone" name="phone" placeholder="(915) 555-0100" autocomplete="tel" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large pill demo-submit-btn" data-track="demo_form_submit">
+                      Book my demo <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                    <p class="form-disclaimer">No spam. The team will reach out personally within 24 hours.</p>
+                    <p class="form-success hidden" id="df-success" role="status">
+                      ✓ Got it! We will be in touch within 24 hours.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: The Pain (Redesigned Editorial Style) -->
+        <section class="pain-section split-section">
+            <div class="container animate-on-scroll fade-up">
+                <!-- Removed the glass card, using rigid structural layout -->
+                <div class="editorial-grid">
+                    <div class="editorial-pullquote">
+                        <span class="eyebrow" style="color: var(--color-electric); font-weight: 700;">THE 45-MINUTE DELAY</span>
+                        <h2 class="massive-quote">"Their new patient intake packet is <strong>18 pages long</strong>."</h2>
+                        <p class="editorial-body">It includes demographic information, consent forms, releases, PHQ-9, GAD-7, and adult assessments. <strong>The patient's name and DOB appear on almost every single page.</strong></p>
+                        <p class="editorial-body">When a new patient arrives without their packet filled out, it delays their appointment by up to 45 minutes.</p>
+                    </div>
+                    
+                    <div class="editorial-checklist ui-card">
+                        <h3 style="margin-bottom: 24px; font-size: 1.25rem;">The manual workaround:</h3>
+                        <ul class="pain-list">
+                            <li class="crossed-out"><i class="ph-bold ph-x"></i> Bulk scanning documents after the fact</li>
+                            <li class="crossed-out"><i class="ph-bold ph-x"></i> Sorting 18 pages manually</li>
+                            <li class="crossed-out"><i class="ph-bold ph-x"></i> Pre-preparing packets for new patients</li>
+                            <li class="crossed-out"><i class="ph-bold ph-x"></i> Retyping "Jane Doe" over and over</li>
+                        </ul>
+                        <div class="pain-solution">
+                            <i class="ph-fill ph-lightning"></i>
+                            <div>
+                                <strong>With Sorta:</strong> Staff enters the name and DOB once. Every page that needs it gets it automatically.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof / Trust Bar -->
+        <section class="trust-bar-section">
+          <div class="container animate-on-scroll fade-up">
+            <div class="trust-bar">
+              <div class="trust-item">
+                <span class="trust-stat">30–60</span>
+                <span class="trust-label">minutes saved per clinic day</span>
+              </div>
+              <div class="trust-divider"></div>
+              <div class="trust-item">
+                <span class="trust-stat">1×</span>
+                <span class="trust-label">data entry. Every form filled.</span>
+              </div>
+              <div class="trust-divider"></div>
+              <div class="trust-item">
+                <span class="trust-stat">$0</span>
+                <span class="trust-label">switching cost. Works on top of your EHR.</span>
+              </div>
+              <div class="trust-divider"></div>
+              <div class="trust-item">
+                <span class="trust-partner-text">Backed by Pioneer21</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3: How It Actually Works -->
+        <section id="how" class="workflow-section">
+            <div class="container">
+                <div class="workflow-head section-header text-center animate-on-scroll fade-up">
+                    <span class="eyebrow workflow-eyebrow">The automation engine</span>
+                    <h2 class="section-title workflow-title"><span class="fw-light">Upload your existing forms.</span><br><span class="fw-bold">Everything else fills itself.</span></h2>
+                    <p class="workflow-lede">Three quick steps — same tools you already use, just a lot less typing.</p>
+                </div>
+
+                <div class="workflow-flow animate-on-scroll fade-up" aria-hidden="true">
+                    <span class="workflow-flow-label">Upload</span>
+                    <span class="workflow-flow-line" aria-hidden="true"></span>
+                    <span class="workflow-flow-arrow" aria-hidden="true"></span>
+                    <span class="workflow-flow-label">Fill once</span>
+                    <span class="workflow-flow-line" aria-hidden="true"></span>
+                    <span class="workflow-flow-arrow" aria-hidden="true"></span>
+                    <span class="workflow-flow-label">Done</span>
+                </div>
+                
+                <div class="workflow-grid">
+                    <!-- Step 1 -->
+                    <div class="workflow-step workflow-step--1 ui-card solid animate-on-scroll fade-up" style="transition-delay: 100ms;">
+                        <div class="step-num">1</div>
+                        <div class="workflow-step-visual" aria-hidden="true">
+                            <div class="wf-surf wf-surf--upload">
+                                <div class="wf-mini-titlebar"><i></i><i></i><i></i></div>
+                                <div class="wf-upload-zone">
+                                    <div class="wf-pdf-stack" aria-hidden="true">
+                                        <span class="wf-pdf-sheet wf-pdf-a"></span>
+                                        <span class="wf-pdf-sheet wf-pdf-b"></span>
+                                    </div>
+                                    <span class="wf-upload-hint">Drop your PDF</span>
+                                </div>
+                                <div class="wf-sparkles" aria-hidden="true"><span></span><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <h3>Upload any form</h3>
+                        <p>Take any PDF you already use — intake packet, consent form, referral letter — and upload it. The AI reads the form, identifies fields, and recreates it as a fillable template. You do this once.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="workflow-step workflow-step--2 ui-card solid animate-on-scroll fade-up" style="transition-delay: 200ms;">
+                        <div class="step-num">2</div>
+                        <div class="workflow-step-visual" aria-hidden="true">
+                            <div class="wf-surf wf-surf--workspace">
+                                <div class="wf-mini-titlebar"><i></i><i></i><i></i></div>
+                                <div class="wf-ws-head">
+                                    <span class="wf-ws-avatar">MT</span>
+                                    <div class="wf-ws-meta">
+                                        <span class="wf-ws-name">Maria · front desk</span>
+                                        <span class="wf-ws-sub">One entry → every form</span>
+                                    </div>
+                                </div>
+                                <div class="wf-ws-fields">
+                                    <div class="wf-ws-field wf-ws-f1"><span class="wf-ws-ph"></span></div>
+                                    <div class="wf-ws-field wf-ws-f2"><span class="wf-ws-ph"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Visit workspace</h3>
+                        <p>When a patient arrives, pull up their profile by phone number and fill in their information <strong>one time</strong>. Sorta syncs that data perfectly across every single form you have on file for them.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="workflow-step workflow-step--3 ui-card solid animate-on-scroll fade-up" style="transition-delay: 300ms;">
+                        <div class="step-num">3</div>
+                        <div class="workflow-step-visual" aria-hidden="true">
+                            <div class="wf-surf wf-surf--output">
+                                <div class="wf-mini-titlebar wf-mini-titlebar--dark"><i></i><i></i><i></i></div>
+                                <div class="wf-out-card">
+                                    <div class="wf-out-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                                    <span class="wf-out-pill">Print-ready PDF</span>
+                                    <span class="wf-out-check" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Carbon copy PDF output</h3>
+                        <p>Click one button. We generate filled PDFs that look exactly like your original forms. Same layout, same fields, same look. Ready to print, sign, or drop into their chart natively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Features — Lottie cards -->
+        <section id="features" class="features-lottie-section">
+            <div class="container">
+                <div class="section-header text-center animate-on-scroll fade-up" style="margin-bottom: 48px;">
+                    <h2 class="section-title">Your forms. Your workflow. Just faster.</h2>
+                    <p class="large-text" style="color: var(--color-gray-500); max-width: 640px; margin-left: auto; margin-right: auto;">We built a paperwork engine that actually understands clinical operations.</p>
+                </div>
+
+                <div class="feature-grid-lottie">
+                    <article class="feature-card-lottie feature-tint-blue animate-on-scroll fade-up" style="transition-delay: 0ms;">
+                        <div class="feature-lottie-visual">
+                            <div class="lottie-host" data-lottie-src="assets/lotties/enter one fill everywhere.json" aria-hidden="true"></div>
+                        </div>
+                        <h3>Enter Once, Fill Everywhere</h3>
+                        <p>Type patient information once and watch it auto-fill across every form — intake packets, consent forms, questionnaires, all of it.</p>
+                    </article>
+                    <article class="feature-card-lottie feature-tint-teal animate-on-scroll fade-up" style="transition-delay: 80ms;">
+                        <div class="feature-lottie-visual">
+                            <div class="lottie-host" data-lottie-src="assets/lotties/works ontop of your system.json" aria-hidden="true"></div>
+                        </div>
+                        <h3>Works On Top of Your System</h3>
+                        <p>No switching EHRs, no replacing what works. Sorta layers on top of your existing workflow with zero disruption.</p>
+                    </article>
+                    <article class="feature-card-lottie feature-tint-violet animate-on-scroll fade-up" style="transition-delay: 160ms;">
+                        <div class="feature-lottie-visual">
+                            <div class="lottie-host" data-lottie-src="assets/lotties/ai powered form parsing.json" aria-hidden="true"></div>
+                        </div>
+                        <h3>AI-Powered Form Parsing</h3>
+                        <p>Upload any form in any format. Our AI reads every field, maps the coordinates, and creates a reusable template automatically.</p>
+                    </article>
+                    <article class="feature-card-lottie feature-tint-green animate-on-scroll fade-up" style="transition-delay: 240ms;">
+                        <div class="feature-lottie-visual">
+                            <div class="lottie-host" data-lottie-src="assets/lotties/clean pdf output.json" aria-hidden="true"></div>
+                        </div>
+                        <h3>Clean PDF Output</h3>
+                        <p>Generate perfectly filled PDFs ready to print, fax, or upload — every time, no manual touch-ups.</p>
+                    </article>
+                    <article class="feature-card-lottie feature-tint-amber animate-on-scroll fade-up" style="transition-delay: 320ms;">
+                        <div class="feature-lottie-visual">
+                            <div class="lottie-host" data-lottie-src="assets/lotties/30-60 minutes saved daily.json" aria-hidden="true"></div>
+                        </div>
+                        <h3>30–60 Minutes Saved per Staff Member</h3>
+                        <p>Give your front desk staff their time back. No more retyping name and date of birth across 18 pages.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patient Benefits (emotional bridge) -->
+        <section class="patient-section">
+          <div class="container">
+            <div class="patient-head animate-on-scroll fade-up">
+              <h2>Because It’s Really About the Patient</h2>
+              <p class="subheadline">Every minute your staff saves on paperwork is a minute they get back with the people who matter most.</p>
+            </div>
+
+            <div class="patient-cards">
+              <article class="patient-card patient-tint-peach animate-on-scroll fade-up" style="transition-delay: 0ms;">
+                <div class="patient-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" role="img" focusable="false" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="pGrad1" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#2740fc" stop-opacity="0.95"/>
+                        <stop offset="1" stop-color="#02e3d3" stop-opacity="0.9"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M10 28c0-9.4 7.6-17 17-17h10c9.4 0 17 7.6 17 17v10c0 9.4-7.6 17-17 17H27c-9.4 0-17-7.6-17-17V28z" fill="rgba(39,64,252,0.08)" stroke="rgba(0,0,84,0.08)"/>
+                    <path d="M20 41c2.7-6.5 8.2-10.5 14.5-10.5S46.3 34.5 49 41" fill="none" stroke="rgba(0,0,84,0.14)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M26 29c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="rgba(0,0,84,0.18)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="45.5" cy="21.5" r="10.5" fill="url(#pGrad1)"/>
+                    <path d="M40.8 21.6l3.2 3.2 7-7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>No More Waiting Room Stress</h3>
+                <p>When paperwork is handled ahead of time, patients aren’t stuck filling out 18 pages in the lobby while their appointment window shrinks. They walk in, sit down, and get seen.</p>
+              </article>
+
+              <article class="patient-card patient-tint-rose animate-on-scroll fade-up" style="transition-delay: 100ms;">
+                <div class="patient-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" role="img" focusable="false" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="pGrad2" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#2740fc" stop-opacity="0.95"/>
+                        <stop offset="1" stop-color="#66bdff" stop-opacity="0.9"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M32 10c9.5 0 18 5.6 18 14.8 0 16.2-18 29.2-18 29.2S14 41 14 24.8C14 15.6 22.5 10 32 10z" fill="rgba(255,150,170,0.10)" stroke="rgba(0,0,84,0.08)" stroke-width="1.5"/>
+                    <path d="M32 18c2.5 0 4.5 2 4.5 4.5S34.5 27 32 27s-4.5-2-4.5-4.5S29.5 18 32 18z" fill="url(#pGrad2)"/>
+                    <path d="M32 46c6.5-4.7 11-10.5 11-18" fill="none" stroke="rgba(0,0,84,0.16)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M26 34c2.2-2.3 4.2-3.5 6-3.5s3.8 1.2 6 3.5" fill="none" stroke="rgba(0,0,84,0.18)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M32 33.2c2.4-3.3 6.6-4.2 9.4-1.8 2.8 2.3 2.6 6.4.2 9.1-2.4 2.7-6.6 4.6-9.6 6.3-3-1.7-7.2-3.6-9.6-6.3-2.4-2.7-2.6-6.8.2-9.1 2.8-2.4 7-1.5 9.4 1.8z" fill="url(#pGrad2)" opacity="0.9"/>
+                  </svg>
+                </div>
+                <h3>Their Information, Handled with Care</h3>
+                <p>Patients trust your clinic with their most personal information. Entering it once — accurately — means fewer errors, fewer corrections, and more confidence that their care starts on the right foot.</p>
+              </article>
+
+              <article class="patient-card patient-tint-gold animate-on-scroll fade-up" style="transition-delay: 200ms;">
+                <div class="patient-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64" role="img" focusable="false" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="pGrad3" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#02e3d3" stop-opacity="0.95"/>
+                        <stop offset="1" stop-color="#2740fc" stop-opacity="0.9"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M14 42c0-8.8 7.2-16 16-16h4c8.8 0 16 7.2 16 16v6H14v-6z" fill="rgba(255,220,130,0.12)" stroke="rgba(0,0,84,0.08)" stroke-width="1.5"/>
+                    <path d="M24 24c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="rgba(0,0,84,0.18)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M20 44h24" fill="none" stroke="rgba(0,0,84,0.12)" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M21 36c2.8 2.7 6.5 4 11 4s8.2-1.3 11-4" fill="none" stroke="rgba(0,0,84,0.14)" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="46.5" cy="21.5" r="9.5" fill="url(#pGrad3)"/>
+                    <path d="M42.5 21.5h8" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M46.5 17.5v8" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3>More Face Time, Less Paperwork</h3>
+                <p>When your staff isn’t buried in forms, they’re present. They’re greeting patients by name, answering questions, and making people feel like more than a chart number.</p>
+              </article>
+            </div>
+
+            <p class="founder-line animate-on-scroll fade-up" style="transition-delay: 450ms;">We built Sorta because we’ve been on the other side of that clipboard. We know what it feels like when the system slows down the care.</p>
+          </div>
+        </section>
+
+        <!-- Section 5: The NOT Section -->
+        <section class="not-section split-section grid-bg invert-colors">
+            <div class="container flex-row animate-on-scroll fade-left">
+                <div class="not-visual">
+                    <h2 class="massive-text">NOT an EHR.</h2>
+                </div>
+                <div class="not-content">
+                    <h2 class="section-title">Works on top of any EHR. <br><span class="fw-light">Nothing changes for your team.</span></h2>
+                    <p class="large-text">We are NOT an EHR. We are NOT a scheduling tool. We are NOT a clinical decision support system. We are NOT a scribe. We are NOT a billing platform.</p>
+                    <p>Sorta lives entirely in the <strong>paperwork layer</strong>. We sit outside your EHR, on top of whatever legacy software you already use, and we eliminate the manual data entry without requiring an expensive migration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+          <div class="container animate-on-scroll fade-up">
+            <div class="section-header text-center" style="margin-bottom: 48px;">
+              <span class="eyebrow" style="color: var(--color-electric); font-weight: 700; letter-spacing: 1px;">COMMON QUESTIONS</span>
+              <h2 class="section-title fw-light">You asked. We'll be transparent with you.</h2>
+            </div>
+            <div class="faq-grid">
+              <div class="faq-item ui-card">
+                <h3 class="faq-q">Do I need to replace my EHR or practice management system?</h3>
+                <p class="faq-a">No. Sorta is not an EHR. It lives entirely outside your existing software. Your current system stays exactly as-is — nothing changes for your clinical team, billing, or scheduling.</p>
+              </div>
+              <div class="faq-item ui-card">
+                <h3 class="faq-q">How long does setup take?</h3>
+                <p class="faq-a">Upload your existing clinic forms once and you're ready. Most clinics are live the same day they sign up. No IT department. No migration. No training beyond "type here, click there."</p>
+              </div>
+              <div class="faq-item ui-card">
+                <h3 class="faq-q">Is patient data secure?</h3>
+                <p class="faq-a">Yes. Data is processed securely and handled with HIPAA-appropriate practices. Each patient visit generates a timestamped, frozen chart snapshot — your unalterable audit trail.</p>
+              </div>
+              <div class="faq-item ui-card">
+                <h3 class="faq-q">What types of clinics is this for?</h3>
+                <p class="faq-a">Independent outpatient clinics of any specialty — physical therapy, mental health, family medicine, ENT, optometry, chiropractic, and more. If you have 1–50 staff and deal with patient paperwork, this is for you.</p>
+              </div>
+              <div class="faq-item ui-card">
+                <h3 class="faq-q">Does it work with scanned paper forms or digital PDFs?</h3>
+                <p class="faq-a">Both. Sorta handles flat scanned PDFs and digital AcroForm PDFs. Upload whatever your clinic already uses — the AI identifies the fields and converts it into a fillable template automatically.</p>
+              </div>
+              <div class="faq-item ui-card">
+                <h3 class="faq-q">What if I want to cancel?</h3>
+                <p class="faq-a">No contracts, no cancellation fees. $300/month, cancel any time. We're confident you'll stick around once your front desk sees 40 minutes back in their day.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Context & Pricing -->
+        <section id="pricing" class="context-section">
+            <div class="container">
+                <div class="context-grid">
+                    <!-- The Origin -->
+                    <div class="origin-card ui-card solid animate-on-scroll fade-up">
+                        <div class="eyebrow" id="origin" style="color: var(--color-teal); font-weight: 700;">THE ORIGIN</div>
+                        <h3 class="section-title">Built by someone who worked the front desk.</h3>
+                        <p>Sorta was built by <strong>Emi Rodriguez</strong> — UTEP computer science student, former Patient Care Technician (PCT), and founder. Bootstrapped entirely out of El Paso, TX.</p>
+                        <p>She watched clinic staff drown in repetitive paperwork firsthand for years while enterprise software kept ignoring clinics with 1–10 providers. So she built the thing that should have existed already.</p>
+                        <div class="founder-badges" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
+                          <span class="pill-badge" style="background: rgba(2,227,211,0.1); border: 1px solid rgba(2,227,211,0.25); color: var(--color-navy); font-size: 0.8rem; padding: 6px 14px; border-radius: 9999px;"><span>🏥</span> <span>Former PCT</span></span>
+                          <span class="pill-badge" style="background: rgba(2,227,211,0.1); border: 1px solid rgba(2,227,211,0.25); color: var(--color-navy); font-size: 0.8rem; padding: 6px 14px; border-radius: 9999px;"><span>📍</span> <span>Built in El Paso, TX</span></span>
+                          <span class="pill-badge" style="background: rgba(2,227,211,0.1); border: 1px solid rgba(2,227,211,0.25); color: var(--color-navy); font-size: 0.8rem; padding: 6px 14px; border-radius: 9999px;"><span>🚀</span> <span>Backed by Pioneer21</span></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="pricing-card ui-card solid animate-on-scroll fade-up" style="transition-delay: 200ms;">
+                        <div class="pricing-header">
+                            <span class="price-val">$300</span>
+                            <span class="price-dur">/ month</span>
+                        </div>
+                        <h3>Flat pricing. No contracts.</h3>
+                        <p>Keep your existing software, dump the data entry. An entire clinic's paperwork automated for the cost of a utility bill.</p>
+                        <a href="https://getsorta.io" class="btn btn-primary btn-large pill mt-4" data-track="pricing_cta_start_automation">Start automation today</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom CTA — final conversion section -->
+    <section class="bottom-cta-section" style="background: linear-gradient(135deg, var(--color-navy) 0%, #0d0080 100%); padding: 80px 24px; text-align: center;">
+      <div class="container animate-on-scroll fade-up">
+        <div class="urgency-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.15); border: 1px solid rgba(2,227,211,0.3); border-radius: 9999px; padding: 8px 18px; font-size: 0.8125rem; color: var(--color-teal); margin-bottom: 24px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-teal); display: inline-block;"></span>
+          Now onboarding pilot clinics in El Paso
+        </div>
+        <h2 style="font-size: 2.5rem; font-weight: 800; color: #fff; margin: 0 0 16px; letter-spacing: -0.02em;">Stop typing patient names 18 times.</h2>
+        <p style="font-size: 1.125rem; color: rgba(255,255,255,0.65); margin: 0 0 28px; max-width: 560px; margin-left: auto; margin-right: auto;">Book a 15-minute demo and we'll show you how it works with your actual forms. No generic demo.</p>
+        <a href="#demo-form" class="btn btn-primary btn-large pill" data-track="bottom_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none;">
+          Book a demo <i class="ph-bold ph-arrow-right"></i>
+        </a>
+        <p style="margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.35);">$300/month flat. No contracts. Cancel anytime.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="soft-footer ui-card animate-on-scroll fade-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+              <img src="assets/sorta-logo.svg" alt="" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
+
+                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2026 Sorta Inc. | Built in El Paso, TX.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Sticky floating CTA — visible after scrolling past hero -->
+    <div id="sticky-cta" class="sticky-cta hidden" aria-hidden="true">
+      <a href="#demo-form" class="btn btn-primary pill sticky-cta-btn" data-track="sticky_cta_click">
+        Book a demo <i class="ph-bold ph-arrow-right"></i>
+      </a>
+    </div>
+    <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+    <script src="js/lottie-init.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>
