@@ -175,10 +175,36 @@
             </ul>
             <div class="nav-actions">
                 <a href="https://app.getsorta.io" class="btn btn-ghost" data-track="nav_login_click">Log In</a>
-                <a href="#demo-form" class="btn btn-primary pill" data-track="nav_cta_start_automation">Start Automation</a>
+                <a href="#demo-form" class="btn btn-primary pill" data-track="nav_cta_start_automation">Start Automating</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile-only drawer nav -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="assets/sorta-logo.svg" alt="Sorta" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="#how">How it Works</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#origin">Story</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="https://app.getsorta.io" class="btn btn-ghost" data-track="mobile_nav_login_click">Log In</a>
+        <a href="#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_start_automation">Start Automating</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
+      </div>
+    </aside>
 
     <main>
         <!-- Section 1: Hero -->
@@ -656,7 +682,7 @@
                         </div>
                         <h3>Flat pricing. No contracts.</h3>
                         <p>Keep your existing software, dump the data entry. An entire clinic's paperwork automated for the cost of a utility bill.</p>
-                        <a href="https://getsorta.io" class="btn btn-primary btn-large pill mt-4" data-track="pricing_cta_start_automation">Start automation today</a>
+                        <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="pricing_cta_start_automation">See Sorta in action</a>
                     </div>
                 </div>
             </div>
@@ -691,6 +717,9 @@
             </div>
             <div class="footer-links">
                 <p>&copy; 2026 Sorta Inc. | Built in El Paso, TX.</p>
+                <p style="margin-top: 10px;">
+                  <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
+                </p>
             </div>
         </div>
     </footer>
