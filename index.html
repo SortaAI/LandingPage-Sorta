@@ -30,8 +30,8 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Phosphor Icons (defer to avoid blocking render) -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
     <link rel="preload" as="style" href="css/style.css" onload="this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
 
@@ -54,6 +54,14 @@
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "w56rlqwwuk");
+    </script>
+
+    <!-- 3. Apollo Website Tracker -->
+    <script>
+      function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+      o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+      o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+      document.head.appendChild(o)}initApollo();
     </script>
 
     <!-- Facebook Pixel — uncomment and replace YOUR_PIXEL_ID when Ads account is ready -->
