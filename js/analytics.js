@@ -165,11 +165,15 @@
             if (errorMsg) errorMsg.classList.add('hidden');
             if (successMsg) successMsg.classList.add('hidden');
             if (submitBtn) {
+                // Reset all states deterministically (mobile browsers can be weird about computed display).
                 submitBtn.classList.remove('is-sent');
+                submitBtn.classList.remove('is-sending');
+            }
+            if (sentSpan) sentSpan.hidden = true;
+            if (sendingSpan) sendingSpan.hidden = false;
+            if (submitBtn) {
                 submitBtn.classList.add('is-sending');
             }
-            if (sendingSpan) sendingSpan.hidden = false;
-            if (sentSpan) sentSpan.hidden = true;
             demoForm.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
 
             // GA4 conversion event
@@ -196,6 +200,9 @@
                 var resp = results[1];
                 if (!resp || !resp.ok) throw new Error('bad response');
 
+                // Ensure only ONE status row is visible.
+                if (sendingSpan) sendingSpan.hidden = true;
+                if (sentSpan) sentSpan.hidden = false;
                 if (submitBtn) {
                     submitBtn.classList.remove('is-sending');
                     submitBtn.classList.add('is-sent');
@@ -204,8 +211,6 @@
                         try { submitBtn.classList.remove('confetti'); } catch (e) {}
                     }, 950);
                 }
-                if (sendingSpan) sendingSpan.hidden = true;
-                if (sentSpan) sentSpan.hidden = false;
                 if (successMsg) successMsg.classList.remove('hidden');
             }).catch(function () {
                 // Re-enable inputs so user can retry.
