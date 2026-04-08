@@ -1439,6 +1439,7 @@ h1, h2, h3, h4 { color: var(--color-navy); }
 /* Submit feedback (fast submit → obvious state change) */
 .demo-submit-btn { position: relative; overflow: hidden; }
 .demo-submit-btn:disabled { opacity: 1; cursor: default; }
+.demo-submit-btn [hidden] { display: none !important; }
 .demo-submit-btn .submit-label,
 .demo-submit-btn .submit-sending,
 .demo-submit-btn .submit-sent { display: none; align-items: center; gap: 10px; }

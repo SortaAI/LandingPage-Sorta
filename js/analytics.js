@@ -146,6 +146,9 @@
             var email = (document.getElementById('df-email') || {}).value || '';
             var phone = (document.getElementById('df-phone') || {}).value || '';
             var submitBtn = demoForm.querySelector('.demo-submit-btn');
+            var labelSpan = submitBtn ? submitBtn.querySelector('.submit-label') : null;
+            var sendingSpan = submitBtn ? submitBtn.querySelector('.submit-sending') : null;
+            var sentSpan = submitBtn ? submitBtn.querySelector('.submit-sent') : null;
             var successMsg = document.getElementById('df-success');
             var errorMsg = document.getElementById('df-error');
 
@@ -165,6 +168,8 @@
                 submitBtn.classList.remove('is-sent');
                 submitBtn.classList.add('is-sending');
             }
+            if (sendingSpan) sendingSpan.hidden = false;
+            if (sentSpan) sentSpan.hidden = true;
             demoForm.querySelectorAll('input, button').forEach(function (el) { el.disabled = true; });
 
             // GA4 conversion event
@@ -199,11 +204,15 @@
                         try { submitBtn.classList.remove('confetti'); } catch (e) {}
                     }, 950);
                 }
+                if (sendingSpan) sendingSpan.hidden = true;
+                if (sentSpan) sentSpan.hidden = false;
                 if (successMsg) successMsg.classList.remove('hidden');
             }).catch(function () {
                 // Re-enable inputs so user can retry.
                 demoForm.querySelectorAll('input, button').forEach(function (el) { el.disabled = false; });
                 if (submitBtn) submitBtn.classList.remove('is-sending');
+                if (sendingSpan) sendingSpan.hidden = true;
+                if (sentSpan) sentSpan.hidden = true;
                 if (errorMsg) errorMsg.classList.remove('hidden');
             });
         });
