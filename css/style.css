@@ -1,5 +1,4 @@
 /* TODO: Minify this file before production deploy using: npx cssnano style.css style.min.css */
-<<<<<<< HEAD
 
 /* ─── Nav Dropdown ──────────────────────────────────── */
 .nav-item-dropdown { position: relative; }
@@ -599,8 +598,6 @@
   .perspective-heading { font-size: 1.3rem; }
   .perspective-body { font-size: 1rem; }
 }
-=======
->>>>>>> origin/main
 /* ==========================================================================
    Sorta Design System & Global Styles
    Techy yet Light Pivot - Removed "Dreamy" Glassmorphism
@@ -2203,7 +2200,6 @@ h1, h2, h3, h4 { color: var(--color-navy); }
 @media (max-width: 600px) {
   .sticky-cta { bottom: 16px; right: 16px; }
 }
-<<<<<<< HEAD
 
 /* ─── Pricing page ───────────────────────────────────────────────────────── */
 .pricing-hero { padding: 160px 0 80px; text-align: center; border-bottom: 1px solid var(--color-gray-100); }
@@ -2298,5 +2294,3 @@ h1, h2, h3, h4 { color: var(--color-navy); }
   .pricing-proof-headline { font-size: 1.75rem; }
   .pricing-table th, .pricing-table td { padding: 10px 12px; font-size: 0.8125rem; }
 }
-=======
->>>>>>> origin/main

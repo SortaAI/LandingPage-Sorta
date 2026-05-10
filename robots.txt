@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-<<<<<<< HEAD
 Disallow: /api/
 
-=======
->>>>>>> origin/main
 Sitemap: https://getsorta.io/sitemap.xml
