@@ -3,5 +3,8 @@ Thumbs.db
 *.log
 __pycache__/
 *.pyc
+<<<<<<< HEAD
 
 .claude/
+=======
+>>>>>>> origin/main

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<<<<<<< HEAD
   <url><loc>https://getsorta.io/</loc><lastmod>2026-05-07</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://getsorta.io/how-it-works.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://getsorta.io/pricing.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
@@ -18,4 +19,12 @@
   <url><loc>https://getsorta.io/specialties/nephrology.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://getsorta.io/specialties/cardiology.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://getsorta.io/specialties/mental-health.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+=======
+  <url>
+    <loc>https://getsorta.io/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+>>>>>>> origin/main
 </urlset>

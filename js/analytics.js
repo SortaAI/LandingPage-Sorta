@@ -189,6 +189,7 @@
 
             var minDelay = new Promise(function (resolve) { setTimeout(resolve, 650); });
 
+<<<<<<< HEAD
             var formPayload = {
                 name: name.trim(),
                 clinic: clinic.trim(),
@@ -200,12 +201,18 @@
             });
             formPayload._replyto = email.trim();
 
+=======
+>>>>>>> origin/main
             Promise.all([
                 minDelay,
                 fetch(demoForm.action, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+<<<<<<< HEAD
                     body: JSON.stringify(formPayload)
+=======
+                    body: JSON.stringify({ name: name.trim(), clinic: clinic.trim(), email: email.trim(), phone: phone.trim() })
+>>>>>>> origin/main
                 })
             ]).then(function (results) {
                 var resp = results[1];
