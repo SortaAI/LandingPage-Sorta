@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rework Tax: When Messy Intake Becomes Auth and Payer Headaches | Sorta Blog</title>
+    <meta name="description" content="Prior auth fights get the headlines — a lot of payer back-and-forth starts with intake that was never clean. Here's the rework tax in clinic language, not legal advice.">
+    <link rel="canonical" href="https://getsorta.io/blog/intake-rework-downstream-costs.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The Rework Tax — Messy Intake, Payer Headaches | Sorta Blog" />
+    <meta property="og:description" content="Unclean demographics and insurance fields don't stay a front-desk problem — they become phone tag with payers and delayed care." />
+    <meta property="og:url" content="https://getsorta.io/blog/intake-rework-downstream-costs.html" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:site_name" content="Sorta" />
+    <meta property="article:tag" content="Prior authorization" />
+    <meta property="article:tag" content="Data quality" />
+    <meta property="article:tag" content="Front desk" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Rework Tax — Intake Mess Becomes Auth Pain | Sorta Blog" />
+    <meta name="twitter:description" content="Cleaning intake isn't glamorous — it's how you stop paying the rework tax twice: once at the desk, again on hold with a payer." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_TOKEN" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <script src="../js/phosphor.min.js" defer></script>
+    <link rel="preload" as="style" href="../css/style.css" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../css/style.css" /></noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZPS6GNGPXD');
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wor9i7cm6t");
+    </script>
+
+    <!-- 3. Apollo Website Tracker -->
+    <script>
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+        document.head.appendChild(o)
+      }
+      initApollo();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Rework Tax: When Messy Intake Becomes Auth and Payer Headaches",
+      "keywords": ["prior authorization", "patient intake", "revenue cycle", "outpatient clinic"],
+      "author": {"@type": "Person", "name": "Emiliano Rodriguez"},
+      "publisher": {"@type": "Organization", "name": "Sorta", "url": "https://getsorta.io"},
+      "datePublished": "2026-05-10",
+      "dateModified": "2026-05-10",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://getsorta.io/blog/intake-rework-downstream-costs.html"},
+      "description": "Prior auth fights get the headlines — a lot of payer back-and-forth starts with intake that was never clean."
+    }
+    </script>
+
+    <style>
+      /* ── Shared Post Styles ── */
+      .post-hero {
+        padding: 140px 0 56px;
+        background: var(--color-bg-white);
+        border-bottom: 1px solid var(--color-gray-100);
+      }
+      .post-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .post-cat-pill {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: var(--radius-pill);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .post-cat-pill.founder { background: var(--color-teal); color: var(--color-navy); }
+      .post-cat-pill.ops { background: var(--color-electric); color: white; }
+      .post-cat-pill.compliance { background: var(--color-navy); color: white; border: 1px solid rgba(0,0,84,0.15); }
+      .post-cat-pill.research { background: var(--color-gray-200); color: var(--color-gray-700); }
+      .post-h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        flex-wrap: wrap;
+      }
+      .post-meta span { display: flex; align-items: center; gap: 5px; }
+      .post-meta .divider { color: var(--color-gray-200); }
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .post-tag {
+        display: inline-block;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: var(--radius-pill);
+        background: var(--color-gray-100);
+        color: var(--color-gray-600);
+        border: 1px solid var(--color-gray-200);
+      }
+
+      /* ── Article Body ── */
+      .post-body {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 60px 32px 80px;
+      }
+      .post-body p {
+        font-size: 1.0625rem;
+        color: #2d2d2d;
+        line-height: 1.75;
+        margin-bottom: 22px;
+      }
+      .post-body h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        letter-spacing: -0.02em;
+        margin: 44px 0 16px;
+        line-height: 1.25;
+      }
+      .post-body ul {
+        list-style: disc;
+        padding-left: 24px;
+        margin-bottom: 22px;
+      }
+      .post-body ul li {
+        font-size: 1.0625rem;
+        color: #2d2d2d;
+        line-height: 1.75;
+        margin-bottom: 8px;
+      }
+      .post-sources {
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        font-style: italic;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--color-gray-100);
+      }
+
+      /* ── Author Bio ── */
+      .author-bio {
+        max-width: 720px;
+        margin: 0 auto 64px;
+        padding: 0 32px;
+      }
+      .author-bio-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 28px 28px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .author-bio-photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 2px solid var(--color-gray-100);
+      }
+      .author-bio-photo-fallback {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-electric), var(--color-teal));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        flex-shrink: 0;
+      }
+      .author-bio-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        margin-bottom: 2px;
+      }
+      .author-bio-title {
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        margin-bottom: 10px;
+      }
+      .author-bio-text {
+        font-size: 0.9375rem;
+        color: var(--color-gray-500);
+        line-height: 1.65;
+        margin-bottom: 10px;
+      }
+      .author-bio-link {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.15s;
+      }
+      .author-bio-link:hover { gap: 9px; }
+
+      /* ── Related Posts ── */
+      .related-posts {
+        max-width: 720px;
+        margin: 0 auto 80px;
+        padding: 0 32px;
+      }
+      .related-posts-h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+      .related-posts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .related-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+      .related-card-pill {
+        display: inline-block;
+        padding: 4px 11px;
+        border-radius: var(--radius-pill);
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        align-self: flex-start;
+      }
+      .related-card-pill.founder { background: var(--color-teal); color: var(--color-navy); }
+      .related-card-pill.ops { background: var(--color-electric); color: white; }
+      .related-card-pill.compliance { background: var(--color-navy); color: white; }
+      .related-card-pill.research { background: var(--color-gray-200); color: var(--color-gray-700); }
+      .related-card-meta {
+        font-size: 0.75rem;
+        color: var(--color-gray-400);
+      }
+      .related-card-title {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+      }
+      .related-card-excerpt {
+        font-size: 0.8125rem;
+        color: var(--color-gray-500);
+        line-height: 1.65;
+        flex: 1;
+      }
+      .related-card-link {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: gap 0.15s;
+      }
+      .related-card-link:hover { gap: 8px; }
+
+      /* ── Bottom CTA ── */
+      .post-cta-section {
+        background: linear-gradient(135deg, var(--color-navy) 0%, #0d0080 100%);
+        padding: 80px 24px;
+        text-align: center;
+      }
+      .post-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(2,227,211,0.15);
+        border: 1px solid rgba(2,227,211,0.3);
+        border-radius: var(--radius-pill);
+        padding: 8px 18px;
+        font-size: 0.8125rem;
+        color: var(--color-teal);
+        margin-bottom: 24px;
+      }
+      .post-cta-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--color-teal);
+        display: inline-block;
+      }
+      .post-cta-h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin: 0 0 16px;
+        letter-spacing: -0.02em;
+      }
+      .post-cta-sub {
+        font-size: 1.125rem;
+        color: rgba(255,255,255,0.65);
+        margin: 0 auto 28px;
+        max-width: 560px;
+      }
+      .post-cta-fine {
+        margin-top: 16px;
+        font-size: 0.8125rem;
+        color: rgba(255,255,255,0.35);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .post-h1 { font-size: 1.875rem; }
+        .post-hero { padding: 120px 0 40px; }
+        .post-body { padding: 40px 24px 60px; }
+        .post-hero-inner { padding: 0 24px; }
+        .author-bio { padding: 0 24px; }
+        .related-posts { padding: 0 24px; }
+        .related-posts-grid { grid-template-columns: 1fr; }
+        .post-cta-h2 { font-size: 1.75rem; }
+        .author-bio-card { flex-direction: column; }
+      }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="../how-it-works.html">How it Works</a></li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="../specialties/index.html" class="nav-dropdown-trigger">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-cols">
+                            <div class="nav-dropdown-col">
+                                <a href="../specialties/optometry.html">Optometry</a>
+                                <a href="../specialties/physical-therapy.html">Physical Therapy</a>
+                                <a href="../specialties/nephrology.html">Nephrology</a>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <a href="../specialties/cardiology.html">Cardiology</a>
+                                <a href="../specialties/mental-health.html">Mental Health</a>
+                                <a href="../specialties/index.html">All Specialties</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="index.html" aria-current="page">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="../how-it-works.html">How it Works</a>
+        <a href="../pricing.html">Pricing</a>
+        <div class="mobile-nav-group">
+          <button class="mobile-nav-expand" type="button" aria-expanded="false">
+            Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
+          </button>
+          <div class="mobile-nav-sub" hidden>
+            <a href="../specialties/optometry.html">Optometry</a>
+            <a href="../specialties/physical-therapy.html">Physical Therapy</a>
+            <a href="../specialties/nephrology.html">Nephrology</a>
+            <a href="../specialties/cardiology.html">Cardiology</a>
+            <a href="../specialties/mental-health.html">Mental Health</a>
+            <a href="../specialties/index.html">All Specialties</a>
+          </div>
+        </div>
+        <a href="../about.html">About</a>
+        <a href="index.html" aria-current="page">Blog</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+        <!-- Post Hero -->
+        <header class="post-hero">
+            <div class="post-hero-inner">
+                <span class="post-cat-pill compliance">Compliance</span>
+                <h1 class="post-h1">The Rework Tax: When Messy Intake Becomes Auth and Payer Headaches</h1>
+                <div class="post-meta">
+                    <span><i class="ph-bold ph-user"></i> Emiliano Rodriguez, CEO</span>
+                    <span class="divider">·</span>
+                    <span><i class="ph-bold ph-calendar-blank"></i> May 2026</span>
+                    <span class="divider">·</span>
+                    <span><i class="ph-bold ph-clock"></i> 6 min read</span>
+                </div>
+                <div class="post-tags" aria-label="Topics">
+                    <span class="post-tag">Prior authorization</span>
+                    <span class="post-tag">Data quality</span>
+                    <span class="post-tag">Revenue cycle</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="post-body animate-on-scroll fade-up">
+
+            <p>Quick disclaimer up front: we're not your lawyer, your compliance officer, or your payer contract negotiator. We're the people who watched bad intake turn into phone tag nobody budgets for.</p>
+
+            <p>When auth teams get blamed for "being slow," sometimes they earned it. Often they're cleaning up a demographic typo that started on a clipboard three Tuesdays ago.</p>
+
+            <h2>What we mean by the rework tax</h2>
+
+            <p>The rework tax is the second (third, fourth) pass you pay after data was wrong or incomplete the first time — staff time, patient annoyance, and slots that slip while someone re-keys the same member ID into another portal.</p>
+
+            <p>Intake is where the tax accrues quietly. It doesn't send a calendar invite. It just shows up as "why is this still pending?" in the group chat.</p>
+
+            <h2>How sludge upstream becomes fighting downstream</h2>
+
+            <ul>
+                <li>Member ID off by a digit because someone read handwriting through plexiglass during flu season.</li>
+                <li>Policy number matches the card photo — but not the patient on the schedule because the legal name field was "close enough."</li>
+                <li>Diagnosis or service details live in a note field instead of the structured place the payer API wants — so a human retypes them under pressure.</li>
+            </ul>
+
+            <p>None of that is glamorous. All of it is ordinary. That's the point — ordinary mess compounds into extraordinary hold music.</p>
+
+            <h2>Why tighter electronic auth timelines magnify boring mistakes</h2>
+
+            <p>Federal timelines on electronic prior auth are real pressure — we walked through CMS-0057-F in plain language <a href="cms-prior-auth-2027.html">here</a> so clinic owners aren't forced through the PDF labyrinth cold.</p>
+
+            <p>When clocks get shorter for electronic submission, sloppy upstream fields aren't a front-desk nuisance anymore — they're schedule risk patients feel in the chair.</p>
+
+            <h2>The non-magic mitigation</h2>
+
+            <p>You don't philosophical-debate yourself out of the rework tax. You reduce re-entry surfaces so the same demographics land consistently on the paperwork blobs payers actually read.</p>
+
+            <p>That's boring engineering: capture once thoughtfully, propagate into PDFs mechanically, argue with keyboards less.</p>
+
+            <p>For the labor math on brute-force typing, <a href="150k-problem.html">where the $150k front-desk bleed comes from</a> lines up uncomfortably well with these second passes.</p>
+
+            <p>Sorta won't negotiate your contracts. It will reduce the clown car of duplicated fields that feeds the clown car of rework. If that's the wedge that fits your mess — <a href="../how-it-works.html">how it slots above your anchored EHR is documented without hand-waving.</a></p>
+
+        </article>
+
+        <!-- Author Bio -->
+        <aside class="author-bio animate-on-scroll fade-up">
+            <div class="author-bio-card">
+                <img src="../assets/team/emi.png" alt="Emiliano Rodriguez" class="author-bio-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="author-bio-photo-fallback" style="display:none;">ER</div>
+                <div>
+                    <div class="author-bio-name">Emiliano Rodriguez</div>
+                    <div class="author-bio-title">CEO &amp; Co-founder, Sorta</div>
+                    <p class="author-bio-text">Former Patient Care Technician. Built Sorta because the paperwork problem was too obvious to ignore.</p>
+                    <a href="index.html" class="author-bio-link">Read more posts <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Related Posts -->
+        <section class="related-posts animate-on-scroll fade-up">
+            <h3 class="related-posts-h3">Related posts</h3>
+            <div class="related-posts-grid">
+                <a href="cms-prior-auth-2027.html" class="related-card">
+                    <span class="related-card-pill compliance">Compliance</span>
+                    <span class="related-card-meta">May 2026 · 4 min read</span>
+                    <span class="related-card-title">CMS-0057-F explained for clinic owners who don't have time to read CMS documents</span>
+                    <span class="related-card-excerpt">Electronic prior auth timelines without the government PDF marathon.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
+                <a href="150k-problem.html" class="related-card">
+                    <span class="related-card-pill ops">Clinic Ops</span>
+                    <span class="related-card-meta">May 2026 · 6 min read</span>
+                    <span class="related-card-title">The $150,000 problem hiding in your front desk</span>
+                    <span class="related-card-excerpt">Where the manual-entry bleed comes from — and why it isn't abstract.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="post-cta-section">
+            <div class="container animate-on-scroll fade-up">
+                <div class="post-cta-badge">
+                    <span class="post-cta-dot"></span>
+                    Free 30-day pilot — no credit card required
+                </div>
+                <h2 class="post-cta-h2">Stop typing patient names 18 times.</h2>
+                <p class="post-cta-sub">Book a 15-minute demo. We'll show you Sorta working with your actual forms.</p>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill" data-track="post_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none;">
+                    Book a demo <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <p class="post-cta-fine">$300/month after your pilot. No contracts. Cancel anytime.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="soft-footer ui-card animate-on-scroll fade-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+              <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
+                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+            </div>
+            <div class="footer-links">
+                <nav class="footer-nav" aria-label="Footer">
+                  <a href="../how-it-works.html">How it Works</a>
+                  <a href="../pricing.html">Pricing</a>
+                  <a href="../about.html">About</a>
+                  <a href="index.html">Blog</a>
+                  <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
+                </nav>
+                <p style="margin-top: 16px;">&copy; 2026 Sorta AI Inc. | Built in El Paso, TX.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="sticky-cta" class="sticky-cta hidden" aria-hidden="true">
+      <a href="../index.html#demo-form" class="btn btn-primary pill sticky-cta-btn" data-track="sticky_cta_click">
+        Book a demo <i class="ph-bold ph-arrow-right"></i>
+      </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.mobile-nav-expand').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var sub = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (sub) sub.hidden = expanded;
+          });
+        });
+      });
+    </script>
+</body>
+</html>

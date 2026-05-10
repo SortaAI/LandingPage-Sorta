@@ -1,0 +1,15 @@
+{
+  "apiBase": "http://127.0.0.1:8000",
+  "frontendOrigin": "http://127.0.0.1:3000",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3YWIxODBlZi0wZjI0LTQyN2EtOTI1NS1kYzhlMTA2ZWNjMGQiLCJpYXQiOjE3NzU2NDI2MDMsImV4cCI6MTc3NTcyOTAwMywidGVuYW50X2lkIjoiZGVtby10ZW5hbnQifQ.RL33SnJCxdoZyMBtu4Chu-hVDLF1YsbhN3zbVpmIRIY",
+  "patientId": "f41bbef9-9fc9-4bff-a402-be8cef0ebfa4",
+  "intakeFormId": "98d5b4e4-a763-40a7-a864-54f4d6bc0fdc",
+  "acroFormId": "7e08f7dc-dcf7-4a0e-9b12-9eaa32399525",
+  "draftMappingTemplateId": "a50b39f0-b500-4760-887e-2c8db6dc55d6",
+  "syntheticTemplateIds": [
+    "a50b39f0-b500-4760-887e-2c8db6dc55d6",
+    "39de615a-0e0a-4271-a295-f3c785f2aeb1",
+    "b7dd751c-6717-4d1d-9c6d-45bec67ef802"
+  ],
+  "fillTemplateId": "39de615a-0e0a-4271-a295-f3c785f2aeb1"
+}

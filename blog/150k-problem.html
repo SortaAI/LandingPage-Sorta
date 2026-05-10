@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The $150,000 Problem Hiding in Your Front Desk | Sorta Blog</title>
+    <meta name="description" content="$150K annual outpatient bleed ties to unnoticed intake duplication—we unpack March 2026 Roving Health math plus weekday queue drag from manual packets.">
+    <link rel="canonical" href="https://getsorta.io/blog/150k-problem.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The $150,000 Problem Hiding in Your Front Desk | Sorta Blog" />
+    <meta property="og:description" content="Manual data entry costs the average outpatient clinic $150,000 a year. Most clinic owners have no idea. Here's where the number comes from." />
+    <meta property="og:url" content="https://getsorta.io/blog/150k-problem.html" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:site_name" content="Sorta" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The $150,000 Problem Hiding in Your Front Desk | Sorta Blog" />
+    <meta name="twitter:description" content="Manual data entry costs the average outpatient clinic $150,000 a year. Here's where the number comes from." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_TOKEN" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <script src="../js/phosphor.min.js" defer></script>
+    <link rel="preload" as="style" href="../css/style.css" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../css/style.css" /></noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZPS6GNGPXD');
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wor9i7cm6t");
+    </script>
+
+    <!-- 3. Apollo Website Tracker -->
+    <script>
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+        document.head.appendChild(o)
+      }
+      initApollo();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The $150,000 Problem Hiding in Your Front Desk",
+      "author": {"@type": "Person", "name": "Emiliano Rodriguez"},
+      "publisher": {"@type": "Organization", "name": "Sorta", "url": "https://getsorta.io"},
+      "datePublished": "2026-05-01",
+      "description": "$150K annual outpatient bleed ties to unnoticed intake duplication—we unpack March 2026 Roving Health math plus weekday queue drag from manual packets."
+    }
+    </script>
+
+    <style>
+      .post-hero {
+        padding: 140px 0 56px;
+        background: var(--color-bg-white);
+        border-bottom: 1px solid var(--color-gray-100);
+      }
+      .post-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .post-cat-pill {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: var(--radius-pill);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .post-cat-pill.ops { background: var(--color-electric); color: white; }
+      .post-h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        flex-wrap: wrap;
+      }
+      .post-meta span { display: flex; align-items: center; gap: 5px; }
+      .post-meta .divider { color: var(--color-gray-200); }
+      .post-body {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 60px 32px 80px;
+      }
+      .post-body p {
+        font-size: 1.0625rem;
+        color: #2d2d2d;
+        line-height: 1.75;
+        margin-bottom: 22px;
+      }
+      .post-body h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        letter-spacing: -0.02em;
+        margin: 44px 0 16px;
+        line-height: 1.25;
+      }
+      .post-sources {
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        font-style: italic;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--color-gray-100);
+      }
+      .author-bio {
+        max-width: 720px;
+        margin: 0 auto 64px;
+        padding: 0 32px;
+      }
+      .author-bio-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 28px 28px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .author-bio-photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 2px solid var(--color-gray-100);
+      }
+      .author-bio-photo-fallback {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-electric), var(--color-teal));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        flex-shrink: 0;
+      }
+      .author-bio-name { font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 2px; }
+      .author-bio-title { font-size: 0.8125rem; color: var(--color-gray-400); margin-bottom: 10px; }
+      .author-bio-text { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin-bottom: 10px; }
+      .author-bio-link {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.15s;
+      }
+      .author-bio-link:hover { gap: 9px; }
+      .related-posts {
+        max-width: 720px;
+        margin: 0 auto 80px;
+        padding: 0 32px;
+      }
+      .related-posts-h3 { font-size: 1.125rem; font-weight: 700; color: var(--color-navy); margin-bottom: 20px; letter-spacing: -0.01em; }
+      .related-posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .related-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+      .related-card-pill {
+        display: inline-block;
+        padding: 4px 11px;
+        border-radius: var(--radius-pill);
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        align-self: flex-start;
+      }
+      .related-card-pill.founder { background: var(--color-teal); color: var(--color-navy); }
+      .related-card-pill.research { background: var(--color-gray-200); color: var(--color-gray-700); }
+      .related-card-meta { font-size: 0.75rem; color: var(--color-gray-400); }
+      .related-card-title { font-size: 0.9375rem; font-weight: 700; color: var(--color-navy); line-height: 1.35; letter-spacing: -0.01em; }
+      .related-card-excerpt { font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.65; flex: 1; }
+      .related-card-link {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: gap 0.15s;
+      }
+      .related-card-link:hover { gap: 8px; }
+      .post-cta-section {
+        background: linear-gradient(135deg, var(--color-navy) 0%, #0d0080 100%);
+        padding: 80px 24px;
+        text-align: center;
+      }
+      .post-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(2,227,211,0.15);
+        border: 1px solid rgba(2,227,211,0.3);
+        border-radius: var(--radius-pill);
+        padding: 8px 18px;
+        font-size: 0.8125rem;
+        color: var(--color-teal);
+        margin-bottom: 24px;
+      }
+      .post-cta-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-teal); display: inline-block; }
+      .post-cta-h2 { font-size: 2.5rem; font-weight: 800; color: white; margin: 0 0 16px; letter-spacing: -0.02em; }
+      .post-cta-sub { font-size: 1.125rem; color: rgba(255,255,255,0.65); margin: 0 auto 28px; max-width: 560px; }
+      .post-cta-fine { margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.35); }
+      @media (max-width: 768px) {
+        .post-h1 { font-size: 1.875rem; }
+        .post-hero { padding: 120px 0 40px; }
+        .post-body { padding: 40px 24px 60px; }
+        .post-hero-inner { padding: 0 24px; }
+        .author-bio { padding: 0 24px; }
+        .related-posts { padding: 0 24px; }
+        .related-posts-grid { grid-template-columns: 1fr; }
+        .post-cta-h2 { font-size: 1.75rem; }
+        .author-bio-card { flex-direction: column; }
+      }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="../how-it-works.html">How it Works</a></li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="../specialties/index.html" class="nav-dropdown-trigger">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-cols">
+                            <div class="nav-dropdown-col">
+                                <a href="../specialties/optometry.html">Optometry</a>
+                                <a href="../specialties/physical-therapy.html">Physical Therapy</a>
+                                <a href="../specialties/nephrology.html">Nephrology</a>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <a href="../specialties/cardiology.html">Cardiology</a>
+                                <a href="../specialties/mental-health.html">Mental Health</a>
+                                <a href="../specialties/index.html">All Specialties</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="index.html" aria-current="page">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu"><span aria-hidden="true">✕</span></button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="../how-it-works.html">How it Works</a>
+        <a href="../pricing.html">Pricing</a>
+        <div class="mobile-nav-group">
+          <button class="mobile-nav-expand" type="button" aria-expanded="false">Specialties <i class="ph-bold ph-caret-down mobile-caret"></i></button>
+          <div class="mobile-nav-sub" hidden>
+            <a href="../specialties/optometry.html">Optometry</a>
+            <a href="../specialties/physical-therapy.html">Physical Therapy</a>
+            <a href="../specialties/nephrology.html">Nephrology</a>
+            <a href="../specialties/cardiology.html">Cardiology</a>
+            <a href="../specialties/mental-health.html">Mental Health</a>
+            <a href="../specialties/index.html">All Specialties</a>
+          </div>
+        </div>
+        <a href="../about.html">About</a>
+        <a href="index.html" aria-current="page">Blog</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+        <header class="post-hero">
+            <div class="post-hero-inner">
+                <span class="post-cat-pill ops">Clinic Ops</span>
+                <h1 class="post-h1">The $150,000 Problem Hiding in Your Front Desk</h1>
+                <div class="post-meta">
+                    <span><i class="ph-bold ph-user"></i> Emiliano Rodriguez, CEO</span>
+                    <span class="divider">·</span>
+                    <span><i class="ph-bold ph-calendar-blank"></i> May 2026</span>
+                    <span class="divider">·</span>
+                    <span><i class="ph-bold ph-clock"></i> 6 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <article class="post-body animate-on-scroll fade-up">
+
+            <p>There's a number floating around in healthcare administration research that most clinic owners have never seen: $150,000.</p>
+
+            <p>That's the estimated annual cost of manual data entry for the average outpatient clinic. Not the cost of running the clinic. Not payroll. Just the cost of staff manually entering the same information into different systems, over and over, every day.</p>
+
+            <p>The number comes from a March 2026 study by Roving Health on administrative burden in outpatient settings. When we first saw it, we thought it seemed high. Then we did the math ourselves.</p>
+
+            <h2>Where the $150,000 actually comes from</h2>
+
+            <p>It's not one big cost. It's a hundred small ones that nobody tracks individually.</p>
+
+            <p>Start with intake. A new patient arrives. They fill out an intake packet — let's call it 10 pages. A staff member then retypes that information into the EHR. Then another staff member needs some of that same information for insurance authorization. Then the billing department needs the same name, DOB, and insurance details for their records.</p>
+
+            <p>At every step, someone is retyping information that already exists somewhere else. It just doesn't exist in the right place at the right time.</p>
+
+            <p>At a front desk rate of $18–22 per hour, 30–45 minutes of retyping per new patient adds up fast. A clinic seeing 15 new patients a week is losing 7–11 hours of labor weekly to pure data re-entry. That's $130–240 per week in staff time doing nothing but copying information from one place to another.</p>
+
+            <p>Multiply by 52 weeks. Add the time lost on prior authorization paperwork, referral documentation, and return patient re-entry. The $150,000 number stops looking so surprising.</p>
+
+            <h2>The hidden cost nobody talks about</h2>
+
+            <p>The direct labor cost is only part of it.</p>
+
+            <p>Every hour a front desk staff member spends retyping patient information is an hour they're not doing something else. Not answering phones. Not handling scheduling problems. Not helping the patient standing at the desk who has a question.</p>
+
+            <p>The bottleneck at check-in affects the entire day. When a new patient takes 45 minutes to get through intake, every appointment after them runs late. Patients get frustrated. Staff gets stressed. Providers see fewer patients than they could. That lost throughput has a dollar value too — it just doesn't show up on any spreadsheet.</p>
+
+            <h2>Why most clinics don't know this is happening</h2>
+
+            <p>Manual data entry is invisible. It's just part of how the clinic runs. Nobody tracks how many times the same piece of information gets typed in a given day. Nobody adds up the hours. It's background noise that everyone has accepted as normal.</p>
+
+            <p>The clinics that do notice it are usually the ones where something forces them to pay attention — a staff member leaves and suddenly one person is doing two jobs, and the retyping is what makes the workload impossible. Or a particularly frustrated front desk employee finally says out loud: "I typed this same patient's name six times today."</p>
+
+            <h2>What fixing it actually looks like</h2>
+
+            <p>The fix isn't complicated. It's just not built into most of the tools clinics already use.</p>
+
+            <p>See the patient-phone → staff-sync → printable PDF choreography on <a href="../how-it-works.html">our how-it-works page</a>.</p>
+
+            <p>Patient enters their information once — on their phone before they arrive, or at a tablet when they check in. That information flows automatically into every form the clinic uses. Nobody retypes it. The same name doesn't get typed six times. It gets typed once.</p>
+
+            <p>The labor savings are immediate. The throughput improvement follows. The $150,000 doesn't disappear overnight, but the daily friction that accumulates into that number starts shrinking from day one.</p>
+
+            <p>It's not a technology problem. The technology to do this has existed for years. It's a distribution problem — the tools that solve it haven't reached the clinics that need them most.</p>
+
+            <p>That's what we're trying to fix.</p>
+
+            <p class="post-sources">Roving Health, March 2026: "Administrative Burden and Labor Cost in Outpatient Clinical Settings"</p>
+
+        </article>
+
+        <!-- Author Bio -->
+        <aside class="author-bio animate-on-scroll fade-up">
+            <div class="author-bio-card">
+                <img src="../assets/team/emi.png" alt="Emiliano Rodriguez" class="author-bio-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="author-bio-photo-fallback" style="display:none;">ER</div>
+                <div>
+                    <div class="author-bio-name">Emiliano Rodriguez</div>
+                    <div class="author-bio-title">CEO &amp; Co-founder, Sorta</div>
+                    <p class="author-bio-text">Former Patient Care Technician. Built Sorta because the paperwork problem was too obvious to ignore.</p>
+                    <a href="index.html" class="author-bio-link">Read more posts <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Related Posts -->
+        <section class="related-posts animate-on-scroll fade-up">
+            <h3 class="related-posts-h3">Related posts</h3>
+            <div class="related-posts-grid">
+                <a href="why-we-built-sorta.html" class="related-card">
+                    <span class="related-card-pill founder">Founder Story</span>
+                    <span class="related-card-meta">May 2026 · 5 min read</span>
+                    <span class="related-card-title">Why we built Sorta instead of just using Jotform</span>
+                    <span class="related-card-excerpt">We looked at every existing tool. None of them solved the sync problem. Here's why we built the engine.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
+                <a href="30-clinic-managers.html" class="related-card">
+                    <span class="related-card-pill research">Research</span>
+                    <span class="related-card-meta">May 2026 · 7 min read</span>
+                    <span class="related-card-title">We talked to 30 clinic managers about what they hate most about their day</span>
+                    <span class="related-card-excerpt">Everyone assumes EHR documentation tops the list. The actual answers were more specific — and more fixable.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="post-cta-section">
+            <div class="container animate-on-scroll fade-up">
+                <div class="post-cta-badge">
+                    <span class="post-cta-dot"></span>
+                    Free 30-day pilot — no credit card required
+                </div>
+                <h2 class="post-cta-h2">Stop typing patient names 18 times.</h2>
+                <p class="post-cta-sub">Book a 15-minute demo. We'll show you Sorta working with your actual forms.</p>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill" data-track="post_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none;">
+                    Book a demo <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <p class="post-cta-fine">$300/month after your pilot. No contracts. Cancel anytime.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="soft-footer ui-card animate-on-scroll fade-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+              <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
+                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+            </div>
+            <div class="footer-links">
+                <nav class="footer-nav" aria-label="Footer">
+                  <a href="../how-it-works.html">How it Works</a>
+                  <a href="../pricing.html">Pricing</a>
+                  <a href="../about.html">About</a>
+                  <a href="index.html">Blog</a>
+                  <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
+                </nav>
+                <p style="margin-top: 16px;">&copy; 2026 Sorta AI Inc. | Built in El Paso, TX.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="sticky-cta" class="sticky-cta hidden" aria-hidden="true">
+      <a href="../index.html#demo-form" class="btn btn-primary pill sticky-cta-btn" data-track="sticky_cta_click">
+        Book a demo <i class="ph-bold ph-arrow-right"></i>
+      </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.mobile-nav-expand').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var sub = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (sub) sub.hidden = expanded;
+          });
+        });
+      });
+    </script>
+</body>
+</html>

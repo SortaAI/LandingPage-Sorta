@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why We Built Sorta Instead of Just Using Jotform | Sorta Blog</title>
+    <meta name="description" content="Toured Jotform, IntakeQ, Google Forms, etc.—still no cross-PDF propagation for clinics—we built Sorta replay engine atop custom PDF uploads instead.">
+    <link rel="canonical" href="https://getsorta.io/blog/why-we-built-sorta.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Why We Built Sorta Instead of Just Using Jotform | Sorta Blog" />
+    <meta property="og:description" content="We looked at every existing tool before building Sorta. Here's why none of them solved the real problem." />
+    <meta property="og:url" content="https://getsorta.io/blog/why-we-built-sorta.html" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:site_name" content="Sorta" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why We Built Sorta Instead of Just Using Jotform | Sorta Blog" />
+    <meta name="twitter:description" content="We looked at every existing tool before building Sorta. Here's why none of them solved the real problem." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_TOKEN" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <script src="../js/phosphor.min.js" defer></script>
+    <link rel="preload" as="style" href="../css/style.css" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../css/style.css" /></noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZPS6GNGPXD');
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wor9i7cm6t");
+    </script>
+
+    <!-- 3. Apollo Website Tracker -->
+    <script>
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+        document.head.appendChild(o)
+      }
+      initApollo();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why We Built Sorta Instead of Just Using Jotform",
+      "author": {"@type": "Person", "name": "Emiliano Rodriguez"},
+      "publisher": {"@type": "Organization", "name": "Sorta", "url": "https://getsorta.io"},
+      "datePublished": "2026-05-01",
+      "description": "Toured Jotform, IntakeQ, Google Forms, etc.—still no cross-PDF propagation for clinics—we built Sorta replay engine atop custom PDF uploads instead."
+    }
+    </script>
+
+    <style>
+      /* ── Shared Post Styles ── */
+      .post-hero {
+        padding: 140px 0 56px;
+        background: var(--color-bg-white);
+        border-bottom: 1px solid var(--color-gray-100);
+      }
+      .post-hero-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .post-cat-pill {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: var(--radius-pill);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .post-cat-pill.founder { background: var(--color-teal); color: var(--color-navy); }
+      .post-cat-pill.ops { background: var(--color-electric); color: white; }
+      .post-cat-pill.compliance { background: var(--color-navy); color: white; border: 1px solid rgba(0,0,84,0.15); }
+      .post-cat-pill.research { background: var(--color-gray-200); color: var(--color-gray-700); }
+      .post-h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        flex-wrap: wrap;
+      }
+      .post-meta span { display: flex; align-items: center; gap: 5px; }
+      .post-meta .divider { color: var(--color-gray-200); }
+
+      /* ── Article Body ── */
+      .post-body {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 60px 32px 80px;
+      }
+      .post-body p {
+        font-size: 1.0625rem;
+        color: #2d2d2d;
+        line-height: 1.75;
+        margin-bottom: 22px;
+      }
+      .post-body h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        letter-spacing: -0.02em;
+        margin: 44px 0 16px;
+        line-height: 1.25;
+      }
+      .post-body ul {
+        list-style: disc;
+        padding-left: 24px;
+        margin-bottom: 22px;
+      }
+      .post-body ul li {
+        font-size: 1.0625rem;
+        color: #2d2d2d;
+        line-height: 1.75;
+        margin-bottom: 8px;
+      }
+      .post-sources {
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        font-style: italic;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--color-gray-100);
+      }
+
+      /* ── Author Bio ── */
+      .author-bio {
+        max-width: 720px;
+        margin: 0 auto 64px;
+        padding: 0 32px;
+      }
+      .author-bio-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 28px 28px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .author-bio-photo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 2px solid var(--color-gray-100);
+      }
+      .author-bio-photo-fallback {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-electric), var(--color-teal));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        flex-shrink: 0;
+      }
+      .author-bio-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        margin-bottom: 2px;
+      }
+      .author-bio-title {
+        font-size: 0.8125rem;
+        color: var(--color-gray-400);
+        margin-bottom: 10px;
+      }
+      .author-bio-text {
+        font-size: 0.9375rem;
+        color: var(--color-gray-500);
+        line-height: 1.65;
+        margin-bottom: 10px;
+      }
+      .author-bio-link {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.15s;
+      }
+      .author-bio-link:hover { gap: 9px; }
+
+      /* ── Related Posts ── */
+      .related-posts {
+        max-width: 720px;
+        margin: 0 auto 80px;
+        padding: 0 32px;
+      }
+      .related-posts-h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+      .related-posts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .related-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+      .related-card-pill {
+        display: inline-block;
+        padding: 4px 11px;
+        border-radius: var(--radius-pill);
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        align-self: flex-start;
+      }
+      .related-card-pill.founder { background: var(--color-teal); color: var(--color-navy); }
+      .related-card-pill.ops { background: var(--color-electric); color: white; }
+      .related-card-pill.compliance { background: var(--color-navy); color: white; }
+      .related-card-pill.research { background: var(--color-gray-200); color: var(--color-gray-700); }
+      .related-card-meta {
+        font-size: 0.75rem;
+        color: var(--color-gray-400);
+      }
+      .related-card-title {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+      }
+      .related-card-excerpt {
+        font-size: 0.8125rem;
+        color: var(--color-gray-500);
+        line-height: 1.65;
+        flex: 1;
+      }
+      .related-card-link {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: gap 0.15s;
+      }
+      .related-card-link:hover { gap: 8px; }
+
+      /* ── Bottom CTA ── */
+      .post-cta-section {
+        background: linear-gradient(135deg, var(--color-navy) 0%, #0d0080 100%);
+        padding: 80px 24px;
+        text-align: center;
+      }
+      .post-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(2,227,211,0.15);
+        border: 1px solid rgba(2,227,211,0.3);
+        border-radius: var(--radius-pill);
+        padding: 8px 18px;
+        font-size: 0.8125rem;
+        color: var(--color-teal);
+        margin-bottom: 24px;
+      }
+      .post-cta-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--color-teal);
+        display: inline-block;
+      }
+      .post-cta-h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin: 0 0 16px;
+        letter-spacing: -0.02em;
+      }
+      .post-cta-sub {
+        font-size: 1.125rem;
+        color: rgba(255,255,255,0.65);
+        margin: 0 auto 28px;
+        max-width: 560px;
+      }
+      .post-cta-fine {
+        margin-top: 16px;
+        font-size: 0.8125rem;
+        color: rgba(255,255,255,0.35);
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 768px) {
+        .post-h1 { font-size: 1.875rem; }
+        .post-hero { padding: 120px 0 40px; }
+        .post-body { padding: 40px 24px 60px; }
+        .post-hero-inner { padding: 0 24px; }
+        .author-bio { padding: 0 24px; }
+        .related-posts { padding: 0 24px; }
+        .related-posts-grid { grid-template-columns: 1fr; }
+        .post-cta-h2 { font-size: 1.75rem; }
+        .author-bio-card { flex-direction: column; }
+      }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="../how-it-works.html">How it Works</a></li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="../specialties/index.html" class="nav-dropdown-trigger">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-cols">
+                            <div class="nav-dropdown-col">
+                                <a href="../specialties/optometry.html">Optometry</a>
+                                <a href="../specialties/physical-therapy.html">Physical Therapy</a>
+                                <a href="../specialties/nephrology.html">Nephrology</a>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <a href="../specialties/cardiology.html">Cardiology</a>
+                                <a href="../specialties/mental-health.html">Mental Health</a>
+                                <a href="../specialties/index.html">All Specialties</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="index.html" aria-current="page">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="../how-it-works.html">How it Works</a>
+        <a href="../pricing.html">Pricing</a>
+        <div class="mobile-nav-group">
+          <button class="mobile-nav-expand" type="button" aria-expanded="false">
+            Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
+          </button>
+          <div class="mobile-nav-sub" hidden>
+            <a href="../specialties/optometry.html">Optometry</a>
+            <a href="../specialties/physical-therapy.html">Physical Therapy</a>
+            <a href="../specialties/nephrology.html">Nephrology</a>
+            <a href="../specialties/cardiology.html">Cardiology</a>
+            <a href="../specialties/mental-health.html">Mental Health</a>
+            <a href="../specialties/index.html">All Specialties</a>
+          </div>
+        </div>
+        <a href="../about.html">About</a>
+        <a href="index.html" aria-current="page">Blog</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+        <!-- Post Hero -->
+        <header class="post-hero">
+            <div class="post-hero-inner">
+                <span class="post-cat-pill founder">Founder Story</span>
+                <h1 class="post-h1">Why We Built Sorta Instead of Just Using Jotform</h1>
+                <div class="post-meta">
+                    <span><i class="ph-bold ph-user"></i> Emiliano Rodriguez, CEO</span>
+                    <span class="divider">·</span>
+                    <span><i class="ph-bold ph-calendar-blank"></i> May 2026</span>
+                    <span class="divider">·</span>
+                    <span><i class="ph-bold ph-clock"></i> 5 min read</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Article Body -->
+        <article class="post-body animate-on-scroll fade-up">
+
+            <p>Before we wrote a single line of code, we spent weeks asking ourselves whether we actually needed to build something new.</p>
+
+            <p>The question was simple: does this already exist?</p>
+
+            <p>We looked at everything. Jotform. Typeform. Google Forms. IntakeQ. JotForm Healthcare. Formstack. We tested them, read their docs, watched their demo videos. Some of them were genuinely good at what they did.</p>
+
+            <p>But none of them solved the actual problem.</p>
+
+            <h2>The forms weren't the problem</h2>
+
+            <p>Every tool we looked at let you build forms. Nice forms. Mobile-friendly forms. Forms you could embed in a website or send via email. Forms with conditional logic and branching and all sorts of clever things.</p>
+
+            <p>But here's what none of them did: take the data a patient entered on one form and automatically populate it across every other form the clinic uses.</p>
+
+            <p>That's not a forms problem. That's a sync problem.</p>
+
+            <p>A new patient at an independent outpatient clinic typically fills out somewhere between 6 and 18 pages of forms. Intake questionnaire. Insurance authorization. HIPAA notice. Consent forms. Specialty-specific assessments. Their name and date of birth appear on almost every single page.</p>
+
+            <p>With every tool we tested, the patient fills out the intake form — and then a staff member retypes that same information into every other form. Or the patient fills out each form individually. Either way, the same data gets entered multiple times.</p>
+
+            <p>Jotform doesn't fix that. IntakeQ doesn't fix that. No form builder fixes that, because the problem isn't the form — it's what happens to the data after the patient submits it.</p>
+
+            <h2>What we actually needed to build</h2>
+
+            <p>The core of Sorta isn't the patient intake link. It's the sync engine underneath it.</p>
+
+            <p>When a patient fills out their information on Sorta, that data gets mapped against every template the clinic has uploaded. Every field that matches — patient name, DOB, insurance company, address, emergency contact — gets populated automatically across every form simultaneously.</p>
+
+            <p>The clinic uploads their existing PDFs once. Our AI maps the fields. From that point on, every patient's information flows automatically into every form without anyone retyping anything.</p>
+
+            <p>That's the thing that didn't exist. Not a better form builder. A sync layer that sits underneath all the forms and connects them.</p>
+
+            <h2>Why we didn't just build on top of an existing tool</h2>
+
+            <p>We considered it. There are APIs for Jotform and Typeform that technically let you pull submitted data and push it somewhere else. We could have built a wrapper on top of one of them.</p>
+
+            <p>The problem is that none of them understand the output side of the equation — the filled PDF that comes out at the end. A clinic doesn't just need the data to exist somewhere in a database. They need a filled PDF that looks identical to the form they've been using for years, stamped with the patient's information in exactly the right place, ready to hand to a provider or drop into a chart.</p>
+
+            <p>Building that on top of a third-party form tool would have meant we were dependent on their pricing, their API rate limits, their feature decisions. And we still would have had to solve the PDF generation problem ourselves.</p>
+
+            <p>So we built the whole thing.</p>
+
+            <h2>What we learned</h2>
+
+            <p>The form is the least interesting part of the problem. Every clinic has forms. They've had them for years. They don't want new forms — they want their existing forms to stop being painful.</p>
+
+            <p>That realization shaped everything about how Sorta works. We don't ask clinics to adopt our templates. We ask them to upload the PDFs they already use. The form doesn't change. The pain goes away.</p>
+
+            <p>If you've been trying to solve this problem with a form builder, that's why it hasn't worked. The problem isn't the form.</p>
+
+            <p>For <a href="../pricing.html">how Sorta's intake tier is priced</a> versus cobbling spreadsheets and SaaS tiers together, we publish the breakdown on its own page.</p>
+
+        </article>
+
+        <!-- Author Bio -->
+        <aside class="author-bio animate-on-scroll fade-up">
+            <div class="author-bio-card">
+                <img src="../assets/team/emi.png" alt="Emiliano Rodriguez" class="author-bio-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="author-bio-photo-fallback" style="display:none;">ER</div>
+                <div>
+                    <div class="author-bio-name">Emiliano Rodriguez</div>
+                    <div class="author-bio-title">CEO &amp; Co-founder, Sorta</div>
+                    <p class="author-bio-text">Former Patient Care Technician. Built Sorta because the paperwork problem was too obvious to ignore.</p>
+                    <a href="index.html" class="author-bio-link">Read more posts <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Related Posts -->
+        <section class="related-posts animate-on-scroll fade-up">
+            <h3 class="related-posts-h3">Related posts</h3>
+            <div class="related-posts-grid">
+                <a href="150k-problem.html" class="related-card">
+                    <span class="related-card-pill ops">Clinic Ops</span>
+                    <span class="related-card-meta">May 2026 · 6 min read</span>
+                    <span class="related-card-title">The $150,000 problem hiding in your front desk</span>
+                    <span class="related-card-excerpt">Manual data entry costs the average clinic $150,000 a year. Here's where the number comes from.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
+                <a href="cms-prior-auth-2027.html" class="related-card">
+                    <span class="related-card-pill compliance">Compliance</span>
+                    <span class="related-card-meta">May 2026 · 4 min read</span>
+                    <span class="related-card-title">CMS-0057-F explained for clinic owners who don't have time to read CMS documents</span>
+                    <span class="related-card-excerpt">A federal mandate coming in 2027 affects how every clinic handles prior authorization.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="post-cta-section">
+            <div class="container animate-on-scroll fade-up">
+                <div class="post-cta-badge">
+                    <span class="post-cta-dot"></span>
+                    Free 30-day pilot — no credit card required
+                </div>
+                <h2 class="post-cta-h2">Stop typing patient names 18 times.</h2>
+                <p class="post-cta-sub">Book a 15-minute demo. We'll show you Sorta working with your actual forms.</p>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill" data-track="post_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none;">
+                    Book a demo <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <p class="post-cta-fine">$300/month after your pilot. No contracts. Cancel anytime.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="soft-footer ui-card animate-on-scroll fade-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+              <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
+                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+            </div>
+            <div class="footer-links">
+                <nav class="footer-nav" aria-label="Footer">
+                  <a href="../how-it-works.html">How it Works</a>
+                  <a href="../pricing.html">Pricing</a>
+                  <a href="../about.html">About</a>
+                  <a href="index.html">Blog</a>
+                  <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
+                </nav>
+                <p style="margin-top: 16px;">&copy; 2026 Sorta AI Inc. | Built in El Paso, TX.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="sticky-cta" class="sticky-cta hidden" aria-hidden="true">
+      <a href="../index.html#demo-form" class="btn btn-primary pill sticky-cta-btn" data-track="sticky_cta_click">
+        Book a demo <i class="ph-bold ph-arrow-right"></i>
+      </a>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.mobile-nav-expand').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var sub = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (sub) sub.hidden = expanded;
+          });
+        });
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Intake by Outpatient Specialty | Sorta — One Layer for Every Form</title>
+    <meta name="description" content="Sorta replays synced outpatient intake across optics, PT, cardio, kidney, or mental-health PDFs while clinics keep billing and chart tooling intact underneath.">
+    <link rel="canonical" href="https://getsorta.io/specialties/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Patient Intake by Outpatient Specialty | Sorta — One Layer for Every Form" />
+    <meta property="og:description" content="One synced intake replays across specialty PDF bundles—claims, charts, billing tools stay untouched while paperwork stops multiplying." />
+    <meta property="og:url" content="https://getsorta.io/specialties/" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Sorta" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Patient Intake by Outpatient Specialty | Sorta — One Layer for Every Form" />
+    <meta name="twitter:description" content="Synced intake replays onto specialty paperwork—underlying chart and billing stacks stay as-is underneath." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_TOKEN" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <script src="../js/phosphor.min.js" defer></script>
+    <link rel="preload" as="style" href="../css/style.css" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="../css/style.css" /></noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZPS6GNGPXD');
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wor9i7cm6t");
+    </script>
+
+    <!-- 3. Apollo Website Tracker -->
+    <script>
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+        document.head.appendChild(o)
+      }
+      initApollo();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Patient Intake by Outpatient Specialty | Sorta",
+      "description": "Synced outpatient intake populates optics, PT, cardio, kidney, and mental-health PDFs while clinics keep their charting stacks unchanged underneath.",
+      "url": "https://getsorta.io/specialties/"
+    }
+    </script>
+
+    <style>
+      .spec-index-hero {
+        padding: 140px 0 80px;
+        text-align: center;
+        background: var(--color-bg-white);
+        border-bottom: 1px solid var(--color-gray-100);
+      }
+      .spec-index-h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin: 0 auto 20px;
+        max-width: 700px;
+      }
+      .spec-index-sub {
+        font-size: 1.125rem;
+        color: var(--color-gray-500);
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.65;
+      }
+      .spec-index-grid-section {
+        padding: 80px 0 60px;
+        background: var(--color-bg-white);
+      }
+      .spec-index-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 64px;
+      }
+      .spec-index-card {
+        background: var(--color-bg-white);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-card);
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        transition: box-shadow 0.18s ease, transform 0.18s ease;
+      }
+      .spec-index-card:hover { box-shadow: var(--shadow-float); transform: translateY(-2px); }
+      .spec-index-card-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(39,64,252,0.08);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-electric);
+        font-size: 1.5rem;
+      }
+      .spec-index-card h3 {
+        font-size: 1.0625rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        margin: 0;
+      }
+      .spec-index-card p {
+        font-size: 0.9rem;
+        color: var(--color-gray-500);
+        line-height: 1.6;
+        margin: 0;
+        flex: 1;
+      }
+      .spec-index-card a {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-electric);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.15s;
+      }
+      .spec-index-card a:hover { gap: 10px; }
+      .spec-index-bottom {
+        text-align: center;
+        padding: 40px 0 0;
+        border-top: 1px solid var(--color-gray-100);
+      }
+      .spec-index-bottom p {
+        font-size: 1rem;
+        color: var(--color-gray-500);
+        margin: 0 0 24px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.65;
+      }
+      @media (max-width: 900px) {
+        .spec-index-grid { grid-template-columns: repeat(2, 1fr); }
+        .spec-index-h1 { font-size: 2.25rem; }
+      }
+      @media (max-width: 580px) {
+        .spec-index-grid { grid-template-columns: 1fr; }
+        .spec-index-h1 { font-size: 1.875rem; }
+        .spec-index-hero { padding: 100px 0 60px; }
+      }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="../how-it-works.html">How it Works</a></li>
+                <li><a href="../pricing.html">Pricing</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="index.html" class="nav-dropdown-trigger" aria-current="page">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-cols">
+                            <div class="nav-dropdown-col">
+                                <a href="optometry.html">Optometry</a>
+                                <a href="physical-therapy.html">Physical Therapy</a>
+                                <a href="nephrology.html">Nephrology</a>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <a href="cardiology.html">Cardiology</a>
+                                <a href="mental-health.html">Mental Health</a>
+                                <a href="index.html">All Specialties</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="../how-it-works.html">How it Works</a>
+        <a href="../pricing.html">Pricing</a>
+        <div class="mobile-nav-group">
+          <button class="mobile-nav-expand" type="button" aria-expanded="false">
+            Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
+          </button>
+          <div class="mobile-nav-sub" hidden>
+            <a href="optometry.html">Optometry</a>
+            <a href="physical-therapy.html">Physical Therapy</a>
+            <a href="nephrology.html">Nephrology</a>
+            <a href="cardiology.html">Cardiology</a>
+            <a href="mental-health.html">Mental Health</a>
+            <a href="index.html" aria-current="page">All Specialties</a>
+          </div>
+        </div>
+        <a href="../about.html">About</a>
+        <a href="../blog/index.html">Blog</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+        <section class="spec-index-hero">
+            <div class="container">
+                <span class="eyebrow" style="color: var(--color-electric); font-weight: 700; display: block; margin-bottom: 16px;">SPECIALTIES</span>
+                <h1 class="spec-index-h1">Every specialty. One intake layer.</h1>
+                <p class="spec-index-sub">If your clinic has patient forms, Sorta works for you. Here's how it applies to yours.</p>
+            </div>
+        </section>
+
+        <section class="spec-index-grid-section">
+            <div class="container">
+                <div class="spec-index-grid">
+                    <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 0ms;">
+                        <div class="spec-index-card-icon">
+                            <i class="ph-bold ph-eye"></i>
+                        </div>
+                        <h3>Optometry</h3>
+                        <p>Intake packets, vision history, insurance auth — entered by the patient once, populated everywhere.</p>
+                        <a href="optometry.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                    <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 60ms;">
+                        <div class="spec-index-card-icon">
+                            <i class="ph-bold ph-person-simple-walk"></i>
+                        </div>
+                        <h3>Physical Therapy</h3>
+                        <p>Health history, functional outcomes, consent forms — one entry, every form filled.</p>
+                        <a href="physical-therapy.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                    <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 120ms;">
+                        <div class="spec-index-card-icon">
+                            <i class="ph-bold ph-drop"></i>
+                        </div>
+                        <h3>Nephrology</h3>
+                        <p>Complex histories, recurring visits, multiple payers — patients enter it once, staff never retypes it.</p>
+                        <a href="nephrology.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                    <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 0ms;">
+                        <div class="spec-index-card-icon">
+                            <i class="ph-bold ph-heart"></i>
+                        </div>
+                        <h3>Cardiology</h3>
+                        <p>Cardiac history, medications, risk factors, prior auth — entered once, flows everywhere.</p>
+                        <a href="cardiology.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                    <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 60ms;">
+                        <div class="spec-index-card-icon">
+                            <i class="ph-bold ph-brain"></i>
+                        </div>
+                        <h3>Mental Health</h3>
+                        <p>PHQ-9, GAD-7, consent, HIPAA — sent to patients before they arrive, populated automatically.</p>
+                        <a href="mental-health.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                    <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 120ms;">
+                        <div class="spec-index-card-icon">
+                            <i class="ph-bold ph-plus"></i>
+                        </div>
+                        <h3>Other Specialties</h3>
+                        <p>Family medicine, chiropractic, ENT, urgent care, dermatology — if you have patient forms, Sorta works for you.</p>
+                        <a href="../index.html#demo-form">Book a demo <i class="ph-bold ph-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="spec-index-bottom animate-on-scroll fade-up">
+                    <p>Don't see your specialty? Book a demo and we'll show you Sorta working with your actual forms.</p>
+                    <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="spec_index_cta_demo">Book a demo <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="soft-footer ui-card animate-on-scroll fade-up">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
+                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+            </div>
+            <div class="footer-links">
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="../how-it-works.html">How it Works</a>
+                    <a href="../pricing.html">Pricing</a>
+                    <a href="../about.html">About</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
+                </nav>
+                <p style="margin-top: 16px;">&copy; 2026 Sorta AI Inc. | Built in El Paso, TX.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.mobile-nav-expand').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var sub = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (sub) sub.hidden = expanded;
+          });
+        });
+      });
+    </script>
+</body>
+</html>
