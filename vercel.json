@@ -1,0 +1,26 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/specialties/index.html",
+      "destination": "/specialties",
+      "permanent": true
+    },
+    {
+      "source": "/(.*).html",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ]
+}

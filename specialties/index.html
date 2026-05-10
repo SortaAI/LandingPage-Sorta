@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Intake by Outpatient Specialty | Sorta — One Layer for Every Form</title>
     <meta name="description" content="Sorta replays synced outpatient intake across optics, PT, cardio, kidney, or mental-health PDFs while clinics keep billing and chart tooling intact underneath.">
-    <link rel="canonical" href="https://getsorta.io/specialties/" />
+    <link rel="canonical" href="https://getsorta.io/specialties" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Patient Intake by Outpatient Specialty | Sorta — One Layer for Every Form" />
     <meta property="og:description" content="One synced intake replays across specialty PDF bundles—claims, charts, billing tools stay untouched while paperwork stops multiplying." />
-    <meta property="og:url" content="https://getsorta.io/specialties/" />
+    <meta property="og:url" content="https://getsorta.io/specialties" />
     <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -34,13 +34,13 @@
     <link rel="preload" as="style" href="../css/style.css" onload="this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="../css/style.css" /></noscript>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <!-- 1. Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFK1NFMBLZ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'G-ZPS6GNGPXD');
+        gtag('config', 'G-DFK1NFMBLZ', { page_path: window.location.pathname });
     </script>
 
     <!-- 2. Microsoft Clarity -->
@@ -69,7 +69,7 @@
       "@type": "MedicalWebPage",
       "name": "Patient Intake by Outpatient Specialty | Sorta",
       "description": "Synced outpatient intake populates optics, PT, cardio, kidney, and mental-health PDFs while clinics keep their charting stacks unchanged underneath.",
-      "url": "https://getsorta.io/specialties/"
+      "url": "https://getsorta.io/specialties"
     }
     </script>
 
@@ -181,34 +181,34 @@
 
     <nav class="navbar animate-on-scroll fade-down">
         <div class="nav-container">
-            <a href="../index.html" class="nav-brand">
+            <a href="/" class="nav-brand">
                 <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
             </a>
             <ul class="nav-links">
-                <li><a href="../how-it-works.html">How it Works</a></li>
-                <li><a href="../pricing.html">Pricing</a></li>
+                <li><a href="/how-it-works">How it Works</a></li>
+                <li><a href="/pricing">Pricing</a></li>
                 <li class="nav-item-dropdown">
-                    <a href="index.html" class="nav-dropdown-trigger" aria-current="page">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <a href="/specialties" class="nav-dropdown-trigger" aria-current="page">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
                     <div class="nav-dropdown">
                         <div class="nav-dropdown-cols">
                             <div class="nav-dropdown-col">
-                                <a href="optometry.html">Optometry</a>
-                                <a href="physical-therapy.html">Physical Therapy</a>
-                                <a href="nephrology.html">Nephrology</a>
+                                <a href="/specialties/optometry">Optometry</a>
+                                <a href="/specialties/physical-therapy">Physical Therapy</a>
+                                <a href="/specialties/nephrology">Nephrology</a>
                             </div>
                             <div class="nav-dropdown-col">
-                                <a href="cardiology.html">Cardiology</a>
-                                <a href="mental-health.html">Mental Health</a>
-                                <a href="index.html">All Specialties</a>
+                                <a href="/specialties/cardiology">Cardiology</a>
+                                <a href="/specialties/mental-health">Mental Health</a>
+                                <a href="/specialties">All Specialties</a>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Blog</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <a href="/#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
                 <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
                   <span class="mobile-menu-icon" aria-hidden="true"></span>
                 </button>
@@ -225,26 +225,26 @@
         </button>
       </div>
       <nav class="mobile-drawer-nav" aria-label="Mobile">
-        <a href="../how-it-works.html">How it Works</a>
-        <a href="../pricing.html">Pricing</a>
+        <a href="/how-it-works">How it Works</a>
+        <a href="/pricing">Pricing</a>
         <div class="mobile-nav-group">
           <button class="mobile-nav-expand" type="button" aria-expanded="false">
             Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
           </button>
           <div class="mobile-nav-sub" hidden>
-            <a href="optometry.html">Optometry</a>
-            <a href="physical-therapy.html">Physical Therapy</a>
-            <a href="nephrology.html">Nephrology</a>
-            <a href="cardiology.html">Cardiology</a>
-            <a href="mental-health.html">Mental Health</a>
-            <a href="index.html" aria-current="page">All Specialties</a>
+            <a href="/specialties/optometry">Optometry</a>
+            <a href="/specialties/physical-therapy">Physical Therapy</a>
+            <a href="/specialties/nephrology">Nephrology</a>
+            <a href="/specialties/cardiology">Cardiology</a>
+            <a href="/specialties/mental-health">Mental Health</a>
+            <a href="/specialties" aria-current="page">All Specialties</a>
           </div>
         </div>
-        <a href="../about.html">About</a>
-        <a href="../blog/index.html">Blog</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
       </nav>
       <div class="mobile-drawer-actions">
-        <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="/#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
         <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
       </div>
     </aside>
@@ -267,7 +267,7 @@
                         </div>
                         <h3>Optometry</h3>
                         <p>Intake packets, vision history, insurance auth — entered by the patient once, populated everywhere.</p>
-                        <a href="optometry.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="/specialties/optometry">See how it works <i class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 60ms;">
                         <div class="spec-index-card-icon">
@@ -275,7 +275,7 @@
                         </div>
                         <h3>Physical Therapy</h3>
                         <p>Health history, functional outcomes, consent forms — one entry, every form filled.</p>
-                        <a href="physical-therapy.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="/specialties/physical-therapy">See how it works <i class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 120ms;">
                         <div class="spec-index-card-icon">
@@ -283,7 +283,7 @@
                         </div>
                         <h3>Nephrology</h3>
                         <p>Complex histories, recurring visits, multiple payers — patients enter it once, staff never retypes it.</p>
-                        <a href="nephrology.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="/specialties/nephrology">See how it works <i class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 0ms;">
                         <div class="spec-index-card-icon">
@@ -291,7 +291,7 @@
                         </div>
                         <h3>Cardiology</h3>
                         <p>Cardiac history, medications, risk factors, prior auth — entered once, flows everywhere.</p>
-                        <a href="cardiology.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="/specialties/cardiology">See how it works <i class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 60ms;">
                         <div class="spec-index-card-icon">
@@ -299,7 +299,7 @@
                         </div>
                         <h3>Mental Health</h3>
                         <p>PHQ-9, GAD-7, consent, HIPAA — sent to patients before they arrive, populated automatically.</p>
-                        <a href="mental-health.html">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="/specialties/mental-health">See how it works <i class="ph-bold ph-arrow-right"></i></a>
                     </div>
                     <div class="spec-index-card animate-on-scroll fade-up" style="transition-delay: 120ms;">
                         <div class="spec-index-card-icon">
@@ -307,13 +307,13 @@
                         </div>
                         <h3>Other Specialties</h3>
                         <p>Family medicine, chiropractic, ENT, urgent care, dermatology — if you have patient forms, Sorta works for you.</p>
-                        <a href="../index.html#demo-form">Book a demo <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="/#demo-form">Book a demo <i class="ph-bold ph-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="spec-index-bottom animate-on-scroll fade-up">
                     <p>Don't see your specialty? Book a demo and we'll show you Sorta working with your actual forms.</p>
-                    <a href="../index.html#demo-form" class="btn btn-primary pill" data-track="spec_index_cta_demo">Book a demo <i class="ph-bold ph-arrow-right"></i></a>
+                    <a href="/#demo-form" class="btn btn-primary pill" data-track="spec_index_cta_demo">Book a demo <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -324,14 +324,14 @@
             <div class="footer-brand">
                 <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
                 <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
-                <a href="../index.html#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+                <a href="/#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
             </div>
             <div class="footer-links">
                 <nav class="footer-nav" aria-label="Footer">
-                    <a href="../how-it-works.html">How it Works</a>
-                    <a href="../pricing.html">Pricing</a>
-                    <a href="../about.html">About</a>
-                    <a href="../blog/index.html">Blog</a>
+                    <a href="/how-it-works">How it Works</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/about">About</a>
+                    <a href="/blog">Blog</a>
                     <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
                 </nav>
                 <p style="margin-top: 16px;">&copy; 2026 Sorta AI Inc. | Built in El Paso, TX.</p>
