@@ -509,21 +509,6 @@
    All placed stock images use object-fit: cover and share
    the same border/shadow language as the UI cards.
 ─────────────────────────────────────────────────────── */
-/* ─── Social proof photo (index.html) ───────────────── */
-.social-proof-photo {
-  margin: 32px 0 48px;
-  border-radius: var(--radius-card-large);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-.social-proof-photo img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center 35%;
-  display: block;
-}
-
 /* ─── HIW bridge photo (how-it-works.html) ───────────── */
 .hiw-bridge-photo {
   padding: 72px 0 0;
@@ -588,7 +573,6 @@
   .hiw-hero-sub { font-size: 1rem; }
   .hiw-bridge-photo img { height: 220px; }
   .limitations-photo img { height: 220px; }
-  .social-proof-photo img { height: 200px; }
   .setup-steps-grid { grid-template-columns: 1fr; gap: 32px; }
   .setup-screenshots-duo { grid-template-columns: 1fr; gap: 20px; }
   .setup-title { font-size: 1.875rem; }
