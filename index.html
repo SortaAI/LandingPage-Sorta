@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Intake Automation for Outpatient Clinics | Sorta</title>
-    <meta name="description" content="Patients fill out intake forms on their phone before they arrive. Staff enters nothing. Every PDF fills itself automatically — works on top of any EHR, same day.">
+    <title>Paperwork Automation for Independent Outpatient Clinics | Sorta</title>
+    <meta name="description" content="Sorta automates the paperwork your EHR doesn't touch — consent forms, prior auth packets, intake, and more. Staff enters data once. Every PDF fills itself. Works on top of any system, same day.">
     <link rel="canonical" href="https://getsorta.io/" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Patient Intake Automation for Outpatient Clinics | Sorta" />
-    <meta property="og:description" content="Patients fill out intake forms on their phone before they arrive. Staff enters nothing. Every PDF fills itself automatically across every form your clinic uses." />
+    <meta property="og:title" content="Paperwork Automation for Independent Outpatient Clinics | Sorta" />
+    <meta property="og:description" content="Sorta automates the paperwork your EHR doesn't touch — consent forms, prior auth packets, intake, and more. Staff enters data once. Every PDF fills itself across every form your clinic uses." />
     <meta property="og:url" content="https://getsorta.io/" />
     <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -18,8 +18,8 @@
     <meta property="og:locale" content="en_US" />
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Patient Intake Automation for Outpatient Clinics | Sorta" />
-    <meta name="twitter:description" content="Patients fill out on their phone. Staff enters nothing. Every PDF fills itself. Works on top of any EHR — same day setup, no contracts." />
+    <meta name="twitter:title" content="Paperwork Automation for Independent Outpatient Clinics | Sorta" />
+    <meta name="twitter:description" content="Staff enters data once. Every form fills itself — intake, consent, prior auth, and everything outside your EHR. Works on top of any system, same day, no contracts." />
     <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
     <!-- Favicon (vector mark — crisp at any size) -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -90,7 +90,7 @@
           "foundingDate": "2026",
           "founders": [{ "@type": "Person", "name": "Emi Rodriguez" }],
           "areaServed": "US",
-          "description": "Patients fill out intake forms on their phone before they arrive. Staff enters nothing. Every PDF fills itself automatically — works on top of any EHR, same day."
+          "description": "Sorta automates the paperwork layer outside your EHR — consent forms, prior auth packets, intake, and specialty documents. Staff enters data once. Every PDF fills itself automatically, same day."
         },
         {
           "@type": "SoftwareApplication",
@@ -105,10 +105,11 @@
             "priceCurrency": "USD",
             "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
           },
-          "description": "Patients fill out intake forms on their phone before they arrive. Staff enters nothing. Every PDF fills itself automatically — works on top of any EHR, same day.",
+          "description": "Sorta automates the paperwork layer outside your EHR — consent forms, prior auth packets, intake, and specialty documents. Staff enters data once. Every PDF fills itself automatically, same day.",
           "featureList": [
             "Enter once, fill everywhere across all clinic forms",
             "Works on top of your existing EHR and workflow",
+            "Automates paperwork outside your EHR — consent forms, prior auth packets, specialty questionnaires",
             "AI-powered form parsing and reusable templates",
             "Clean, print-ready PDF output every time",
             "30–60 minutes saved for front desk staff daily",
@@ -161,6 +162,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No. Sorta sends patients a link before their appointment. They fill everything out on their phone before they arrive. When they walk in, the paperwork is already done."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "We already use a patient portal for intake — do we still need Sorta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Patient portals handle intake inside your EHR. Sorta handles everything outside it — consent forms, specialty questionnaires, prior authorization packets, and insurance authorization documents. If anyone on your team is still manually moving data between your portal and these outside forms, that's exactly what Sorta eliminates."
           }
         }
       ]
@@ -254,7 +263,7 @@
                     <span class="fw-bold">data once.</span><br>
                     <span class="fw-light">We fill the rest.</span>
                 </h1>
-                <p class="hero-subtext">Sorta is the paperwork engine for independent outpatient clinics. Patients fill out their forms on their phone before they arrive. Staff enters nothing — every PDF fills itself automatically across every form in the packet.</p>
+                <p class="hero-subtext">Sorta is the paperwork engine for independent outpatient clinics. Patients fill out their forms on their phone before they arrive. Staff enters nothing — every PDF fills itself automatically across every form in the packet. Already fully digitized? Sorta handles the consent forms, prior auth packets, and specialty documents that live outside every EHR — the paperwork your portal still doesn't touch.</p>
                 <div class="hero-actions">
                     <a href="#demo-form" class="btn btn-primary btn-large pill" data-track="hero_cta_cut_paperwork">
                         Cut the paperwork <i class="ph-bold ph-arrow-right"></i>
@@ -385,6 +394,47 @@
           </div>
         </section>
 
+        <!-- ICP Selector — two paths -->
+        <section style="padding: 72px 0; background: var(--color-gray-50);">
+          <div class="container">
+            <div class="section-header text-center animate-on-scroll fade-up" style="margin-bottom: 48px;">
+              <span class="eyebrow" style="color: var(--color-electric); font-weight: 700; letter-spacing: 1px;">WHICH ONE ARE YOU?</span>
+              <h2 class="section-title fw-light">Every clinic has paperwork. <strong>The problem looks different.</strong></h2>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto;" class="animate-on-scroll fade-up icp-grid">
+              <!-- Card A: Paper / basic EMR -->
+              <div class="ui-card solid" style="padding: 40px 36px; border-radius: var(--radius-lg); border: 2px solid rgba(39,64,252,0.15); display: flex; flex-direction: column; gap: 20px;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(39,64,252,0.08); border-radius: 12px;">
+                  <i class="ph-bold ph-clipboard-text" style="font-size: 1.5rem; color: var(--color-electric);"></i>
+                </div>
+                <div>
+                  <span class="eyebrow" style="color: var(--color-electric); font-weight: 700; font-size: 0.75rem;">STILL ON PAPER OR BASIC EMR</span>
+                  <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-navy); margin: 8px 0 12px; line-height: 1.3;">Your front desk is still filling out forms by hand</h3>
+                  <p style="font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin: 0 0 20px;">Patients fill out intake on their phone before they arrive. Staff enters nothing — every PDF in the packet fills itself automatically. Same day setup, no IT required.</p>
+                </div>
+                <a href="#demo-form" class="btn btn-primary pill" style="align-self: flex-start;" data-track="icp_card_a_cta">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+              </div>
+              <!-- Card B: Fully digitized / Athenahealth / Epic -->
+              <div class="ui-card solid" style="padding: 40px 36px; border-radius: var(--radius-lg); border: 2px solid rgba(2,227,211,0.3); display: flex; flex-direction: column; gap: 20px;">
+                <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(2,227,211,0.1); border-radius: 12px;">
+                  <i class="ph-bold ph-plugs-connected" style="font-size: 1.5rem; color: var(--color-teal);"></i>
+                </div>
+                <div>
+                  <span class="eyebrow" style="color: var(--color-teal); font-weight: 700; font-size: 0.75rem;">ALREADY ON ATHENAHEALTH, EPIC, OR A PORTAL</span>
+                  <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-navy); margin: 8px 0 12px; line-height: 1.3;">Your EHR handles intake — but not everything outside it</h3>
+                  <p style="font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin: 0 0 20px;">Consent forms, prior auth packets, specialty questionnaires — the stack of documents that live outside your system and still get filled manually. That's the gap Sorta closes.</p>
+                </div>
+                <a href="already-digital.html" class="btn btn-primary pill" style="align-self: flex-start; background: var(--color-teal); color: var(--color-navy); border-color: var(--color-teal);" data-track="icp_card_b_cta">See how it works <i class="ph-bold ph-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <style>
+          @media (max-width: 700px) {
+            .icp-grid { grid-template-columns: 1fr !important; }
+          }
+        </style>
+
         <!-- Section 2: The Pain (Redesigned Editorial Style) -->
         <section class="pain-section split-section">
             <div class="container animate-on-scroll fade-up">
@@ -405,6 +455,7 @@
                             <li class="crossed-out"><i class="ph-bold ph-x"></i> Sorting 18 pages manually</li>
                             <li class="crossed-out"><i class="ph-bold ph-x"></i> Pre-preparing packets for new patients</li>
                             <li class="crossed-out"><i class="ph-bold ph-x"></i> Retyping "Jane Doe" over and over</li>
+                            <li class="crossed-out"><i class="ph-bold ph-x"></i> Moving data manually from your portal into outside forms</li>
                         </ul>
                         <div class="pain-solution">
                             <i class="ph-fill ph-lightning"></i>
@@ -660,7 +711,7 @@
                 <div class="not-content">
                     <h2 class="section-title">Works on top of any EHR. <br><span class="fw-light">Nothing changes for your team.</span></h2>
                     <p class="large-text">We are NOT an EHR. We are NOT a scheduling tool. We are NOT a clinical decision support system. We are NOT a scribe. We are NOT a billing platform.</p>
-                    <p>Sorta lives entirely in the <strong>paperwork layer</strong>. We sit outside your EHR, on top of whatever legacy software you already use, and we eliminate the manual data entry without requiring an expensive migration.</p>
+                    <p>Sorta lives entirely in the <strong>paperwork layer</strong>. We sit outside your EHR, on top of whatever legacy software you already use, and we eliminate the manual data entry without requiring an expensive migration. Whether your clinic is still on paper or fully digitized with a modern EHR — if you have forms outside your system, Sorta fills them.</p>
                 </div>
             </div>
         </section>
@@ -704,7 +755,7 @@
           <div class="container animate-on-scroll fade-up">
             <div class="section-header text-center" style="margin-bottom: 48px;">
               <span class="eyebrow" style="color: var(--color-electric); font-weight: 700; letter-spacing: 1px;">COMMON QUESTIONS</span>
-              <h2 class="section-title fw-light">You asked. We'll be transparent with you.</h2>
+              <h2 class="section-title fw-light">Common questions — answered clearly and honestly.</h2>
             </div>
             <div class="faq-grid">
               <div class="faq-item ui-card">
@@ -721,11 +772,11 @@
               </div>
               <div class="faq-item ui-card">
                 <h3 class="faq-q">What types of clinics is this for?</h3>
-                <p class="faq-a">Independent outpatient clinics of any specialty — optometry, physical therapy, nephrology, cardiology, mental health, family medicine, ENT, chiropractic, and more. If your front desk is still retyping patient information across multiple forms, Sorta works for you.</p>
+                <p class="faq-a">Independent outpatient clinics of any specialty — optometry, physical therapy, nephrology, cardiology, mental health, family medicine, ENT, chiropractic, and more. If your front desk is still retyping patient information across multiple forms, Sorta works for you. This includes fully digitized clinics using Athenahealth, Epic, or a patient portal — if you still have forms outside that system, Sorta handles exactly that layer.</p>
               </div>
               <div class="faq-item ui-card">
-                <h3 class="faq-q">Does it work with scanned paper forms or digital PDFs?</h3>
-                <p class="faq-a">Both. Sorta handles flat scanned PDFs and digital AcroForm PDFs. Upload whatever your clinic already uses — the AI identifies the fields and converts it into a fillable template automatically.</p>
+                <h3 class="faq-q">We already use a patient portal — do we still need Sorta?</h3>
+                <p class="faq-a">Yes. Portals handle intake inside your EHR. Sorta handles everything outside it — consent forms, specialty questionnaires, prior auth packets, insurance authorization documents. If anyone on your team is still manually moving data between your portal and these outside forms, that's exactly what Sorta eliminates.</p>
               </div>
               <div class="faq-item ui-card">
                 <h3 class="faq-q">What if I want to cancel?</h3>
@@ -789,7 +840,7 @@
             <div class="footer-brand">
               <img src="assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
 
-                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <h2>Keep your forms. <span class="fw-light">Stop retyping everything.</span></h2>
                 <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
             </div>
             <div class="footer-links">

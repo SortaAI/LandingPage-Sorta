@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Patient Intake Automation Works | Sorta</title>
+    <title>How Sorta Works — Paperwork Automation for Outpatient Clinics | Sorta</title>
     <meta name="description" content="Patients complete intake on their phone before arriving; staff syncs once and every clinic PDF fills. Works on top of any EHR, same-day setup, no migrations.">
     <link rel="canonical" href="https://getsorta.io/how-it-works" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="How Patient Intake Automation Works | Sorta" />
+    <meta property="og:title" content="How Sorta Works — Paperwork Automation for Outpatient Clinics | Sorta" />
     <meta property="og:description" content="Patients complete intake before arrival; staff syncs once. PDFs populate automatically — works on top of your existing EHR and forms." />
     <meta property="og:url" content="https://getsorta.io/how-it-works" />
     <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
@@ -18,7 +18,7 @@
     <meta property="og:locale" content="en_US" />
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="How Patient Intake Automation Works | Sorta" />
+    <meta name="twitter:title" content="How Sorta Works — Paperwork Automation for Outpatient Clinics | Sorta" />
     <meta name="twitter:description" content="Phone intake before arrival, one-click sync, print-ready PDFs. Works on top of any EHR — no migration." />
     <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
     <!-- Favicon -->
@@ -65,7 +65,7 @@
       "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "How to set up Sorta for your clinic",
-      "description": "Set up patient intake automation for your independent outpatient clinic in three steps.",
+      "description": "Set up paperwork automation for your independent outpatient clinic in three steps. Upload your existing forms, send patients their intake link, sync and generate filled PDFs.",
       "step": [
         {
           "@type": "HowToStep",
@@ -95,8 +95,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="/how-it-works" aria-current="page">How it Works</a></li>
-                <li><a href="/pricing">Pricing</a></li>
-                <li class="nav-item-dropdown">
+<li class="nav-item-dropdown">
                     <a href="/specialties" class="nav-dropdown-trigger">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
                     <div class="nav-dropdown">
                         <div class="nav-dropdown-cols">
@@ -136,8 +135,7 @@
       </div>
       <nav class="mobile-drawer-nav" aria-label="Mobile">
         <a href="/how-it-works" aria-current="page">How it Works</a>
-        <a href="/pricing">Pricing</a>
-        <div class="mobile-nav-group">
+        <div class=\"mobile-nav-group\">
           <button class="mobile-nav-expand" type="button" aria-expanded="false">
             Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
           </button>
@@ -190,10 +188,37 @@
                     <div class="perspective-content-col">
                         <h3 class="perspective-heading">They fill it out before they arrive.</h3>
                         <p class="perspective-body">Before the appointment, staff sends the patient a link directly from Sorta. The patient fills out everything on their phone — name, DOB, insurance, medical history, whatever your forms ask for. Takes about five minutes. When they walk in, they're done. No clipboard. No pen. No sitting in the waiting room filling out the same form they filled out last time.</p>
-                        <div class="perspective-visual">
-                            <div class="phone-mockup">
+                        <div class="perspective-visual perspective-visual-patient">
+                            <div class="phone-mockup phone-mockup--intake" role="img" aria-label="Phone showing Sorta new patient intake: patient name, date of birth, phone, and email">
                                 <div class="phone-notch" aria-hidden="true"></div>
-                                <img src="marketing-screenshots/details/detail-autofill.png" alt="Patient filling out intake forms on their phone" loading="lazy" />
+                                <div class="phone-screen">
+                                    <div class="phone-screen-top">
+                                        <img src="assets/sorta-logo.svg" alt="" class="phone-sorta-logo" width="56" height="18" decoding="async" />
+                                        <span class="phone-screen-eyebrow">New patient intake</span>
+                                    </div>
+                                    <p class="phone-screen-hint">Complete before your visit — about 5 min</p>
+                                    <div class="phone-form-rows">
+                                        <div class="phone-form-row">
+                                            <span class="phone-form-label">Patient name</span>
+                                            <span class="phone-form-input" aria-hidden="true">Jane Doe</span>
+                                        </div>
+                                        <div class="phone-form-row">
+                                            <span class="phone-form-label">Date of birth</span>
+                                            <span class="phone-form-input" aria-hidden="true">4/15/1985</span>
+                                        </div>
+                                        <div class="phone-form-row">
+                                            <span class="phone-form-label">Phone</span>
+                                            <span class="phone-form-input" aria-hidden="true">(555) 234-5678</span>
+                                        </div>
+                                        <div class="phone-form-row phone-form-row--faded">
+                                            <span class="phone-form-label">Email</span>
+                                            <span class="phone-form-input" aria-hidden="true">jane.doe@example.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="phone-screen-footer">
+                                        <span class="phone-pill-secure"><i class="ph-bold ph-lock" aria-hidden="true"></i> Single-use link</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <p class="perspective-footnote"><em>The patient link expires after 7 days and is single-use. Patients never create an account.</em></p>
@@ -387,7 +412,7 @@
         <section class="hiw-faq-section" id="faq">
             <div class="container animate-on-scroll fade-up">
                 <div class="section-header text-center" style="margin-bottom: 48px;">
-                    <h2 class="section-title fw-light">You asked. We'll be straight with you.</h2>
+                    <h2 class="section-title fw-light">Common questions — answered clearly and honestly.</h2>
                 </div>
                 <div class="faq-grid">
                     <div class="faq-item ui-card">
@@ -426,7 +451,7 @@
                 <a href="/#demo-form" class="btn btn-large pill" data-track="hiw_bottom_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none; border-radius: 9999px;">
                     Book a 15-minute demo <i class="ph-bold ph-arrow-right"></i>
                 </a>
-                <p style="margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.35);">$300/month flat. No contracts. Cancel anytime.</p>
+                <p style="margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.35);">No contracts. Cancel anytime.</p>
             </div>
         </section>
 
@@ -437,14 +462,13 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <img src="assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
-                <h2>One patient. One entry. <span class="fw-light">Every form filled.</span></h2>
+                <h2>Keep your forms. <span class="fw-light">Stop retyping everything.</span></h2>
                 <a href="/#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
             </div>
             <div class="footer-links">
                 <nav class="footer-nav" aria-label="Footer">
                     <a href="/how-it-works" aria-current="page">How it Works</a>
-                    <a href="/pricing">Pricing</a>
-                    <a href="/about">About</a>
+                    <a href=\"/about\">About</a>
                     <a href="/blog">Blog</a>
                     <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin_click">LinkedIn</a>
                 </nav>
