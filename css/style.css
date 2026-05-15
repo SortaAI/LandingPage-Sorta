@@ -2412,3 +2412,144 @@ h1, h2, h3, h4 { color: var(--color-navy); }
   .pricing-proof-headline { font-size: 1.75rem; }
   .pricing-table th, .pricing-table td { padding: 10px 12px; font-size: 0.8125rem; }
 }
+
+/* ═══════════════════════════════════════════
+   DEMO POPUP
+═══════════════════════════════════════════ */
+
+/* [hidden] must win over display:flex below, otherwise an invisible layer blocks all clicks */
+.popup-overlay[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
+/* Closed or mid-close: never intercept clicks behind the overlay */
+.popup-overlay:not(.popup-visible) {
+  pointer-events: none;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 12, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.popup-overlay.popup-visible { opacity: 1; pointer-events: auto; }
+.popup-overlay.popup-visible .popup-modal {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.popup-modal {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  transform: translateY(16px);
+  opacity: 0;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray-400);
+  font-size: 1.375rem;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  z-index: 10;
+  transition: color 0.15s;
+}
+.popup-close:hover { color: var(--color-navy); }
+
+.popup-left {
+  background: var(--color-navy);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.popup-left-eyebrow {
+  color: var(--color-teal);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.popup-left h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.popup-left p {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+  margin: 0;
+}
+.popup-trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.popup-trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.8);
+}
+.popup-trust-check {
+  color: var(--color-teal);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.popup-right {
+  padding: 48px 40px;
+}
+
+/* Reuse existing sorta-form styles */
+.popup-right .sorta-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 680px) {
+  .popup-modal {
+    grid-template-columns: 1fr;
+    max-height: 95vh;
+  }
+  .popup-left {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 32px 28px;
+  }
+  .popup-right { padding: 28px 28px 36px; }
+  .popup-right .sorta-form .form-row { grid-template-columns: 1fr; }
+}
