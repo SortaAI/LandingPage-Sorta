@@ -207,7 +207,7 @@
                 <li><a href="blog/index.html">Blog</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <a href="#demo-form" class="btn btn-primary pill" data-track="nav_cta_book_demo">Apply for the pilot</a>
                 <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
                   <span class="mobile-menu-icon" aria-hidden="true"></span>
                 </button>
@@ -244,7 +244,7 @@
         <a href="blog/index.html">Blog</a>
       </nav>
       <div class="mobile-drawer-actions">
-        <a href="#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="#demo-form" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Apply for the pilot</a>
         <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
       </div>
     </aside>
@@ -342,20 +342,22 @@
             <div class="demo-form-wrap animate-on-scroll fade-up">
               <div class="demo-form-inner ui-card">
                 <div class="demo-form-left">
-                  <span class="eyebrow" style="color: var(--color-electric); font-weight: 700;">FREE 30-DAY PILOT</span>
-                  <h2 class="demo-form-heading">Book a 15-minute demo</h2>
-                  <p class="demo-form-sub">We'll show you Sorta working with your actual forms. Not a generic demo. Your forms, your workflow, 15 minutes.</p>
+                  <span class="eyebrow" style="color: var(--color-electric); font-weight: 700;">PILOT PROGRAM — LIMITED SPOTS</span>
+                  <h2 class="demo-form-heading">Try it free for 30 days with your actual forms</h2>
+                  <p class="demo-form-sub">We're a small team onboarding our first clinics. We're not doing a generic demo and asking for a credit card — we want to earn it.</p>
+                  <p class="demo-form-sub">Here's what the pilot actually is: we take your real forms, configure everything ourselves, and your staff runs it for 30 days. At the end, if it didn't save your front desk real time, you walk away and owe us nothing. If it did, we talk about next steps then.</p>
                   <ul class="demo-trust-list">
-                    <li><span class="trust-check">✓</span> Works on top of your current system</li>
-                    <li><span class="trust-check">✓</span> Up and running the same day</li>
-                    <li><span class="trust-check">✓</span> No IT department required</li>
-                    <li><span class="trust-check">✓</span> $300/month flat — no contracts</li>
+                    <li><span class="trust-check">✓</span> 30 days completely free</li>
+                    <li><span class="trust-check">✓</span> We configure your real forms — you don't touch anything</li>
+                    <li><span class="trust-check">✓</span> No credit card, no contract</li>
+                    <li><span class="trust-check">✓</span> Only pay if it genuinely saves your staff time</li>
                   </ul>
                 </div>
                 <div class="demo-form-right">
                   <!-- Submissions POST to Vercel /api/contact, which forwards JSON to Formspree using FORMSPREE_URL (not exposed to clients). -->
                   <form id="sorta-demo-form" class="sorta-form" action="/api/contact" method="POST" novalidate>
-                    <input type="hidden" name="_subject" value="Sorta demo request (getsorta.io)" />
+                    <input type="hidden" name="source" value="homepage" />
+                    <input type="hidden" name="_subject" value="Sorta demo request (homepage)" />
                     <input type="hidden" name="_next" value="https://getsorta.io/?thanks=demo" />
                     <div class="form-row">
                       <div class="form-group">
@@ -376,11 +378,11 @@
                       <input type="tel" id="df-phone" name="phone" placeholder="(915) 555-0100" autocomplete="tel" />
                     </div>
                     <button type="submit" class="btn btn-primary btn-large pill demo-submit-btn" data-track="demo_form_submit">
-                      <span class="submit-label">Book my demo <i class="ph-bold ph-arrow-right"></i></span>
+                      <span class="submit-label">Apply for the pilot <i class="ph-bold ph-arrow-right"></i></span>
                       <span class="submit-sending" hidden><span class="btn-spinner" aria-hidden="true"></span> Sending…</span>
                       <span class="submit-sent" hidden><span class="btn-check" aria-hidden="true"></span> You’re in — we’ll reach out soon</span>
                     </button>
-                    <p class="form-disclaimer">No spam. The team will reach out personally within 24 hours.</p>
+                    <p class="form-disclaimer">No credit card. No contracts. Emi will reach out personally within 24 hours.</p>
                     <p class="form-error hidden" id="df-error" role="status">
                       Something went wrong — please try again.
                     </p>
@@ -810,7 +812,7 @@
                         </div>
                         <h3>Flat pricing. No contracts.</h3>
                         <p>Keep your existing software, dump the data entry. An entire clinic's paperwork automated for the cost of a utility bill.</p>
-                        <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="pricing_cta_start_automation">See Sorta in action</a>
+                        <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="pricing_cta_start_automation">Apply for the pilot</a>
                     </div>
                 </div>
             </div>
@@ -823,12 +825,12 @@
       <div class="container animate-on-scroll fade-up">
         <div class="urgency-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.15); border: 1px solid rgba(2,227,211,0.3); border-radius: 9999px; padding: 8px 18px; font-size: 0.8125rem; color: var(--color-teal); margin-bottom: 24px;">
           <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-teal); display: inline-block;"></span>
-          Free 30-day pilot — no credit card required
+          Pilot program — limited spots · 30 days free
         </div>
         <h2 style="font-size: 2.5rem; font-weight: 800; color: #fff; margin: 0 0 16px; letter-spacing: -0.02em;">Stop typing patient names 18 times.</h2>
-        <p style="font-size: 1.125rem; color: rgba(255,255,255,0.65); margin: 0 0 28px; max-width: 560px; margin-left: auto; margin-right: auto;">Book a 15-minute demo. We'll show you Sorta working with your actual forms — not a generic template, not fake data. Your forms.</p>
+        <p style="font-size: 1.125rem; color: rgba(255,255,255,0.65); margin: 0 0 28px; max-width: 560px; margin-left: auto; margin-right: auto;">Apply below — we set up your real forms, your staff runs Sorta for 30 days, and you only pay if it actually saves time. No credit card to start.</p>
         <a href="#demo-form" class="btn btn-primary btn-large pill" data-track="bottom_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none;">
-          Book a demo <i class="ph-bold ph-arrow-right"></i>
+          Apply for the pilot <i class="ph-bold ph-arrow-right"></i>
         </a>
         <p style="margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.35);">$300/month flat. No contracts. Cancel anytime.</p>
       </div>
@@ -841,7 +843,7 @@
               <img src="assets/sorta-logo.svg" alt="Sorta logo" class="bottom-cta-logo" width="200" height="66" loading="lazy" />
 
                 <h2>Keep your forms. <span class="fw-light">Stop retyping everything.</span></h2>
-                <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Demo Sorta Now</a>
+                <a href="#demo-form" class="btn btn-primary btn-large pill mt-4" data-track="footer_cta_demo">Apply for the pilot</a>
             </div>
             <div class="footer-links">
                 <nav class="footer-nav" aria-label="Footer">
@@ -858,7 +860,7 @@
     <!-- Sticky floating CTA — visible after scrolling past hero -->
     <div id="sticky-cta" class="sticky-cta hidden" aria-hidden="true">
       <a href="#demo-form" class="btn btn-primary pill sticky-cta-btn" data-track="sticky_cta_click">
-        Book a demo <i class="ph-bold ph-arrow-right"></i>
+        Apply for the pilot <i class="ph-bold ph-arrow-right"></i>
       </a>
     </div>
     <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
