@@ -67,6 +67,34 @@
       "url": "https://getsorta.io/specialties/mental-health"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I set up digital patient intake for a mental health clinic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You upload your existing intake forms to Sorta — consent documents, screeners, authorizations, all of them. Patients complete intake on their phone before their first session. Staff syncs once and every form fills. Your clinicians receive documents that look exactly as they always have." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with TherapyNotes, SimplePractice, or other mental health EHRs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta operates completely outside your EHR — it doesn't replace it, integrate with it, or require any connection to it. Your practice management software handles scheduling and clinical notes. Sorta handles the PDF paperwork layer that sits outside it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sorta handle PHQ-9, GAD-7, and other mental health screeners?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta works with any PDF your practice uses, including standardized screeners. The patient fills them out once as part of their intake submission. The results populate the appropriate fields in each document automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta replace our existing therapy intake forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. You upload the PDFs your practice already uses — the consent forms your clients are used to, the screeners your clinicians rely on. Sorta populates them with patient information. Nothing changes about the documents. The manual data entry goes away." }
+        }
+      ]
+    }
+    </script>
 
     <style>
       .spec-hero { padding: 140px 0 80px; background: var(--color-bg); border-bottom: 1px solid var(--color-gray-100); }
@@ -277,6 +305,44 @@
                 </div>
             </div>
         </section>
+
+        <!-- What mental health intake typically includes -->
+        <section class="spec-intake-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-intake-h2">What mental health patient intake typically includes</h2>
+                <div class="spec-intake-body">
+                    <p>Mental health intake packets are typically the longest in outpatient care. A new patient visit usually requires a biopsychosocial assessment, a PHQ-9 depression screener, a GAD-7 anxiety screener, an informed consent for treatment (and a separate one for telehealth if applicable), a HIPAA notice, an insurance authorization, and often a safety assessment. Some practices add a medication history form and a release of records from the patient's primary care provider.</p>
+                    <p>Across all of those documents, patient name, date of birth, address, insurance details, and emergency contact appear multiple times. Without automation, staff retypes everything. Sorta maps the patient's intake submission across every mental health form the practice uses, so all of it fills on a single sync — screeners, consent forms, and authorization paperwork included.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common questions about mental health intake -->
+        <section class="spec-faq-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-faq-h2">Common questions about mental health intake</h2>
+                <p class="spec-faq-sub">What therapy practice owners and front desk staff actually ask us.</p>
+                <div class="spec-faq-list">
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">How do I set up digital patient intake for a mental health clinic?</p>
+                        <p class="spec-faq-a">You upload your existing intake forms to Sorta — consent documents, screeners, authorizations, all of them. Patients complete intake on their phone before their first session. Staff syncs once and every form fills. Your clinicians receive documents that look exactly as they always have.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta work with TherapyNotes, SimplePractice, or other mental health EHRs?</p>
+                        <p class="spec-faq-a">Yes. Sorta operates completely outside your EHR — it doesn't replace it, integrate with it, or require any connection to it. Your practice management software handles scheduling and clinical notes. Sorta handles the PDF paperwork layer that sits outside it.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Can Sorta handle PHQ-9, GAD-7, and other mental health screeners?</p>
+                        <p class="spec-faq-a">Yes. Sorta works with any PDF your practice uses, including standardized screeners. The patient fills them out once as part of their intake submission. The results populate the appropriate fields in each document automatically.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta replace our existing therapy intake forms?</p>
+                        <p class="spec-faq-a">No. That's the entire point. You upload the PDFs your practice already uses — the consent forms your clients are used to, the screeners your clinicians rely on. Sorta populates them with patient information. Nothing changes about the documents. The manual data entry goes away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 <section class="spec-cta-section">
             <div class="container animate-on-scroll fade-up">
                 <div class="spec-cta-badge">
@@ -310,39 +376,39 @@
         <span class="footer-v2-col-header">Main pages</span>
         <nav class="footer-v2-links" aria-label="Main pages">
           <a href="/">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../how-it-works.html">How it Works</a>
-          <a href="../pricing.html">Pricing</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="/about">About</a>
+          <a href="/how-it-works">How it Works</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/blog">Blog</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Product</span>
         <nav class="footer-v2-links" aria-label="Product">
-          <a href="../how-it-works.html">How it works</a>
-          <a href="../already-digital.html">Already digital?</a>
-          <a href="../specialties/index.html">Specialties</a>
-          <a href="../pricing.html">Pricing</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/already-digital">Already digital?</a>
+          <a href="/specialties">Specialties</a>
+          <a href="/pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Specialties</span>
         <nav class="footer-v2-links" aria-label="Specialties">
-          <a href="../specialties/optometry.html">Optometry</a>
-          <a href="../specialties/physical-therapy.html">Physical Therapy</a>
-          <a href="../specialties/mental-health.html">Mental Health</a>
-          <a href="../specialties/cardiology.html">Cardiology</a>
-          <a href="../specialties/nephrology.html">Nephrology</a>
+          <a href="/specialties/optometry">Optometry</a>
+          <a href="/specialties/physical-therapy">Physical Therapy</a>
+          <a href="/specialties/mental-health">Mental Health</a>
+          <a href="/specialties/cardiology">Cardiology</a>
+          <a href="/specialties/nephrology">Nephrology</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Legal</span>
         <nav class="footer-v2-links" aria-label="Legal">
-          <a href="../privacy.html">Privacy Policy</a>
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../hipaa.html">HIPAA Compliance</a>
-          <a href="../cookies.html">Cookie Policy</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/hipaa">HIPAA Compliance</a>
+          <a href="/cookies">Cookie Policy</a>
           <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin">LinkedIn</a>
         </nav>
       </div>
@@ -350,10 +416,10 @@
     <div class="footer-v2-bottom">
       <span>&#169; 2026 Sorta, Inc. All rights reserved.</span>
       <div class="footer-v2-legal">
-        <a href="../privacy.html">Privacy</a>
-        <a href="../terms.html">Terms</a>
-        <a href="../hipaa.html">HIPAA</a>
-        <a href="../cookies.html">Cookies</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/hipaa">HIPAA</a>
+        <a href="/cookies">Cookies</a>
       </div>
     </div>
   </div>

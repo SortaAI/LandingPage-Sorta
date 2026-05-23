@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMS-0057-F Explained for Clinic Owners Who Don't Have Time to Read CMS Documents | Sorta Blog</title>
-    <meta name="description" content="CMS-0057-F hits Jan 2027—we decode payer electronic prior auth timelines for outpatient clinic admins without forcing you through the CFR PDF labyrinth.">
-    <link rel="canonical" href="https://getsorta.io/blog/cms-prior-auth-2027" />
-    <!-- Open Graph -->
+    <title>How to Set Up Digital Patient Intake for a Physical Therapy Clinic | Sorta Blog</title>
+    <meta name="description" content="Most PT clinics that go digital still have front desk staff re-entering data somewhere. Here's what actually changes — and what doesn't — when you switch to phones-first intake.">
+    <link rel="canonical" href="https://getsorta.io/blog/how-to-set-up-digital-intake-physical-therapy" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="CMS-0057-F Explained for Clinic Owners | Sorta Blog" />
-    <meta property="og:description" content="A federal mandate coming in January 2027 affects how every clinic handles prior authorization. Here's what it actually means for your front desk." />
-    <meta property="og:url" content="https://getsorta.io/blog/cms-prior-auth-2027" />
+    <meta property="og:title" content="How to Set Up Digital Patient Intake for a Physical Therapy Clinic | Sorta Blog" />
+    <meta property="og:description" content="Most PT clinics that go digital still have front desk staff re-entering data somewhere. Here's what actually changes when you switch to phones-first intake." />
+    <meta property="og:url" content="https://getsorta.io/blog/how-to-set-up-digital-intake-physical-therapy" />
     <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
     <meta property="og:site_name" content="Sorta" />
-    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CMS-0057-F Explained for Clinic Owners | Sorta Blog" />
-    <meta name="twitter:description" content="A federal mandate coming in January 2027 affects how every clinic handles prior authorization. No jargon." />
+    <meta name="twitter:title" content="How to Set Up Digital Patient Intake for a Physical Therapy Clinic | Sorta Blog" />
+    <meta name="twitter:description" content="Most PT clinics that go digital still have staff re-entering data somewhere. Here's what actually changes with phones-first intake." />
     <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +23,6 @@
     <script src="../js/phosphor.min.js" defer></script>
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -34,8 +30,6 @@
         gtag('js', new Date());
         gtag('config', 'G-ZPS6GNGPXD');
     </script>
-
-    <!-- 2. Microsoft Clarity -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -43,8 +37,6 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "wor9i7cm6t");
     </script>
-
-    <!-- 3. Apollo Website Tracker -->
     <script>
       function initApollo(){
         var n=Math.random().toString(36).substring(7),o=document.createElement("script");
@@ -59,77 +51,35 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "CMS-0057-F Explained for Clinic Owners Who Don't Have Time to Read CMS Documents",
-      "keywords": ["prior authorization", "CMS-0057-F", "outpatient clinic", "payer workflows", "healthcare administration"],
+      "headline": "How to Set Up Digital Patient Intake for a Physical Therapy Clinic",
+      "keywords": ["physical therapy patient intake", "digital intake PT clinic", "physical therapy intake software", "PT clinic paperwork automation"],
       "author": {"@type": "Person", "name": "Emiliano Rodriguez"},
       "publisher": {"@type": "Organization", "name": "Sorta", "url": "https://getsorta.io"},
-      "datePublished": "2026-05-01",
-      "dateModified": "2026-05-15",
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://getsorta.io/blog/cms-prior-auth-2027"},
-      "description": "CMS-0057-F requires payers to build electronic prior auth APIs by January 2027. Here's what it actually means for your outpatient clinic — no jargon."
+      "datePublished": "2026-05-23",
+      "dateModified": "2026-05-23",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://getsorta.io/blog/how-to-set-up-digital-intake-physical-therapy"},
+      "description": "Most PT clinics that go digital still have front desk staff re-entering data somewhere. Here's what actually changes when you switch to phones-first intake."
     }
     </script>
 
     <style>
-      .post-hero {
-        padding: 140px 0 56px;
-        background: var(--color-bg-white);
-        border-bottom: 1px solid var(--color-gray-100);
-      }
+      .post-hero { padding: 140px 0 56px; background: var(--color-bg-white); border-bottom: 1px solid var(--color-gray-100); }
       .post-hero-inner { max-width: 720px; margin: 0 auto; padding: 0 32px; }
-      .post-cat-pill {
-        display: inline-block;
-        padding: 5px 14px;
-        border-radius: var(--radius-pill);
-        font-size: 0.6875rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-      }
-      .post-cat-pill.compliance { background: var(--color-navy); color: white; }
-      .post-h1 {
-        font-size: 2.75rem;
-        font-weight: 700;
-        color: var(--color-navy);
-        line-height: 1.15;
-        letter-spacing: -0.03em;
-        margin-bottom: 24px;
-      }
-      .post-meta {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        font-size: 0.8125rem;
-        color: var(--color-gray-400);
-        flex-wrap: wrap;
-      }
+      .post-cat-pill { display: inline-block; padding: 5px 14px; border-radius: var(--radius-pill); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+      .post-cat-pill.ops { background: var(--color-electric); color: white; }
+      .post-h1 { font-size: 2.75rem; font-weight: 700; color: var(--color-navy); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 24px; }
+      .post-meta { display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; color: var(--color-gray-400); flex-wrap: wrap; }
       .post-meta span { display: flex; align-items: center; gap: 5px; }
       .post-meta .divider { color: var(--color-gray-200); }
       .post-body { max-width: 720px; margin: 0 auto; padding: 60px 32px 80px; }
       .post-body p { font-size: 1.0625rem; color: #2d2d2d; line-height: 1.75; margin-bottom: 22px; }
       .post-body h2 { font-size: 1.5rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 44px 0 16px; line-height: 1.25; }
-      .post-body ul { list-style: disc; padding-left: 24px; margin-bottom: 22px; }
+      .post-body ul { padding-left: 24px; margin-bottom: 22px; }
       .post-body ul li { font-size: 1.0625rem; color: #2d2d2d; line-height: 1.75; margin-bottom: 8px; }
-      .post-sources { font-size: 0.8125rem; color: var(--color-gray-400); font-style: italic; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-gray-100); }
       .author-bio { max-width: 720px; margin: 0 auto 64px; padding: 0 32px; }
-      .author-bio-card {
-        background: var(--color-bg-white);
-        border: 1px solid var(--color-gray-200);
-        border-radius: var(--radius-card);
-        box-shadow: var(--shadow-card);
-        padding: 28px;
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-      }
+      .author-bio-card { background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 28px; display: flex; align-items: flex-start; gap: 20px; }
       .author-bio-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--color-gray-100); }
-      .author-bio-photo-fallback {
-        width: 64px; height: 64px; border-radius: 50%;
-        background: linear-gradient(135deg, var(--color-electric), var(--color-teal));
-        display: flex; align-items: center; justify-content: center;
-        font-size: 1.25rem; font-weight: 700; color: white; flex-shrink: 0;
-      }
+      .author-bio-photo-fallback { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--color-electric), var(--color-teal)); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: white; flex-shrink: 0; }
       .author-bio-name { font-size: 1rem; font-weight: 700; color: var(--color-navy); margin-bottom: 2px; }
       .author-bio-title { font-size: 0.8125rem; color: var(--color-gray-400); margin-bottom: 10px; }
       .author-bio-text { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin-bottom: 10px; }
@@ -138,35 +88,18 @@
       .related-posts { max-width: 720px; margin: 0 auto 80px; padding: 0 32px; }
       .related-posts-h3 { font-size: 1.125rem; font-weight: 700; color: var(--color-navy); margin-bottom: 20px; letter-spacing: -0.01em; }
       .related-posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-      .related-card {
-        background: var(--color-bg-white);
-        border: 1px solid var(--color-gray-200);
-        border-radius: var(--radius-card);
-        box-shadow: var(--shadow-card);
-        padding: 24px 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        transition: box-shadow 0.2s, transform 0.2s;
-      }
+      .related-card { background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 24px 20px; display: flex; flex-direction: column; gap: 10px; transition: box-shadow 0.2s, transform 0.2s; text-decoration: none; }
       .related-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-      .related-card-pill {
-        display: inline-block; padding: 4px 11px; border-radius: var(--radius-pill);
-        font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; align-self: flex-start;
-      }
+      .related-card-pill { display: inline-block; padding: 4px 11px; border-radius: var(--radius-pill); font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; align-self: flex-start; }
       .related-card-pill.ops { background: var(--color-electric); color: white; }
-      .related-card-pill.research { background: var(--color-gray-200); color: var(--color-gray-700); }
+      .related-card-pill.founder { background: var(--color-teal); color: var(--color-navy); }
       .related-card-meta { font-size: 0.75rem; color: var(--color-gray-400); }
       .related-card-title { font-size: 0.9375rem; font-weight: 700; color: var(--color-navy); line-height: 1.35; letter-spacing: -0.01em; }
       .related-card-excerpt { font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.65; flex: 1; }
       .related-card-link { font-size: 0.8125rem; font-weight: 600; color: var(--color-electric); display: inline-flex; align-items: center; gap: 4px; transition: gap 0.15s; }
       .related-card-link:hover { gap: 8px; }
       .post-cta-section { background: linear-gradient(135deg, var(--color-navy) 0%, #0d0080 100%); padding: 80px 24px; text-align: center; }
-      .post-cta-badge {
-        display: inline-flex; align-items: center; gap: 8px;
-        background: rgba(2,227,211,0.15); border: 1px solid rgba(2,227,211,0.3);
-        border-radius: var(--radius-pill); padding: 8px 18px; font-size: 0.8125rem; color: var(--color-teal); margin-bottom: 24px;
-      }
+      .post-cta-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.15); border: 1px solid rgba(2,227,211,0.3); border-radius: var(--radius-pill); padding: 8px 18px; font-size: 0.8125rem; color: var(--color-teal); margin-bottom: 24px; }
       .post-cta-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-teal); display: inline-block; }
       .post-cta-h2 { font-size: 2.5rem; font-weight: 800; color: white; margin: 0 0 16px; letter-spacing: -0.02em; }
       .post-cta-sub { font-size: 1.125rem; color: rgba(255,255,255,0.65); margin: 0 auto 28px; max-width: 560px; }
@@ -193,7 +126,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="/how-it-works">How it Works</a></li>
-<li class="nav-item-dropdown">
+                <li class="nav-item-dropdown">
                     <a href="/specialties" class="nav-dropdown-trigger">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
                     <div class="nav-dropdown">
                         <div class="nav-dropdown-cols">
@@ -253,75 +186,86 @@
     <main>
         <header class="post-hero">
             <div class="post-hero-inner">
-                <span class="post-cat-pill compliance">Compliance</span>
-                <h1 class="post-h1">CMS-0057-F Explained for Clinic Owners Who Don't Have Time to Read CMS Documents</h1>
+                <span class="post-cat-pill ops">Clinic Ops</span>
+                <h1 class="post-h1">How to Set Up Digital Patient Intake for a Physical Therapy Clinic</h1>
                 <div class="post-meta">
                     <span><i class="ph-bold ph-user"></i> Emiliano Rodriguez, CEO</span>
                     <span class="divider">·</span>
                     <span><i class="ph-bold ph-calendar-blank"></i> May 2026</span>
                     <span class="divider">·</span>
-                    <span><i class="ph-bold ph-clock"></i> 4 min read</span>
+                    <span><i class="ph-bold ph-clock"></i> 6 min read</span>
                 </div>
             </div>
         </header>
 
         <article class="post-body animate-on-scroll fade-up">
 
-            <p>In January 2027, a federal rule called CMS-0057-F goes into effect. It's been making rounds in healthcare policy circles for a couple of years. Most independent clinic owners have never heard of it.</p>
+            <div class="post-summary">
+              <span class="post-summary-label">In this post</span>
+              <ul>
+                <li>Why physical therapy intake is harder to digitize than most clinics expect</li>
+                <li>The difference between a form builder and an intake automation tool for PT</li>
+                <li>The sync step most PT digital intake setups miss entirely</li>
+                <li>What to look for in patient intake software for physical therapy</li>
+              </ul>
+            </div>
 
-            <p>Here's what it actually means for your clinic — no acronym soup, no policy jargon.</p>
+            <p>The promise of digital intake for PT clinics sounds simple: patients fill out forms on their phones instead of clipboards, and the front desk stops drowning in paperwork. Most clinics that try it find out quickly that the promise and the reality are two different things.</p>
 
-            <h2>What the rule actually does</h2>
+            <p>Here's what actually changes when you switch a physical therapy clinic to digital intake — and the specific part most setups miss.</p>
 
-            <p>CMS-0057-F requires payers — insurance companies — to build electronic APIs for prior authorization. Right now, most prior authorization requests happen over fax, phone, or through clunky payer portals that feel like they were designed in 2003. The rule mandates that by January 2027, payers must have standardized electronic prior auth systems in place.</p>
+            <h2>Why physical therapy intake is harder to digitize than it looks</h2>
 
-            <p>The mandate is primarily on the payer side, not the clinic side. Insurance companies have to build the infrastructure. But here's why it matters for your clinic.</p>
+            <p>The problem isn't the forms. Most PT clinics have intake forms that work fine. The problem is what happens to the data after the patient submits it.</p>
 
-            <h2>Why this affects your front desk</h2>
+            <p>A standard new-patient intake for a physical therapy clinic generates several documents: a patient intake form, a pain and functional assessment, a medical history questionnaire, a HIPAA notice, a consent to treat, and an insurance authorization. If the clinic takes payer referrals, there's often a physician referral form on top of that. Some practices include standardized outcome measures like the LEFS or DASH at intake.</p>
 
-            <p>Once payers have electronic prior auth systems live, the clinics that aren't set up to use them are still going to be doing it the old way — fax and phone — while other clinics are getting faster approvals electronically.</p>
+            <p>Every one of those documents asks for the same information: patient name, date of birth, address, insurance carrier, policy number, referring physician. If your digital intake solution captures that information but your front desk still has to type it into each document separately, you haven't solved the problem. You've moved the clipboard to a screen.</p>
 
-            <p>Right now, prior authorization is one of the most painful parts of running an outpatient clinic — especially for high-volume specialties like <a href="/specialties/cardiology">cardiology</a>. The numbers are brutal:</p>
+            <h2>What "digital patient intake" actually means for a PT clinic</h2>
 
-            <ul>
-                <li>39 prior authorizations per physician per week (AMA, 2024)</li>
-                <li>13 hours of staff time lost weekly on prior auth per practice (AMA, 2024)</li>
-                <li>40% of practices have staff working exclusively on prior authorization</li>
-            </ul>
+            <p>There are two very different products that get sold as "digital patient intake":</p>
 
-            <p>When those payer APIs go live in 2027, the clinics that have modern administrative infrastructure in place will process prior auths faster, get approvals sooner, and reduce denials caused by manual submission errors. The ones still faxing will fall further behind.</p>
+            <p>The first is a form builder with a patient-facing interface. The patient fills out their information digitally. Staff receives the data. Staff then uses that data to fill out all the other documents by hand.</p>
 
-            <h2>What 80.7% means</h2>
+            <p>The second is an intake system that maps patient data across every document the clinic uses. The patient fills out their information once. Every PT form that needs that information gets populated automatically.</p>
 
-            <p>One more number worth knowing: 80.7% of prior authorization appeals are overturned (KFF, January 2026).</p>
+            <p>The first product saves paper. The second one saves staff time.</p>
 
-            <p>That means most prior auth denials are wrong. The insurance company said no, but if you pushed back, you would have won more than 80% of the time. The problem is that only 11.5% of denials ever get appealed — because the process of appealing takes time and staff that most clinics don't have.</p>
+            <p>For a physical therapy clinic seeing 15–25 new patients a week, the difference between these two approaches is roughly 5–10 staff hours per week. At $18–22/hour, that's meaningful money — and it doesn't count the throughput slowdown when intake runs long and every appointment after it runs late.</p>
 
-            <p>That's the real cost of prior auth. Not just the 13 hours per week spent on submissions. It's the revenue being left on the table because appealing every wrongful denial isn't humanly possible with a manual process.</p>
+            <h2>The step most PT digital intake setups miss</h2>
 
-            <h2>What to do before 2027</h2>
+            <p>The sync step.</p>
 
-            <p>You don't need to overhaul your clinic tomorrow. But you should be thinking about your administrative infrastructure now, before the deadline creates urgency.</p>
+            <p>When a PT clinic uploads their existing forms to a sync-capable intake system, something specific happens: the system maps the fields. It learns that "patient name" on the HIPAA notice maps to the same data as "patient name" on the insurance authorization form, even though the two PDFs look nothing alike.</p>
 
-            <p>While crews plan around timelines like CMS-0057-F, paperwork automation you can turn on before payer APIs arrive is the practical hedge — same staff, fewer PDF round-trips.</p>
+            <p>From that point forward, every new patient's intake data flows automatically into every form that needs it. Staff clicks sync. Everything fills. Nobody retypes anything.</p>
 
-            <p>A few questions worth asking:</p>
+            <p>This field-mapping step is what most PT clinics implementing digital intake skip entirely — usually because the form builder they bought doesn't support it. The result is a front desk that's doing intake digitally and still retyping patient data into every document manually. The clipboard is gone. The work isn't.</p>
 
-            <ul>
-                <li>How does your clinic currently handle prior auth? Fax, phone, or portal?</li>
-                <li>What percentage of your denials get appealed?</li>
-                <li>How many staff hours per week go to prior auth specifically?</li>
-            </ul>
+            <h2>What changes for front desk staff when the sync layer is in place</h2>
 
-            <p>If you don't know the answers to those questions, the administrative burden is happening in the background without visibility. That's where it does the most damage.</p>
+            <p>A new patient has completed their intake on their phone before walking in. When they arrive, the front desk has their information ready. One sync action populates the intake packet, the consent form, the insurance authorization, and any outcome measures — simultaneously.</p>
 
-            <p>The 2027 deadline isn't a threat. It's an opportunity to modernize before you're forced to.</p>
+            <p>What doesn't change: the PDFs themselves. Your staff and providers see the same forms they've always used. The layout, the field names, the signature lines — everything looks identical to the paper version. The only thing that changed is that a human being stopped filling those forms out by hand.</p>
 
-            <p class="post-sources">Sources: CMS-0057-F Final Rule; AMA Prior Authorization Survey 2024; KFF Prior Authorization Data, January 2026</p>
+            <p>For PT clinics specifically, this matters for the outcome measures. The LEFS doesn't disappear. The DASH still gets scored. The patient still completes them — just digitally, before arriving, and the results go directly into the document without anyone transcribing the answers.</p>
+
+            <h2>What to look for in patient intake software for physical therapy</h2>
+
+            <p>If you're evaluating options, the key question to ask every vendor is: what happens to the patient's data after they submit it?</p>
+
+            <p>Specifically: does it auto-populate your existing PT forms, or does a staff member still transfer data manually?</p>
+
+            <p>If the answer involves any manual data entry after the patient submits, you're looking at a form builder, not an intake automation tool. Those aren't the same product.</p>
+
+            <p>The other question worth asking: do you need to replace your existing forms? An intake automation tool built for PT clinics should work with the PDFs you already use — the consent forms your clinic has used for years, the outcome measures your providers trust. You shouldn't have to redesign anything to start saving time.</p>
+
+            <p>See how the sync layer works end to end: <a href="/how-it-works">how Sorta works</a>. Or go straight to the physical therapy-specific setup: <a href="/specialties/physical-therapy">PT clinic intake automation</a>.</p>
 
         </article>
 
-        <!-- Author Bio -->
         <aside class="author-bio animate-on-scroll fade-up">
             <div class="author-bio-card">
                 <img src="../assets/team/emi.png" alt="Emiliano Rodriguez" class="author-bio-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
@@ -335,10 +279,16 @@
             </div>
         </aside>
 
-        <!-- Related Posts -->
         <section class="related-posts animate-on-scroll fade-up">
             <h3 class="related-posts-h3">Related posts</h3>
             <div class="related-posts-grid">
+                <a href="/blog/overlay-vs-replacement-checklist" class="related-card">
+                    <span class="related-card-pill ops">Clinic Ops</span>
+                    <span class="related-card-meta">May 2026 · 7 min read</span>
+                    <span class="related-card-title">Overlay vs rip-and-replace: a checklist for outpatient intake</span>
+                    <span class="related-card-excerpt">The questions to ask before you sign anything — and when adding a layer beats replacing the core.</span>
+                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
+                </a>
                 <a href="/blog/150k-problem" class="related-card">
                     <span class="related-card-pill ops">Clinic Ops</span>
                     <span class="related-card-meta">May 2026 · 6 min read</span>
@@ -346,25 +296,17 @@
                     <span class="related-card-excerpt">Manual data entry costs the average clinic $150,000 a year. Here's where the number comes from.</span>
                     <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
                 </a>
-                <a href="/blog/30-clinic-managers" class="related-card">
-                    <span class="related-card-pill research">Research</span>
-                    <span class="related-card-meta">May 2026 · 7 min read</span>
-                    <span class="related-card-title">We talked to 30 clinic managers about what they hate most about their day</span>
-                    <span class="related-card-excerpt">Everyone assumes EHR documentation tops the list. The actual answers were more specific — and more fixable.</span>
-                    <span class="related-card-link">Read more <i class="ph-bold ph-arrow-right"></i></span>
-                </a>
             </div>
         </section>
 
-        <!-- Bottom CTA -->
         <section class="post-cta-section">
             <div class="container animate-on-scroll fade-up">
                 <div class="post-cta-badge">
                     <span class="post-cta-dot"></span>
                     Free 30-day pilot — no credit card required
                 </div>
-                <h2 class="post-cta-h2">Stop typing patient names 18 times.</h2>
-                <p class="post-cta-sub">Book a 15-minute demo. We'll show you Sorta working with your actual forms.</p>
+                <h2 class="post-cta-h2">See it with your actual PT forms.</h2>
+                <p class="post-cta-sub">Book a 15-minute demo. We'll show you Sorta working with your clinic's real intake packet.</p>
                 <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="post_cta_book_demo" style="font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; background: var(--color-teal); color: var(--color-navy); font-weight: 700; border: none;">
                     Book a demo <i class="ph-bold ph-arrow-right"></i>
                 </a>
@@ -459,57 +401,6 @@
         });
       });
     </script>
-<!-- Demo Popup -->
-<div class="popup-overlay" id="demo-popup-overlay" hidden aria-modal="true" role="dialog" aria-labelledby="popup-heading">
-  <div class="popup-modal" id="demo-popup-modal">
-    <button class="popup-close" id="popup-close-btn" aria-label="Close popup">✕</button>
-    <div class="popup-left">
-      <span class="popup-left-eyebrow">Pilot Program — Limited Spots</span>
-      <h2 id="popup-heading">Try it free for 30 days with your actual forms</h2>
-      <p>We're a small team onboarding our first clinics. We're not doing a generic demo and asking for a credit card — we want to earn it.</p>
-      <p>Here's what the pilot actually is: we take your real forms, configure everything ourselves, and your staff runs it for 30 days. At the end, if it didn't save your front desk real time, you walk away and owe us nothing. If it did, we talk about next steps then.</p>
-      <ul class="popup-trust-list">
-        <li><span class="popup-trust-check">✓</span> 30 days completely free</li>
-        <li><span class="popup-trust-check">✓</span> We configure your real forms — you don't touch anything</li>
-        <li><span class="popup-trust-check">✓</span> No credit card, no contract</li>
-        <li><span class="popup-trust-check">✓</span> Only pay if it genuinely saves your staff time</li>
-      </ul>
-    </div>
-    <div class="popup-right">
-      <form id="sorta-popup-form" class="sorta-form" novalidate>
-        <input type="hidden" name="source" value="blog-cms-prior-auth-2027" />
-        <input type="hidden" name="_subject" value="Sorta demo request (blog-cms-prior-auth-2027)" />
-        <div class="form-row">
-          <div class="form-group">
-            <label for="pf-name">Your name</label>
-            <input type="text" id="pf-name" name="name" placeholder="Maria Torres" required autocomplete="name" />
-          </div>
-          <div class="form-group">
-            <label for="pf-clinic">Clinic name</label>
-            <input type="text" id="pf-clinic" name="clinic" placeholder="El Paso PT Clinic" required autocomplete="organization" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="pf-email">Work email</label>
-          <input type="email" id="pf-email" name="email" placeholder="you@yourclinic.com" required autocomplete="email" />
-        </div>
-        <div class="form-group">
-          <label for="pf-phone">Phone <span class="optional">(optional)</span></label>
-          <input type="tel" id="pf-phone" name="phone" placeholder="(915) 555-0100" autocomplete="tel" />
-        </div>
-        <button type="submit" class="btn btn-primary btn-large pill popup-submit-btn demo-submit-btn" data-track="popup_form_submit">
-          <span class="submit-label">Apply for the pilot <i class="ph-bold ph-arrow-right"></i></span>
-          <span class="submit-sending" hidden><span class="btn-spinner" aria-hidden="true"></span> Sending…</span>
-          <span class="submit-sent" hidden><span class="btn-check" aria-hidden="true"></span> You're in — we'll reach out soon</span>
-        </button>
-        <p class="form-disclaimer">No credit card. No contracts. Emi will reach out personally within 24 hours.</p>
-        <p class="form-error hidden" id="pf-error" role="status">Something went wrong — please try again.</p>
-        <p class="form-success hidden" id="pf-success" role="status">✓ Got it! We will be in touch within 24 hours.</p>
-      </form>
-    </div>
-  </div>
-</div>
-<script src="../js/popup.js"></script>
-
+    <script src="../js/popup.js"></script>
 </body>
 </html>

@@ -67,6 +67,34 @@
       "url": "https://getsorta.io/specialties/physical-therapy"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I set up digital patient intake for a physical therapy clinic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You upload your existing PT intake forms to Sorta, patients complete intake on their phone before their visit, and staff clicks sync — every form fills automatically. No new EHR to learn, no template redesign. We configure everything around the forms your clinic already uses." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with WebPT, Clinicient, or other physical therapy EHRs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta operates completely outside your EHR — it doesn't connect to it, replace it, or require any integration. Your PT software handles clinical notes and scheduling. Sorta handles the PDF paperwork layer that your EHR doesn't touch." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sorta handle functional outcome measures like LEFS, FOTO, or DASH?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta works with any PDF your clinic uses, including functional outcome questionnaires. Patients complete them as part of intake. The results populate the correct fields in the document automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta replace our current physical therapy intake forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — and that's intentional. You upload the PDFs your clinic already uses. Sorta populates them with patient information automatically. The forms look exactly the same. The re-entry goes away." }
+        }
+      ]
+    }
+    </script>
 
     <style>
       .spec-hero {
@@ -501,7 +529,44 @@
             </div>
         </section>
 
-        <!-- Section 6: CTA -->
+        <!-- What physical therapy intake typically includes -->
+        <section class="spec-intake-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-intake-h2">What physical therapy patient intake typically includes</h2>
+                <div class="spec-intake-body">
+                    <p>Physical therapy intake packets typically include a patient intake form, a pain and functional assessment, a medical history questionnaire, a HIPAA notice, an informed consent to treat, and an insurance authorization. Some practices also include functional outcome measures like the LEFS or FOTO at intake, plus a physician referral if required by the payer.</p>
+                    <p>The overlap across these documents is significant — patient name, date of birth, address, insurance carrier, policy number, and referring physician appear on multiple forms. Without automation, front desk staff retypes that information every time. Sorta maps the patient's intake submission across every PT form the clinic uses, so all of it fills simultaneously on sync.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common questions about physical therapy intake -->
+        <section class="spec-faq-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-faq-h2">Common questions about physical therapy intake</h2>
+                <p class="spec-faq-sub">What PT clinic owners and front desk staff actually ask us.</p>
+                <div class="spec-faq-list">
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">How do I set up digital patient intake for a physical therapy clinic?</p>
+                        <p class="spec-faq-a">You upload your existing PT intake forms to Sorta, patients complete intake on their phone before their visit, and staff clicks sync — every form fills automatically. There's no new EHR to learn, no template redesign. We configure everything around the forms your clinic already uses.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta work with WebPT, Clinicient, or other physical therapy EHRs?</p>
+                        <p class="spec-faq-a">Yes. Sorta operates completely outside your EHR — it doesn't connect to it, replace it, or require any integration. Your PT software handles clinical notes and scheduling. Sorta handles the PDF paperwork layer that your EHR doesn't touch.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Can Sorta handle functional outcome measures like LEFS, FOTO, or DASH?</p>
+                        <p class="spec-faq-a">Yes. Sorta works with any PDF your clinic uses, including functional outcome questionnaires. Patients complete them as part of intake. The results populate the correct fields in the document automatically.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta replace our current physical therapy intake forms?</p>
+                        <p class="spec-faq-a">No — and that's intentional. You upload the PDFs your clinic already uses. Sorta populates them with patient information automatically. The forms look exactly the same. The re-entry goes away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
 <section class="spec-cta-section">
             <div class="container animate-on-scroll fade-up">
                 <div class="spec-cta-badge">
@@ -535,39 +600,39 @@
         <span class="footer-v2-col-header">Main pages</span>
         <nav class="footer-v2-links" aria-label="Main pages">
           <a href="/">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../how-it-works.html">How it Works</a>
-          <a href="../pricing.html">Pricing</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="/about">About</a>
+          <a href="/how-it-works">How it Works</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/blog">Blog</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Product</span>
         <nav class="footer-v2-links" aria-label="Product">
-          <a href="../how-it-works.html">How it works</a>
-          <a href="../already-digital.html">Already digital?</a>
-          <a href="../specialties/index.html">Specialties</a>
-          <a href="../pricing.html">Pricing</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/already-digital">Already digital?</a>
+          <a href="/specialties">Specialties</a>
+          <a href="/pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Specialties</span>
         <nav class="footer-v2-links" aria-label="Specialties">
-          <a href="../specialties/optometry.html">Optometry</a>
-          <a href="../specialties/physical-therapy.html">Physical Therapy</a>
-          <a href="../specialties/mental-health.html">Mental Health</a>
-          <a href="../specialties/cardiology.html">Cardiology</a>
-          <a href="../specialties/nephrology.html">Nephrology</a>
+          <a href="/specialties/optometry">Optometry</a>
+          <a href="/specialties/physical-therapy">Physical Therapy</a>
+          <a href="/specialties/mental-health">Mental Health</a>
+          <a href="/specialties/cardiology">Cardiology</a>
+          <a href="/specialties/nephrology">Nephrology</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Legal</span>
         <nav class="footer-v2-links" aria-label="Legal">
-          <a href="../privacy.html">Privacy Policy</a>
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../hipaa.html">HIPAA Compliance</a>
-          <a href="../cookies.html">Cookie Policy</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/hipaa">HIPAA Compliance</a>
+          <a href="/cookies">Cookie Policy</a>
           <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin">LinkedIn</a>
         </nav>
       </div>
@@ -575,10 +640,10 @@
     <div class="footer-v2-bottom">
       <span>&#169; 2026 Sorta, Inc. All rights reserved.</span>
       <div class="footer-v2-legal">
-        <a href="../privacy.html">Privacy</a>
-        <a href="../terms.html">Terms</a>
-        <a href="../hipaa.html">HIPAA</a>
-        <a href="../cookies.html">Cookies</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/hipaa">HIPAA</a>
+        <a href="/cookies">Cookies</a>
       </div>
     </div>
   </div>

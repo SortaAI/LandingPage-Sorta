@@ -67,6 +67,34 @@
       "url": "https://getsorta.io/specialties/cardiology"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I digitize patient intake for a cardiology clinic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You upload your existing cardiology intake forms to Sorta, patients complete intake on their phone before their visit, and staff clicks sync — every form fills automatically. We configure everything around your existing forms so nothing changes about the documents your staff and providers already know." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with Epic, athenahealth, or other cardiology EHR platforms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta operates completely outside your EHR — no integration required. Your EHR handles clinical documentation. Sorta handles the paper and PDF layer that sits outside it: intake packets, authorization forms, consent documents, and anything else your EHR doesn't autofill." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sorta handle cardiology risk factor questionnaires and device history forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta works with any PDF form your practice uses. Patients complete the questionnaire as part of intake, and the data maps automatically to every document that needs it. Nothing gets retyped." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Sorta take to set up for a cardiology practice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "About 48 hours from when you send us your forms. We handle all configuration — field mapping, testing, and delivery. Your staff learns the sync workflow in about 10 minutes. Most cardiology practices are running it by the end of the week they sign up." }
+        }
+      ]
+    }
+    </script>
 
     <style>
       .spec-hero { padding: 140px 0 80px; background: var(--color-bg); border-bottom: 1px solid var(--color-gray-100); }
@@ -277,6 +305,57 @@
                 </div>
             </div>
         </section>
+
+        <!-- What cardiology intake typically includes -->
+        <section class="spec-intake-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-intake-h2">What cardiology patient intake typically includes</h2>
+                <div class="spec-intake-body">
+                    <p>Cardiology intake typically covers a cardiac and medical history form, a cardiovascular risk factor questionnaire, a current medication and supplement list, an insurance authorization, a HIPAA notice, and a release of records from the patient's primary care physician or previous cardiologist. Some practices add a device history form for patients with pacemakers or implanted defibrillators.</p>
+                    <p>The shared data across these forms — name, date of birth, address, insurance information, referring provider — gets typed by staff into every document separately without an automation layer. Sorta maps the patient's intake submission against all of the cardiology clinic's uploaded forms so that one sync fills all of them at once.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common questions about cardiology intake -->
+        <section class="spec-faq-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-faq-h2">Common questions about cardiology intake</h2>
+                <p class="spec-faq-sub">What cardiology clinic owners and front desk staff actually ask us.</p>
+                <div class="spec-faq-list">
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">How do I digitize patient intake for a cardiology clinic?</p>
+                        <p class="spec-faq-a">You upload your existing cardiology intake forms to Sorta, patients complete intake on their phone before their visit, and staff clicks sync — every form fills automatically. We configure everything around your existing forms so nothing changes about the documents your staff and providers already know.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta work with Epic, athenahealth, or other cardiology EHR platforms?</p>
+                        <p class="spec-faq-a">Yes. Sorta operates completely outside your EHR — no integration required. Your EHR handles clinical documentation. Sorta handles the paper and PDF layer that sits outside it: intake packets, authorization forms, consent documents, and anything else your EHR doesn't autofill.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Can Sorta handle cardiology risk factor questionnaires and device history forms?</p>
+                        <p class="spec-faq-a">Yes. Sorta works with any PDF form your practice uses. Patients complete the questionnaire as part of intake, and the data maps automatically to every document that needs it. Nothing gets retyped.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">How long does Sorta take to set up for a cardiology practice?</p>
+                        <p class="spec-faq-a">About 48 hours from when you send us your forms. We handle all configuration — field mapping, testing, and delivery. Your staff learns the sync workflow in about 10 minutes. Most cardiology practices are running it by the end of the week they sign up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section style="padding: 64px 0; border-top: 1px solid var(--color-gray-100); background: var(--color-bg-white);">
+    <div class="container animate-on-scroll fade-up">
+        <h2 style="font-size: 1.375rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.01em; margin: 0 0 20px;">From the blog</h2>
+        <a href="/blog/cardiology-patient-intake-software" style="display: flex; flex-direction: column; gap: 10px; max-width: 480px; background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 24px 20px; text-decoration: none;">
+            <span style="display: inline-block; padding: 4px 11px; border-radius: 9999px; font-size: 0.625rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--color-electric); color: white; align-self: flex-start;">Clinic Ops</span>
+            <span style="font-size: 0.75rem; color: var(--color-gray-400);">May 2026 · 7 min read</span>
+            <span style="font-size: 0.9375rem; font-weight: 700; color: var(--color-navy); line-height: 1.35; letter-spacing: -0.01em;">What to look for in cardiology patient intake software</span>
+            <span style="font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.65;">Med lists, device histories, risk factor forms — what cardiology intake software actually needs to handle.</span>
+            <span style="font-size: 0.8125rem; font-weight: 600; color: var(--color-electric); display: inline-flex; align-items: center; gap: 4px;">Read more <i class="ph-bold ph-arrow-right"></i></span>
+        </a>
+    </div>
+</section>
+
 <section class="spec-cta-section">
             <div class="container animate-on-scroll fade-up">
                 <div class="spec-cta-badge">
@@ -310,39 +389,39 @@
         <span class="footer-v2-col-header">Main pages</span>
         <nav class="footer-v2-links" aria-label="Main pages">
           <a href="/">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../how-it-works.html">How it Works</a>
-          <a href="../pricing.html">Pricing</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="/about">About</a>
+          <a href="/how-it-works">How it Works</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/blog">Blog</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Product</span>
         <nav class="footer-v2-links" aria-label="Product">
-          <a href="../how-it-works.html">How it works</a>
-          <a href="../already-digital.html">Already digital?</a>
-          <a href="../specialties/index.html">Specialties</a>
-          <a href="../pricing.html">Pricing</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/already-digital">Already digital?</a>
+          <a href="/specialties">Specialties</a>
+          <a href="/pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Specialties</span>
         <nav class="footer-v2-links" aria-label="Specialties">
-          <a href="../specialties/optometry.html">Optometry</a>
-          <a href="../specialties/physical-therapy.html">Physical Therapy</a>
-          <a href="../specialties/mental-health.html">Mental Health</a>
-          <a href="../specialties/cardiology.html">Cardiology</a>
-          <a href="../specialties/nephrology.html">Nephrology</a>
+          <a href="/specialties/optometry">Optometry</a>
+          <a href="/specialties/physical-therapy">Physical Therapy</a>
+          <a href="/specialties/mental-health">Mental Health</a>
+          <a href="/specialties/cardiology">Cardiology</a>
+          <a href="/specialties/nephrology">Nephrology</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Legal</span>
         <nav class="footer-v2-links" aria-label="Legal">
-          <a href="../privacy.html">Privacy Policy</a>
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../hipaa.html">HIPAA Compliance</a>
-          <a href="../cookies.html">Cookie Policy</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/hipaa">HIPAA Compliance</a>
+          <a href="/cookies">Cookie Policy</a>
           <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin">LinkedIn</a>
         </nav>
       </div>
@@ -350,10 +429,10 @@
     <div class="footer-v2-bottom">
       <span>&#169; 2026 Sorta, Inc. All rights reserved.</span>
       <div class="footer-v2-legal">
-        <a href="../privacy.html">Privacy</a>
-        <a href="../terms.html">Terms</a>
-        <a href="../hipaa.html">HIPAA</a>
-        <a href="../cookies.html">Cookies</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/hipaa">HIPAA</a>
+        <a href="/cookies">Cookies</a>
       </div>
     </div>
   </div>

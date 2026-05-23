@@ -67,6 +67,34 @@
       "url": "https://getsorta.io/specialties/optometry"
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I digitize patient intake for an optometry clinic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You upload your existing optometry intake forms to Sorta, patients complete intake on their phone before their visit, and staff clicks sync — every form fills automatically. You don't replace your existing forms or your EHR. Sorta sits on top of both." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with RevolutionEHR, Eyefinity, MaximEyes, or OfficeMate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta works completely outside your EHR — no integration required. Your EHR handles clinical documentation. Sorta handles the PDF paperwork layer. Whatever optometry EHR you're running, Sorta works alongside it without any connection work." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to set up intake automation for an optometry practice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "About 48 hours from when you send us your forms. We configure everything — you don't touch anything technical. We map your fields, test the outputs, and hand it back ready to run. Your staff learns the workflow in about 10 minutes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta replace our current optometry intake forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. You upload the PDFs your clinic already uses — the same forms that survived credentialing reviews and that your providers are comfortable with. Sorta populates them. The forms don't change. The manual re-entry goes away." }
+        }
+      ]
+    }
+    </script>
 
     <style>
       /* ── Specialty page shared styles ── */
@@ -516,7 +544,44 @@
             </div>
         </section>
 
-        <!-- Section 6: CTA -->
+        <!-- What optometry intake typically includes -->
+        <section class="spec-intake-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-intake-h2">What optometry patient intake typically includes</h2>
+                <div class="spec-intake-body">
+                    <p>A standard new-patient visit at an optometry clinic generates several documents: a health and ocular history form, an insurance authorization, a HIPAA notice, a contact lens history for contact lens patients, and a release of records for patients transferring from another provider. For returning patients, there's usually a medication and prescription review on top of that.</p>
+                    <p>Each of those forms asks for the same patient demographics — name, date of birth, address, insurance ID, emergency contact. Without automation, a staff member retypes all of it into every form separately. Sorta maps the patient's submission across every uploaded template simultaneously, so all of it fills at once.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common questions about optometry intake -->
+        <section class="spec-faq-section">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="spec-faq-h2">Common questions about optometry intake</h2>
+                <p class="spec-faq-sub">What optometry clinic owners and front desk staff actually ask us.</p>
+                <div class="spec-faq-list">
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">How do I digitize patient intake for an optometry clinic?</p>
+                        <p class="spec-faq-a">You upload your existing optometry intake forms to Sorta, patients complete intake on their phone before their visit, and staff clicks sync — every form fills automatically. You don't replace your existing forms or your EHR. Sorta sits on top of both.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta work with RevolutionEHR, Eyefinity, MaximEyes, or OfficeMate?</p>
+                        <p class="spec-faq-a">Yes. Sorta works completely outside your EHR — no integration required. Your EHR handles clinical documentation. Sorta handles the PDF paperwork layer. Whatever optometry EHR or practice management software you're running, Sorta works alongside it without any connection work.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">How long does it take to set up intake automation for an optometry practice?</p>
+                        <p class="spec-faq-a">About 48 hours from when you send us your forms. We configure everything — you don't touch anything technical. We map your fields, test the outputs, and hand it back ready to run. Your staff learns the workflow in about 10 minutes.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Does Sorta replace our current optometry intake forms?</p>
+                        <p class="spec-faq-a">No. You upload the PDFs your clinic already uses — the same forms that survived credentialing reviews and that your providers are comfortable with. Sorta populates them. The forms don't change. The manual re-entry goes away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
 <section class="spec-cta-section">
             <div class="container animate-on-scroll fade-up">
                 <div class="spec-cta-badge">
@@ -550,39 +615,39 @@
         <span class="footer-v2-col-header">Main pages</span>
         <nav class="footer-v2-links" aria-label="Main pages">
           <a href="/">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../how-it-works.html">How it Works</a>
-          <a href="../pricing.html">Pricing</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="/about">About</a>
+          <a href="/how-it-works">How it Works</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/blog">Blog</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Product</span>
         <nav class="footer-v2-links" aria-label="Product">
-          <a href="../how-it-works.html">How it works</a>
-          <a href="../already-digital.html">Already digital?</a>
-          <a href="../specialties/index.html">Specialties</a>
-          <a href="../pricing.html">Pricing</a>
+          <a href="/how-it-works">How it works</a>
+          <a href="/already-digital">Already digital?</a>
+          <a href="/specialties">Specialties</a>
+          <a href="/pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Specialties</span>
         <nav class="footer-v2-links" aria-label="Specialties">
-          <a href="../specialties/optometry.html">Optometry</a>
-          <a href="../specialties/physical-therapy.html">Physical Therapy</a>
-          <a href="../specialties/mental-health.html">Mental Health</a>
-          <a href="../specialties/cardiology.html">Cardiology</a>
-          <a href="../specialties/nephrology.html">Nephrology</a>
+          <a href="/specialties/optometry">Optometry</a>
+          <a href="/specialties/physical-therapy">Physical Therapy</a>
+          <a href="/specialties/mental-health">Mental Health</a>
+          <a href="/specialties/cardiology">Cardiology</a>
+          <a href="/specialties/nephrology">Nephrology</a>
         </nav>
       </div>
       <div>
         <span class="footer-v2-col-header">Legal</span>
         <nav class="footer-v2-links" aria-label="Legal">
-          <a href="../privacy.html">Privacy Policy</a>
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../hipaa.html">HIPAA Compliance</a>
-          <a href="../cookies.html">Cookie Policy</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/hipaa">HIPAA Compliance</a>
+          <a href="/cookies">Cookie Policy</a>
           <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin">LinkedIn</a>
         </nav>
       </div>
@@ -590,10 +655,10 @@
     <div class="footer-v2-bottom">
       <span>&#169; 2026 Sorta, Inc. All rights reserved.</span>
       <div class="footer-v2-legal">
-        <a href="../privacy.html">Privacy</a>
-        <a href="../terms.html">Terms</a>
-        <a href="../hipaa.html">HIPAA</a>
-        <a href="../cookies.html">Cookies</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/hipaa">HIPAA</a>
+        <a href="/cookies">Cookies</a>
       </div>
     </div>
   </div>
