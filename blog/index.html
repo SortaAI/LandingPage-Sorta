@@ -378,6 +378,65 @@
         .blog-newsletter-form { flex-direction: column; align-items: center; }
         .blog-newsletter-form input { width: 100%; }
       }
+
+      /* ── Category Filters ── */
+      .blog-filter-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 36px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--color-gray-100);
+      }
+      .blog-filter-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--color-gray-400);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-right: 4px;
+        white-space: nowrap;
+      }
+      .blog-filter-btn {
+        padding: 7px 16px;
+        border-radius: var(--radius-pill);
+        border: 1px solid var(--color-gray-200);
+        background: transparent;
+        color: var(--color-gray-500);
+        font-family: inherit;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: border-color 0.15s, color 0.15s, background 0.15s;
+        white-space: nowrap;
+      }
+      .blog-filter-btn:hover {
+        border-color: var(--color-navy);
+        color: var(--color-navy);
+      }
+      .blog-filter-btn.active {
+        background: var(--color-navy);
+        border-color: var(--color-navy);
+        color: white;
+      }
+      .blog-filter-count {
+        font-weight: 400;
+        opacity: 0.55;
+        font-size: 0.75rem;
+      }
+      .blog-card-badge {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: var(--color-teal);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .blog-card[hidden] { display: none; }
+      @media (max-width: 768px) {
+        .blog-filter-bar { gap: 6px; }
+        .blog-filter-btn { font-size: 0.75rem; padding: 6px 12px; }
+      }
     </style>
 </head>
 <body>
@@ -486,9 +545,19 @@
         <!-- Post Grid -->
         <section class="blog-grid-section">
             <div class="container">
-                <div class="blog-grid">
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 0ms;">
+                <!-- Category Filter -->
+                <div class="blog-filter-bar" role="group" aria-label="Filter posts by category">
+                    <span class="blog-filter-label">Filter</span>
+                    <button class="blog-filter-btn active" data-filter="all">All <span class="blog-filter-count" id="count-all"></span></button>
+                    <button class="blog-filter-btn" data-filter="ops">Clinic Ops <span class="blog-filter-count" id="count-ops"></span></button>
+                    <button class="blog-filter-btn" data-filter="compliance">Compliance <span class="blog-filter-count" id="count-compliance"></span></button>
+                    <button class="blog-filter-btn" data-filter="research">Research <span class="blog-filter-count" id="count-research"></span></button>
+                </div>
+
+                <div class="blog-grid" id="blog-grid">
+
+                    <article class="blog-card animate-on-scroll fade-up" data-category="ops" style="transition-delay: 0ms;">
                         <span class="blog-cat-pill ops" style="align-self: flex-start;">Clinic Ops</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -500,7 +569,7 @@
                         <a href="/blog/phones-first-intake-week-one" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 80ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="ops" style="transition-delay: 80ms;">
                         <span class="blog-cat-pill ops" style="align-self: flex-start;">Clinic Ops</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -512,7 +581,7 @@
                         <a href="/blog/overlay-vs-replacement-checklist" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 160ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="compliance" style="transition-delay: 160ms;">
                         <span class="blog-cat-pill compliance" style="align-self: flex-start;">Compliance</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -524,19 +593,21 @@
                         <a href="/blog/intake-rework-downstream-costs" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 240ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="ops" style="transition-delay: 240ms;">
                         <span class="blog-cat-pill ops" style="align-self: flex-start;">Clinic Ops</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
                             <span>·</span>
                             <span>6 min read</span>
+                            <span>·</span>
+                            <span class="blog-card-badge">Most read</span>
                         </div>
                         <h2 class="blog-card-title">The $150,000 problem hiding in your front desk</h2>
                         <p class="blog-card-excerpt">Manual data entry costs the average clinic $150,000 a year. Most clinic owners have no idea. Here's where that number comes from and what's actually causing it.</p>
                         <a href="/blog/150k-problem" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 320ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="compliance" style="transition-delay: 320ms;">
                         <span class="blog-cat-pill compliance" style="align-self: flex-start;">Compliance</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -548,19 +619,21 @@
                         <a href="/blog/cms-prior-auth-2027" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 400ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="research" style="transition-delay: 400ms;">
                         <span class="blog-cat-pill research" style="align-self: flex-start;">Research</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
                             <span>·</span>
                             <span>7 min read</span>
+                            <span>·</span>
+                            <span class="blog-card-badge">Most read</span>
                         </div>
                         <h2 class="blog-card-title">We talked to 30 clinic managers about what they hate most about their day. Here's what they said.</h2>
                         <p class="blog-card-excerpt">Billing software, scheduling, EHR documentation — everyone assumes those are the biggest headaches. The actual answers surprised us.</p>
                         <a href="/blog/30-clinic-managers" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 480ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="ops" style="transition-delay: 480ms;">
                         <span class="blog-cat-pill ops" style="align-self: flex-start;">Clinic Ops</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -572,7 +645,7 @@
                         <a href="/blog/how-to-set-up-digital-intake-physical-therapy" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 560ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="ops" style="transition-delay: 560ms;">
                         <span class="blog-cat-pill ops" style="align-self: flex-start;">Clinic Ops</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -584,7 +657,7 @@
                         <a href="/blog/what-your-ehr-doesnt-handle" class="blog-card-link">Read more <i class="ph-bold ph-arrow-right"></i></a>
                     </article>
 
-                    <article class="blog-card animate-on-scroll fade-up" style="transition-delay: 640ms;">
+                    <article class="blog-card animate-on-scroll fade-up" data-category="ops" style="transition-delay: 640ms;">
                         <span class="blog-cat-pill ops" style="align-self: flex-start;">Clinic Ops</span>
                         <div class="blog-card-meta">
                             <span>May 2026</span>
@@ -727,6 +800,36 @@
   </div>
 </div>
 <script src="../js/popup.js"></script>
+<script>
+  (function () {
+    var cards = Array.from(document.querySelectorAll('#blog-grid .blog-card[data-category]'));
+    var btns  = document.querySelectorAll('.blog-filter-btn');
 
+    // Populate counts
+    var counts = {};
+    cards.forEach(function (c) {
+      var cat = c.dataset.category;
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    var totalEl = document.getElementById('count-all');
+    if (totalEl) totalEl.textContent = '(' + cards.length + ')';
+    Object.keys(counts).forEach(function (cat) {
+      var el = document.getElementById('count-' + cat);
+      if (el) el.textContent = '(' + counts[cat] + ')';
+    });
+
+    // Filter on click
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.dataset.filter;
+        cards.forEach(function (card) {
+          card.hidden = filter !== 'all' && card.dataset.category !== filter;
+        });
+      });
+    });
+  })();
+</script>
 </body>
 </html>
