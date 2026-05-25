@@ -58,14 +58,34 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://getsorta.io/#website",
+          "name": "Sorta",
+          "alternateName": "getsorta.io",
+          "url": "https://getsorta.io/",
+          "description": "Paperwork automation for independent outpatient clinics. Enter patient info once — every form fills itself.",
+          "publisher": { "@id": "https://getsorta.io/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://getsorta.io/?q={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
           "@type": "Organization",
           "@id": "https://getsorta.io/#organization",
           "name": "Sorta",
           "url": "https://getsorta.io",
-          "logo": "https://getsorta.io/assets/sorta-logo.svg",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://getsorta.io/assets/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          },
           "foundingDate": "2026",
           "founders": [{ "@type": "Person", "name": "Emi Rodriguez" }],
           "areaServed": "US",
+          "sameAs": ["https://www.linkedin.com/company/getsorta"],
           "description": "Sorta automates the paperwork layer outside your EHR — consent forms, prior auth packets, intake, and specialty documents. Staff enters data once. Every PDF fills itself automatically, same day."
         },
         {
@@ -82,6 +102,19 @@
             "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" }
           },
           "description": "Sorta automates the paperwork layer outside your EHR — consent forms, prior auth packets, intake, and specialty documents. Staff enters data once. Every PDF fills itself automatically, same day."
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://getsorta.io/#sitelinks",
+          "name": "Site Navigation",
+          "hasPart": [
+            { "@type": "WebPage", "name": "How it Works", "url": "https://getsorta.io/how-it-works", "description": "See how Sorta automates patient intake paperwork on top of any EHR." },
+            { "@type": "WebPage", "name": "Pricing",       "url": "https://getsorta.io/pricing",       "description": "Simple, transparent pricing for independent outpatient clinics." },
+            { "@type": "WebPage", "name": "Specialties",   "url": "https://getsorta.io/specialties",   "description": "Sorta works for every outpatient specialty — optometry, PT, cardiology, and more." },
+            { "@type": "WebPage", "name": "About",         "url": "https://getsorta.io/about",         "description": "The team behind Sorta and why we built it." },
+            { "@type": "WebPage", "name": "Blog",          "url": "https://getsorta.io/blog",          "description": "Guides and insights for independent clinic operators." },
+            { "@type": "WebPage", "name": "Live Demo",     "url": "https://getsorta.io/demo",          "description": "See Sorta in 2 minutes — no login, no setup required." }
+          ]
         }
       ]
     }
