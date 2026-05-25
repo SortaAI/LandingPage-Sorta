@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sorta Demo Admin</title>
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="/demo/admin/admin.css" />
 </head>
 <body>
 
   <!-- ── Password Gate ── -->
   <div id="passwordGate" class="gate-overlay">
     <div class="gate-card">
-      <img src="../../assets/sorta-logo.svg" alt="Sorta" class="gate-logo" />
+      <img src="/assets/sorta-logo.svg" alt="Sorta" class="gate-logo" />
       <h1 class="gate-title">Demo Admin</h1>
       <p class="gate-sub">Enter the password to access the config panel.</p>
       <form id="loginForm" onsubmit="checkPassword(event)">
@@ -30,7 +30,7 @@
   <!-- ── Admin Panel ── -->
   <div id="adminPanel" class="admin-panel hidden">
     <div class="admin-header">
-      <img src="../../assets/sorta-logo.svg" alt="Sorta" class="admin-logo" />
+      <img src="/assets/sorta-logo.svg" alt="Sorta" class="admin-logo" />
       <h1 class="admin-title">Demo Config</h1>
     </div>
 
@@ -71,6 +71,6 @@
     <p class="admin-note">Config is saved to <code>localStorage</code> in this browser. The demo page reads it on load.</p>
   </div>
 
-  <script src="admin.js"></script>
+  <script src="/demo/admin/admin.js"></script>
 </body>
 </html>
