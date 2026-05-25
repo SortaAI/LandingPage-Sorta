@@ -868,6 +868,7 @@ h1, h2, h3, h4 { color: var(--color-navy); }
 .nav-links { display: flex; gap: 32px; }
 .nav-links a { font-weight: 500; color: var(--color-gray-500); transition: color 0.2s; }
 .nav-links a:hover { color: var(--color-electric); }
+.nav-actions { display: flex; align-items: center; gap: 16px; }
 
 /* Mobile-only hamburger + drawer (hidden on desktop) */
 .mobile-menu-btn { display: none; }
@@ -2094,6 +2095,7 @@ h1, h2, h3, h4 { color: var(--color-navy); }
   .nav-links { display: none; }
   /* Hide all desktop nav CTAs; use hamburger instead */
   .nav-actions .btn { display: none; }
+  .nav-demo-text { display: none; }
 
   /* Type + hero spacing */
   .pill-badge { font-size: 0.8rem; padding: 7px 12px; margin-bottom: 18px; }
