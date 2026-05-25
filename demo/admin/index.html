@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorta Demo Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ── Password Gate ── -->
+  <div id="passwordGate" class="gate-overlay">
+    <div class="gate-card">
+      <img src="../../assets/sorta-logo.svg" alt="Sorta" class="gate-logo" />
+      <h1 class="gate-title">Demo Admin</h1>
+      <p class="gate-sub">Enter the password to access the config panel.</p>
+      <form id="loginForm" onsubmit="checkPassword(event)">
+        <input type="password" id="passwordInput" placeholder="Password" class="gate-input" autocomplete="current-password" />
+        <div class="gate-error" id="gateError">Incorrect password. Try again.</div>
+        <button type="submit" class="btn-primary full-width">Unlock →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── Admin Panel ── -->
+  <div id="adminPanel" class="admin-panel hidden">
+    <div class="admin-header">
+      <img src="../../assets/sorta-logo.svg" alt="Sorta" class="admin-logo" />
+      <h1 class="admin-title">Demo Config</h1>
+    </div>
+
+    <div class="admin-card">
+      <div class="field-group">
+        <label class="field-label" for="clinicNameInput">Clinic Name</label>
+        <input type="text" id="clinicNameInput" class="admin-input" placeholder="El Paso Eye Center" />
+        <p class="field-hint">Displayed in the demo form header and PDF preview.</p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Active Forms</label>
+        <div class="checkbox-list">
+          <label class="checkbox-row">
+            <input type="checkbox" id="cbIntake" checked />
+            <span class="checkbox-label">Patient Intake</span>
+          </label>
+          <label class="checkbox-row">
+            <input type="checkbox" id="cbInsurance" checked />
+            <span class="checkbox-label">Insurance Verification</span>
+          </label>
+          <label class="checkbox-row">
+            <input type="checkbox" id="cbConsent" checked />
+            <span class="checkbox-label">Consent Form</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button class="btn-primary" onclick="saveConfig()">Save Config</button>
+        <button class="btn-outline" onclick="resetDefaults()">Reset to Defaults</button>
+        <button class="btn-teal" onclick="window.open('/demo', '_blank')">Preview Demo →</button>
+      </div>
+
+      <div class="save-notice hidden" id="saveNotice">✓ Config saved to this browser.</div>
+    </div>
+
+    <p class="admin-note">Config is saved to <code>localStorage</code> in this browser. The demo page reads it on load.</p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

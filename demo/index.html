@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorta Demo — See It in 2 Minutes</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div class="progress-bar-track" aria-hidden="true">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Step counter -->
+  <div class="step-counter" id="stepCounter">Step 1 of 6</div>
+
+  <!-- ── Screen 1: Landing ── -->
+  <div class="screen active" id="screen-1">
+    <div class="screen-inner center-layout">
+      <img src="../assets/sorta-logo.svg" alt="Sorta" class="logo" />
+      <h1 class="headline">See Sorta in 2 minutes.</h1>
+      <p class="subtext">No login. No setup. Just watch the paperwork disappear.</p>
+      <button class="btn-primary" onclick="goToScreen(2)">Start Demo →</button>
+    </div>
+  </div>
+
+  <!-- ── Screen 2: The Problem ── -->
+  <div class="screen" id="screen-2">
+    <div class="screen-inner">
+      <h2 class="screen-title">The Problem with Today's Workflow</h2>
+      <div class="split-layout">
+        <div class="split-card split-bad">
+          <div class="split-icon">✕</div>
+          <div class="split-label bad">Without Sorta</div>
+          <p>Patient name typed into EHR. Then intake form. Then insurance form. Then consent form. <strong>Same name. Four times.</strong></p>
+        </div>
+        <div class="split-card split-good">
+          <div class="split-icon">✓</div>
+          <div class="split-label good">With Sorta</div>
+          <p>Patient data entered once. <strong>Every form fills itself instantly.</strong></p>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goToScreen(1)">← Back</button>
+        <button class="btn-primary" onclick="goToScreen(3)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Screen 3: Two Paths ── -->
+  <div class="screen" id="screen-3">
+    <div class="screen-inner">
+      <h2 class="screen-title">Two ways in. One source of truth.</h2>
+      <p class="screen-sub">Pick whatever fits the visit — Sorta handles both.</p>
+
+      <div class="paths-row">
+
+        <!-- Path A: Staff entry -->
+        <div class="path-card animated-field" style="--delay:0s">
+          <div class="path-badge">Option A</div>
+          <div class="path-icon">💻</div>
+          <h3 class="path-title">Staff enters data</h3>
+          <p class="path-desc">Front desk types patient info once at check-in. Every form fills itself instantly — no retyping across intake, insurance, or consent.</p>
+          <div class="mini-form">
+            <div class="mini-field"><span class="mini-label">Patient</span><span class="mini-val">Maria Gonzalez</span></div>
+            <div class="mini-field"><span class="mini-label">DOB</span><span class="mini-val">03/12/1985</span></div>
+            <div class="mini-field"><span class="mini-label">Insurance</span><span class="mini-val">Blue Cross Blue Shield</span></div>
+          </div>
+          <div class="path-tag tag-blue">
+            <span class="clinic-name-display" id="clinicNameDisplay">El Paso Eye Center</span> portal
+          </div>
+        </div>
+
+        <div class="paths-or">or</div>
+
+        <!-- Path B: Patient self-serve link -->
+        <div class="path-card animated-field" style="--delay:0.25s">
+          <div class="path-badge">Option B</div>
+          <div class="path-icon">📱</div>
+          <h3 class="path-title">Send patient a link</h3>
+          <p class="path-desc">Text or email a one-time link before the appointment. Patient fills their own info from any device — forms are waiting, complete, when they arrive.</p>
+          <div class="sms-bubble-wrap">
+            <div class="sms-bubble">
+              <div class="sms-from">Sorta · El Paso Eye Center</div>
+              <div class="sms-text">Hi Maria! Please complete your intake forms before your visit:<br/><span class="sms-link">getsorta.io/intake/ePxR82</span></div>
+              <div class="sms-time">10:14 AM · Delivered</div>
+            </div>
+          </div>
+          <div class="path-tag tag-teal">One-time secure link · expires after use</div>
+        </div>
+
+      </div>
+
+      <div class="form-tooltip centered-tooltip" style="margin-top:20px">
+        <span class="tooltip-dot"></span>
+        Either way, data flows into every form automatically. Staff never types it twice.
+      </div>
+
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goToScreen(2)">← Back</button>
+        <button class="btn-primary" onclick="goToScreen(4)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Screen 4: Forms Fill ── -->
+  <div class="screen" id="screen-4">
+    <div class="screen-inner">
+      <h2 class="screen-title">Every Form Fills Itself.</h2>
+      <div class="forms-row" id="formsRow">
+
+        <div class="form-card" id="card-intake">
+          <div class="card-header">
+            <span class="card-icon">📋</span>
+            <span class="card-title">Patient Intake</span>
+            <span class="card-check" id="check-intake">✓</span>
+          </div>
+          <div class="card-lines">
+            <div class="card-line"><span class="line-label">Name</span><span class="line-val" id="fi-name">—</span></div>
+            <div class="card-line"><span class="line-label">DOB</span><span class="line-val" id="fi-dob">—</span></div>
+            <div class="card-line"><span class="line-label">Insurance</span><span class="line-val" id="fi-ins">—</span></div>
+            <div class="card-line"><span class="line-label">Policy #</span><span class="line-val" id="fi-pol">—</span></div>
+          </div>
+        </div>
+
+        <div class="form-card" id="card-insurance">
+          <div class="card-header">
+            <span class="card-icon">🏥</span>
+            <span class="card-title">Insurance Verification</span>
+            <span class="card-check" id="check-insurance">✓</span>
+          </div>
+          <div class="card-lines">
+            <div class="card-line"><span class="line-label">Member</span><span class="line-val" id="fv-name">—</span></div>
+            <div class="card-line"><span class="line-label">Provider</span><span class="line-val" id="fv-ins">—</span></div>
+            <div class="card-line"><span class="line-label">Policy #</span><span class="line-val" id="fv-pol">—</span></div>
+            <div class="card-line"><span class="line-label">DOB</span><span class="line-val" id="fv-dob">—</span></div>
+          </div>
+        </div>
+
+        <div class="form-card" id="card-consent">
+          <div class="card-header">
+            <span class="card-icon">✍️</span>
+            <span class="card-title">Consent Form</span>
+            <span class="card-check" id="check-consent">✓</span>
+          </div>
+          <div class="card-lines">
+            <div class="card-line"><span class="line-label">Patient</span><span class="line-val" id="fc-name">—</span></div>
+            <div class="card-line"><span class="line-label">DOB</span><span class="line-val" id="fc-dob">—</span></div>
+            <div class="card-line"><span class="line-label">Ins. Plan</span><span class="line-val" id="fc-ins">—</span></div>
+            <div class="card-line"><span class="line-label">Date</span><span class="line-val" id="fc-date">—</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-tooltip centered-tooltip">
+        <span class="tooltip-dot"></span>
+        Every form fills itself. No retyping. No errors.
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goToScreen(3)">← Back</button>
+        <button class="btn-primary" onclick="goToScreen(5)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Screen 5: PDF Ready ── -->
+  <div class="screen" id="screen-5">
+    <div class="screen-inner">
+      <h2 class="screen-title">Print-Ready in Seconds.</h2>
+      <div class="pdf-preview-card">
+        <div class="pdf-header">
+          <div>
+            <div class="pdf-clinic-name" id="pdfClinicName">El Paso Eye Center</div>
+            <div class="pdf-subtitle">New Patient Intake — Completed</div>
+          </div>
+          <div class="pdf-timestamp" id="pdfTimestamp">Generated: —</div>
+        </div>
+        <table class="pdf-table">
+          <tbody>
+            <tr><td class="pdf-key">Patient Name</td><td class="pdf-val">Maria Gonzalez</td></tr>
+            <tr><td class="pdf-key">Date of Birth</td><td class="pdf-val">03/12/1985</td></tr>
+            <tr><td class="pdf-key">Insurance Provider</td><td class="pdf-val">Blue Cross Blue Shield</td></tr>
+            <tr><td class="pdf-key">Policy Number</td><td class="pdf-val">BCX-4892710</td></tr>
+            <tr><td class="pdf-key">Visit Date</td><td class="pdf-val" id="pdfVisitDate">—</td></tr>
+            <tr><td class="pdf-key">Clinic</td><td class="pdf-val" id="pdfClinicRow">El Paso Eye Center</td></tr>
+            <tr><td class="pdf-key">Status</td><td class="pdf-val pdf-status">✓ Complete</td></tr>
+          </tbody>
+        </table>
+        <div class="pdf-actions">
+          <button class="btn-outline">🖨 Print</button>
+          <button class="btn-outline accent">💾 Save PDF</button>
+        </div>
+      </div>
+      <div class="form-tooltip centered-tooltip">
+        <span class="tooltip-dot"></span>
+        Clean, ready-to-print PDFs in seconds.
+      </div>
+      <div class="nav-row">
+        <button class="btn-ghost" onclick="goToScreen(4)">← Back</button>
+        <button class="btn-primary" onclick="goToScreen(6)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Screen 6: Result + CTA ── -->
+  <div class="screen" id="screen-6">
+    <div class="screen-inner center-layout">
+      <img src="../assets/sorta-logo.svg" alt="Sorta" class="logo" />
+      <div class="big-stat">45 min → under 5</div>
+      <p class="subtext">That's how much time independent clinics save on new patient intake with Sorta.</p>
+      <a class="btn-primary" href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener">Book a Pilot Call →</a>
+      <a class="secondary-link" href="mailto:contact@getsorta.io">Questions? Email us → contact@getsorta.io</a>
+      <button class="btn-ghost restart-btn" onclick="goToScreen(1)">↩ Restart Demo</button>
+    </div>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
