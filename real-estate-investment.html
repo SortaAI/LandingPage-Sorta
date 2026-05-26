@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Real Estate Investment Analysis | Sorta AI</title>
+    <meta name="description" content="AI-powered real estate investment analysis using Texas MLS data. Evaluate properties by cost per sqft, neighborhood desirability, repair costs, ROI, and unit count.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/real-estate.css" />
+</head>
+<body>
+
+<header class="rei-header">
+    <div class="rei-header-inner">
+        <a href="/" class="rei-brand">
+            <img src="assets/sorta-logo.svg" alt="Sorta logo" width="122" height="40" />
+        </a>
+        <span class="rei-badge">Real Estate Investment Tool</span>
+    </div>
+</header>
+
+<main class="rei-main">
+
+<!-- Hero Section -->
+<section class="rei-hero">
+    <h1>Texas Real Estate Investment Parameters</h1>
+    <p class="rei-hero-sub">AI-driven property analysis using Texas MLS data to identify profitable investment opportunities based on five key metrics.</p>
+</section>
+
+<!-- Parameters Overview -->
+<section class="rei-params-overview">
+    <div class="rei-params-grid">
+        <div class="rei-param-card" data-param="cost-sqft">
+            <div class="rei-param-icon">📐</div>
+            <h3>Cost per Sq Ft</h3>
+            <p>Compare price-per-square-foot against market averages to find undervalued properties.</p>
+            <div class="rei-param-metric">
+                <span class="metric-label">TX Avg</span>
+                <span class="metric-value">$168/sqft</span>
+            </div>
+        </div>
+        <div class="rei-param-card" data-param="neighborhood">
+            <div class="rei-param-icon">📍</div>
+            <h3>Desirable Neighborhoods</h3>
+            <p>Scoring based on school ratings, crime stats, walkability, and appreciation trends.</p>
+            <div class="rei-param-metric">
+                <span class="metric-label">Top Markets</span>
+                <span class="metric-value">DFW, Austin, SA</span>
+            </div>
+        </div>
+        <div class="rei-param-card" data-param="repairs">
+            <div class="rei-param-icon">🔧</div>
+            <h3>Minimal Repair Investment</h3>
+            <p>Properties requiring &lt;$15K in repairs for immediate rental or resale readiness.</p>
+            <div class="rei-param-metric">
+                <span class="metric-label">Target</span>
+                <span class="metric-value">&lt; $15,000</span>
+            </div>
+        </div>
+        <div class="rei-param-card" data-param="roi">
+            <div class="rei-param-icon">📈</div>
+            <h3>Investment-to-Return Ratio</h3>
+            <p>Projected ROI factoring in cap rate, cash-on-cash return, and 5-year appreciation.</p>
+            <div class="rei-param-metric">
+                <span class="metric-label">Min Target</span>
+                <span class="metric-value">8%+ CoC</span>
+            </div>
+        </div>
+        <div class="rei-param-card" data-param="units">
+            <div class="rei-param-icon">🏢</div>
+            <h3>Units per Property</h3>
+            <p>Multiplexes and small apartments for higher income density per acquisition.</p>
+            <div class="rei-param-metric">
+                <span class="metric-label">Sweet Spot</span>
+                <span class="metric-value">2–8 units</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search/Filter Tool -->
+<section class="rei-tool">
+    <h2>Property Search — Texas MLS</h2>
+    <p class="rei-tool-sub">Filter active Texas MLS listings by investment parameters</p>
+
+    <div class="rei-filters">
+        <div class="rei-filter-row">
+            <div class="rei-filter-group">
+                <label for="filter-market">Market / Metro</label>
+                <select id="filter-market">
+                    <option value="all">All Texas Markets</option>
+                    <option value="dfw">Dallas-Fort Worth</option>
+                    <option value="houston">Houston</option>
+                    <option value="sanantonio">San Antonio</option>
+                    <option value="austin">Austin</option>
+                    <option value="elpaso">El Paso</option>
+                    <option value="rgv">Rio Grande Valley</option>
+                    <option value="corpus">Corpus Christi</option>
+                    <option value="lubbock">Lubbock</option>
+                </select>
+            </div>
+            <div class="rei-filter-group">
+                <label for="filter-maxprice">Max Price</label>
+                <select id="filter-maxprice">
+                    <option value="200000">$200,000</option>
+                    <option value="350000" selected>$350,000</option>
+                    <option value="500000">$500,000</option>
+                    <option value="750000">$750,000</option>
+                    <option value="1000000">$1,000,000</option>
+                    <option value="999999999">No Limit</option>
+                </select>
+            </div>
+            <div class="rei-filter-group">
+                <label for="filter-sqft">Max $/Sq Ft</label>
+                <select id="filter-sqft">
+                    <option value="100">$100/sqft</option>
+                    <option value="130">$130/sqft</option>
+                    <option value="150" selected>$150/sqft</option>
+                    <option value="180">$180/sqft</option>
+                    <option value="200">$200/sqft</option>
+                    <option value="999">No Limit</option>
+                </select>
+            </div>
+        </div>
+        <div class="rei-filter-row">
+            <div class="rei-filter-group">
+                <label for="filter-units">Min Units</label>
+                <select id="filter-units">
+                    <option value="1">1 (Single Family)</option>
+                    <option value="2" selected>2 (Duplex+)</option>
+                    <option value="3">3 (Triplex+)</option>
+                    <option value="4">4 (Fourplex+)</option>
+                    <option value="5">5+ (Small Apartment)</option>
+                </select>
+            </div>
+            <div class="rei-filter-group">
+                <label for="filter-repair">Max Estimated Repairs</label>
+                <select id="filter-repair">
+                    <option value="5000">$5,000</option>
+                    <option value="10000">$10,000</option>
+                    <option value="15000" selected>$15,000</option>
+                    <option value="25000">$25,000</option>
+                    <option value="50000">$50,000</option>
+                </select>
+            </div>
+            <div class="rei-filter-group">
+                <label for="filter-roi">Min ROI (CoC %)</label>
+                <select id="filter-roi">
+                    <option value="5">5%</option>
+                    <option value="8" selected>8%</option>
+                    <option value="10">10%</option>
+                    <option value="12">12%</option>
+                    <option value="15">15%</option>
+                </select>
+            </div>
+        </div>
+        <button class="rei-search-btn" id="search-btn">
+            Search Texas MLS Listings
+        </button>
+    </div>
+</section>
+
+<!-- Results Table -->
+<section class="rei-results" id="results-section">
+    <div class="rei-results-header">
+        <h2>Investment Opportunities</h2>
+        <span class="rei-results-count" id="results-count"></span>
+    </div>
+    <div class="rei-results-table-wrap">
+        <table class="rei-table" id="results-table">
+            <thead>
+                <tr>
+                    <th>Address</th>
+                    <th>Market</th>
+                    <th>Price</th>
+                    <th>$/SqFt</th>
+                    <th>Units</th>
+                    <th>Est. Repairs</th>
+                    <th>Projected CoC</th>
+                    <th>Neighborhood Score</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody id="results-body">
+            </tbody>
+        </table>
+    </div>
+    <p class="rei-disclaimer">Data sourced from Texas MLS (NTREIS, HAR, SABOR, ACTRIS, ABOR). Updated daily. Projections are estimates only — verify with licensed professionals before investing.</p>
+</section>
+
+<!-- Methodology Section -->
+<section class="rei-methodology">
+    <h2>How We Score Properties</h2>
+    <div class="rei-method-grid">
+        <div class="rei-method-item">
+            <h4>Cost per Square Foot Analysis</h4>
+            <p>We compare each listing's price-per-sqft against the ZIP code median, metro median, and comparable sold properties within 0.5 miles over the last 6 months. Properties priced 15%+ below the area median flag as potential value opportunities.</p>
+            <div class="rei-method-source">Source: NTREIS, HAR, SABOR, ACTRIS MLS feeds</div>
+        </div>
+        <div class="rei-method-item">
+            <h4>Neighborhood Desirability Index</h4>
+            <p>Composite score (1–100) combining: school ratings (GreatSchools API), crime statistics (FBI UCR data), walk/transit scores, 3-year property appreciation rate, median household income growth, and new development permits filed.</p>
+            <div class="rei-method-source">Source: Census ACS, FBI UCR, GreatSchools, CoStar</div>
+        </div>
+        <div class="rei-method-item">
+            <h4>Repair Cost Estimation</h4>
+            <p>AI model trained on 50K+ Texas inspection reports estimates repair needs based on: year built, last renovation date, listing photos (roof, HVAC, foundation indicators), days on market, and price reductions. Validated against actual rehab costs from investor networks.</p>
+            <div class="rei-method-source">Source: Property inspection databases, contractor bid aggregators</div>
+        </div>
+        <div class="rei-method-item">
+            <h4>Investment-to-Return Projection</h4>
+            <p>Cash-on-cash return calculated using: projected rent (Rentometer + local comps), estimated operating expenses (taxes, insurance, maintenance, vacancy at 8%), and financing assumptions (25% down, current 30-yr rate). Also models 5-year total return including appreciation.</p>
+            <div class="rei-method-source">Source: Rentometer, Zillow Rental Index, Freddie Mac PMMS</div>
+        </div>
+        <div class="rei-method-item">
+            <h4>Multi-Unit Premium Scoring</h4>
+            <p>Properties with 2+ units receive bonus scoring for: income density (gross rent multiplier), per-door acquisition cost vs. market, unit mix efficiency, and separate metering. Small multifamily (2–4 units) qualifies for residential financing rates — a key advantage.</p>
+            <div class="rei-method-source">Source: Texas MLS multi-family feeds, CoStar, county tax records</div>
+        </div>
+    </div>
+</section>
+
+<!-- Texas MLS Markets -->
+<section class="rei-markets">
+    <h2>Texas MLS Markets Covered</h2>
+    <div class="rei-markets-grid">
+        <div class="rei-market-card">
+            <h4>Dallas-Fort Worth (NTREIS)</h4>
+            <p>Largest inland metro. Strong job growth, diverse economy. Median $/sqft: $172. Active multi-family inventory growing 12% YoY.</p>
+        </div>
+        <div class="rei-market-card">
+            <h4>Houston (HAR)</h4>
+            <p>Energy corridor + medical center. Median $/sqft: $142. High multi-family density in Inner Loop and near-loop neighborhoods.</p>
+        </div>
+        <div class="rei-market-card">
+            <h4>San Antonio (SABOR)</h4>
+            <p>Military + tourism + tech growth. Median $/sqft: $138. Strong rental demand, especially near bases and medical centers.</p>
+        </div>
+        <div class="rei-market-card">
+            <h4>Austin (ACTRIS/ABOR)</h4>
+            <p>Tech hub with price correction creating entry points. Median $/sqft: $228. Watch for value in suburbs and east side.</p>
+        </div>
+        <div class="rei-market-card">
+            <h4>El Paso</h4>
+            <p>Affordable entry point with stable military demand. Median $/sqft: $118. Strong cash-flow market for buy-and-hold investors.</p>
+        </div>
+        <div class="rei-market-card">
+            <h4>Rio Grande Valley</h4>
+            <p>Rapid population growth, extremely low cost basis. Median $/sqft: $108. Emerging market with high cap rates on multi-family.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="rei-footer">
+    <p>&copy; 2026 Sorta AI — Real Estate Investment Analysis Tool</p>
+    <p class="rei-footer-legal">Not financial advice. All projections are estimates based on publicly available MLS data and should be independently verified. Past performance does not guarantee future results.</p>
+</footer>
+
+<script src="js/real-estate.js"></script>
+</body>
+</html>
