@@ -17,7 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => observer.observe(el));
+
+    // Immediately show elements already in the viewport — fixes Lighthouse NO_FCP
+    // (IntersectionObserver fires async; this synchronous check ensures above-fold
+    // content is visible before the first paint is measured)
+    animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            el.classList.add('visible');
+        }
+        observer.observe(el);
+    });
 
     // Sticky CTA — show after hero section scrolls out of view
     const stickyCta = document.getElementById('sticky-cta');

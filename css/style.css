@@ -1248,6 +1248,11 @@ h1, h2, h3, h4 { color: var(--color-navy); }
 .fade-down { transform: translateY(-20px); }
 .fade-right { transform: translateX(-20px); }
 .fade-left { transform: translateX(20px); }
+/* Show all content immediately if JS hasn't run or user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll { opacity: 1; transform: none; transition: none; }
+}
+.no-js .animate-on-scroll { opacity: 1; transform: none; }
 
 /* Responsive */
 @media (max-width: 1024px) {
