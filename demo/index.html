@@ -19,208 +19,289 @@
   </div>
 
   <!-- Step counter -->
-  <div class="step-counter" id="stepCounter">Step 1 of 6</div>
+  <div class="step-counter" id="stepCounter">Step 1 of 5</div>
 
-  <!-- ── Screen 1: Landing ── -->
+  <!-- ── Screen 1: Intro ── -->
   <div class="screen active" id="screen-1">
     <div class="screen-inner center-layout">
       <img src="/assets/sorta-logo.svg" alt="Sorta" class="logo" />
       <h1 class="headline">See Sorta in 2 minutes.</h1>
-      <p class="subtext">You're about to watch 45 minutes of paperwork become under 5. No login. No setup.</p>
+      <p class="subtext">Three things make Sorta different — drop a PDF, type once, send a link. Everything below is interactive. Nothing leaves your browser.</p>
       <button class="btn-primary" onclick="goToScreen(2)">Start Demo →</button>
+      <p class="tiny-note">No login. No API calls. Pure browser.</p>
     </div>
   </div>
 
-  <!-- ── Screen 2: The Problem ── -->
+  <!-- ── Screen 2: ACT 1 — Drop any PDF, watch it learn the form ── -->
   <div class="screen" id="screen-2">
     <div class="screen-inner">
-      <h2 class="screen-title">This is how most clinics still do paperwork.</h2>
-      <div class="split-layout">
-        <div class="split-card split-bad">
-          <div class="split-icon">✕</div>
-          <div class="split-label bad">Without Sorta</div>
-          <p>Patient name typed into the EHR. Then the intake form. Then the insurance form. Then the consent form. <strong>Same name. Four times.</strong></p>
+      <div class="act-eyebrow">Act 1 of 3</div>
+      <h2 class="screen-title">Drop any form. Sorta reads it.</h2>
+      <p class="screen-sub">Reducto + Gemini 2.5 Pro + GPT-4 — the AI pipeline that maps your existing PDFs without you redesigning anything.</p>
+
+      <div class="act1-row">
+        <!-- Drag-drop / extraction visual -->
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Click to start the extraction demo">
+          <div class="dropzone-empty" id="dropzoneEmpty">
+            <div class="dropzone-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="32" height="32"><path d="M16 4v18M8 14l8-10 8 10M5 26h22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="dropzone-title">Drop a PDF here</div>
+            <div class="dropzone-sub">or tap to demo with a sample intake packet</div>
+          </div>
+
+          <div class="dropzone-busy" id="dropzoneBusy" hidden>
+            <div class="pdf-thumb" id="pdfThumb" aria-hidden="true">
+              <div class="pdf-page">
+                <div class="pdf-line pl-lg"></div>
+                <div class="pdf-line pl-sm"></div>
+                <div class="pdf-row">
+                  <div class="pdf-line pl-md"></div>
+                  <div class="pdf-line pl-md"></div>
+                </div>
+                <div class="pdf-row">
+                  <div class="pdf-line pl-md"></div>
+                  <div class="pdf-line pl-md"></div>
+                </div>
+                <div class="pdf-line pl-lg"></div>
+                <div class="pdf-checkbox-row">
+                  <div class="pdf-cb"></div><div class="pdf-line pl-sm"></div>
+                  <div class="pdf-cb"></div><div class="pdf-line pl-sm"></div>
+                </div>
+                <div class="pdf-line pl-md"></div>
+                <div class="pdf-line pl-lg"></div>
+                <!-- Field rectangles drawn over the page during extraction -->
+                <div class="pdf-field-rect" data-rect="1"></div>
+                <div class="pdf-field-rect" data-rect="2"></div>
+                <div class="pdf-field-rect" data-rect="3"></div>
+                <div class="pdf-field-rect" data-rect="4"></div>
+                <div class="pdf-field-rect" data-rect="5"></div>
+                <div class="pdf-field-rect" data-rect="6"></div>
+                <div class="pdf-field-rect" data-rect="7"></div>
+                <div class="pdf-field-rect" data-rect="8"></div>
+              </div>
+            </div>
+
+            <div class="extraction-status">
+              <div class="status-line" id="statusLine">Initializing…</div>
+              <div class="status-progress"><div class="status-progress-fill" id="statusProgressFill"></div></div>
+              <ul class="status-steps" id="statusSteps">
+                <li data-step="0"><span class="ss-mark">·</span> <span class="ss-text">AcroForm scan</span></li>
+                <li data-step="1"><span class="ss-mark">·</span> <span class="ss-text">Reducto field extraction</span></li>
+                <li data-step="2"><span class="ss-mark">·</span> <span class="ss-text">Gemini 2.5 Pro vision validation</span></li>
+                <li data-step="3"><span class="ss-mark">·</span> <span class="ss-text">GPT-4 label cleanup</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="dropzone-done" id="dropzoneDone" hidden>
+            <div class="done-summary">
+              <div class="done-stat"><strong>37</strong>fields detected</div>
+              <div class="done-stat"><strong>2</strong>flagged for review</div>
+            </div>
+            <ul class="extracted-fields">
+              <li><span class="ef-name">First Name</span><span class="ef-conf ok">✓ extracted</span></li>
+              <li><span class="ef-name">Date of Birth</span><span class="ef-conf ok">✓ extracted</span></li>
+              <li><span class="ef-name">Insurance Policy #</span><span class="ef-conf ok">✓ extracted</span></li>
+              <li><span class="ef-name">Reason for Visit</span><span class="ef-conf review">⚠ needs review</span></li>
+              <li><span class="ef-name">Allergies (yes/no)</span><span class="ef-conf ok">✓ extracted</span></li>
+              <li class="ef-more">+ 32 more — all mapped</li>
+            </ul>
+            <button class="btn-mini" type="button" onclick="resetAct1()">↻ Run it again</button>
+          </div>
         </div>
-        <div class="split-card split-good">
-          <div class="split-icon">✓</div>
-          <div class="split-label good">With Sorta</div>
-          <p>Patient info entered once at check-in. <strong>Every form in the packet is done.</strong></p>
+
+        <div class="act-caption">
+          <span class="caption-dot"></span>
+          We do the mapping. You don't redesign a thing.
         </div>
       </div>
+
       <div class="nav-row">
         <button class="btn-ghost" onclick="goToScreen(1)">← Back</button>
-        <button class="btn-primary" onclick="goToScreen(3)">Next →</button>
+        <button class="btn-primary" onclick="goToScreen(3)">Next: cross-form sync →</button>
       </div>
     </div>
   </div>
 
-  <!-- ── Screen 3: Two Paths ── -->
+  <!-- ── Screen 3: ACT 2 — Type once, three forms update ── -->
   <div class="screen" id="screen-3">
     <div class="screen-inner">
-      <h2 class="screen-title">Two visits. Same paperwork. Done either way.</h2>
-      <p class="screen-sub">Walk-in or scheduled — Sorta handles both.</p>
+      <div class="act-eyebrow">Act 2 of 3</div>
+      <h2 class="screen-title">Type once. Three forms update.</h2>
+      <p class="screen-sub">Type below — watch the same data land on every form in the packet, even when the field IDs don't match.</p>
 
-      <div class="paths-row">
-
-        <!-- Path A: Staff entry -->
-        <div class="path-card animated-field" style="--delay:0s">
-          <div class="path-badge">Walk-in</div>
-          <div class="path-icon">💻</div>
-          <h3 class="path-title">Staff enters data</h3>
-          <p class="path-desc">Front desk types the patient's info once at check-in. Intake, insurance, consent — every form in the packet picks it up automatically. Nobody retypes anything.</p>
-          <div class="mini-form">
-            <div class="mini-field"><span class="mini-label">Patient</span><span class="mini-val">Maria Gonzalez</span></div>
-            <div class="mini-field"><span class="mini-label">DOB</span><span class="mini-val">03/12/1985</span></div>
-            <div class="mini-field"><span class="mini-label">Insurance</span><span class="mini-val">Blue Cross Blue Shield</span></div>
-          </div>
-          <div class="path-tag tag-blue">
-            <span class="clinic-name-display" id="clinicNameDisplay">El Paso Eye Center</span> portal
-          </div>
-        </div>
-
-        <div class="paths-or">or</div>
-
-        <!-- Path B: Patient self-serve link -->
-        <div class="path-card animated-field" style="--delay:0.25s">
-          <div class="path-badge">Scheduled visit</div>
-          <div class="path-icon">📱</div>
-          <h3 class="path-title">Send patient a link</h3>
-          <p class="path-desc">Text or email a one-time link before the appointment. Patient fills their own info from any device — the whole packet is waiting, done, when they walk in.</p>
-          <div class="sms-bubble-wrap">
-            <div class="sms-bubble">
-              <div class="sms-from">Sorta · El Paso Eye Center</div>
-              <div class="sms-text">Hi Maria! Please complete your intake forms before your visit:<br/><span class="sms-link">getsorta.io/intake/ePxR82</span></div>
-              <div class="sms-time">10:14 AM · Delivered</div>
-            </div>
-          </div>
-          <div class="path-tag tag-teal">One-time secure link · expires after use</div>
-        </div>
-
+      <div class="sync-input-wrap">
+        <label class="sync-input-label">Patient name</label>
+        <input type="text" id="syncInputName" class="sync-input" placeholder="Try typing a name…" autocomplete="off" />
+        <label class="sync-input-label" style="margin-top:14px">Date of birth</label>
+        <input type="text" id="syncInputDob" class="sync-input" placeholder="MM/DD/YYYY" autocomplete="off" />
       </div>
 
-      <div class="form-tooltip centered-tooltip" style="margin-top:20px">
-        <span class="tooltip-dot"></span>
-        Either way, the whole packet is ready by check-in. Nobody at your front desk retypes anything.
+      <div class="sync-forms-row">
+        <div class="sync-form-card">
+          <div class="sync-form-head"><span class="sf-icon">📋</span><span class="sf-title">Patient Intake</span></div>
+          <div class="sync-field"><span class="sf-label">first_name</span><span class="sf-val" data-sync="firstName">—</span></div>
+          <div class="sync-field"><span class="sf-label">last_name</span><span class="sf-val" data-sync="lastName">—</span></div>
+          <div class="sync-field"><span class="sf-label">dob</span><span class="sf-val" data-sync="dob">—</span></div>
+        </div>
+        <div class="sync-form-card">
+          <div class="sync-form-head"><span class="sf-icon">🏥</span><span class="sf-title">Insurance Verification</span></div>
+          <div class="sync-field"><span class="sf-label">memberFullName</span><span class="sf-val" data-sync="fullName">—</span></div>
+          <div class="sync-field"><span class="sf-label">date_of_birth</span><span class="sf-val" data-sync="dob">—</span></div>
+        </div>
+        <div class="sync-form-card">
+          <div class="sync-form-head"><span class="sf-icon">✍️</span><span class="sf-title">Consent Form</span></div>
+          <div class="sync-field"><span class="sf-label">patientName</span><span class="sf-val" data-sync="fullName">—</span></div>
+          <div class="sync-field"><span class="sf-label">birth_date</span><span class="sf-val" data-sync="dob">—</span></div>
+        </div>
+      </div>
+
+      <div class="act-caption">
+        <span class="caption-dot"></span>
+        Semantic field sync: <code>name → first_name + last_name</code>, <code>dob → date_of_birth → birth_date</code>. Four matching tiers, no manual mapping.
       </div>
 
       <div class="nav-row">
         <button class="btn-ghost" onclick="goToScreen(2)">← Back</button>
-        <button class="btn-primary" onclick="goToScreen(4)">Next →</button>
+        <button class="btn-primary" onclick="goToScreen(4)">Next: send a link →</button>
       </div>
     </div>
   </div>
 
-  <!-- ── Screen 4: Forms Fill ── -->
+  <!-- ── Screen 4: ACT 3 — Staff ↔ Patient view toggle ── -->
   <div class="screen" id="screen-4">
     <div class="screen-inner">
-      <h2 class="screen-title">The whole packet. Done in seconds.</h2>
-      <div class="forms-row" id="formsRow">
+      <div class="act-eyebrow">Act 3 of 3</div>
+      <h2 class="screen-title">Send a link. Watch what they see.</h2>
+      <p class="screen-sub">Toggle between the staff view and the patient's phone. Nothing actually sends — this is a view switcher.</p>
 
-        <div class="form-card" id="card-intake">
-          <div class="card-header">
-            <span class="card-icon">📋</span>
-            <span class="card-title">Patient Intake</span>
-            <span class="card-check" id="check-intake">✓</span>
-          </div>
-          <div class="card-lines">
-            <div class="card-line"><span class="line-label">Name</span><span class="line-val" id="fi-name">—</span></div>
-            <div class="card-line"><span class="line-label">DOB</span><span class="line-val" id="fi-dob">—</span></div>
-            <div class="card-line"><span class="line-label">Insurance</span><span class="line-val" id="fi-ins">—</span></div>
-            <div class="card-line"><span class="line-label">Policy #</span><span class="line-val" id="fi-pol">—</span></div>
-          </div>
-        </div>
-
-        <div class="form-card" id="card-insurance">
-          <div class="card-header">
-            <span class="card-icon">🏥</span>
-            <span class="card-title">Insurance Verification</span>
-            <span class="card-check" id="check-insurance">✓</span>
-          </div>
-          <div class="card-lines">
-            <div class="card-line"><span class="line-label">Member</span><span class="line-val" id="fv-name">—</span></div>
-            <div class="card-line"><span class="line-label">Provider</span><span class="line-val" id="fv-ins">—</span></div>
-            <div class="card-line"><span class="line-label">Policy #</span><span class="line-val" id="fv-pol">—</span></div>
-            <div class="card-line"><span class="line-label">DOB</span><span class="line-val" id="fv-dob">—</span></div>
-          </div>
-        </div>
-
-        <div class="form-card" id="card-consent">
-          <div class="card-header">
-            <span class="card-icon">✍️</span>
-            <span class="card-title">Consent Form</span>
-            <span class="card-check" id="check-consent">✓</span>
-          </div>
-          <div class="card-lines">
-            <div class="card-line"><span class="line-label">Patient</span><span class="line-val" id="fc-name">—</span></div>
-            <div class="card-line"><span class="line-label">DOB</span><span class="line-val" id="fc-dob">—</span></div>
-            <div class="card-line"><span class="line-label">Ins. Plan</span><span class="line-val" id="fc-ins">—</span></div>
-            <div class="card-line"><span class="line-label">Date</span><span class="line-val" id="fc-date">—</span></div>
-          </div>
-        </div>
-
+      <div class="view-toggle" role="tablist" aria-label="Switch between staff and patient view">
+        <button type="button" class="vt-btn active" id="vtStaff" role="tab" aria-selected="true" onclick="switchView('staff')">🖥️ Staff view</button>
+        <button type="button" class="vt-btn" id="vtPatient" role="tab" aria-selected="false" onclick="switchView('patient')">📱 Patient view</button>
       </div>
-      <div class="form-tooltip centered-tooltip">
-        <span class="tooltip-dot"></span>
-        Intake. Insurance. Consent. All ready at the same time — no retyping, no consent forms bouncing back for missing initials.
+
+      <!-- STAFF view -->
+      <div class="vt-pane vt-pane-staff active" id="paneStaff">
+        <div class="staff-card">
+          <div class="staff-card-head">
+            <span class="sc-eyebrow">Send forms · Maria Gonzalez</span>
+            <span class="sc-pill">3 forms ready</span>
+          </div>
+          <div class="staff-field">
+            <label class="staff-label">Send via</label>
+            <div class="channel-row">
+              <button type="button" class="channel-btn active" id="chSms" onclick="setChannel('sms')">📱 SMS</button>
+              <button type="button" class="channel-btn" id="chEmail" onclick="setChannel('email')">📧 Email</button>
+            </div>
+          </div>
+          <div class="staff-field">
+            <label class="staff-label" id="contactLabel">Patient phone</label>
+            <input type="text" class="staff-input" id="contactInput" placeholder="(555) 555-0142" autocomplete="off" />
+          </div>
+          <div class="staff-forms-list">
+            <div class="sfl-row"><span class="sfl-check">✓</span> Patient Intake Form</div>
+            <div class="sfl-row"><span class="sfl-check">✓</span> Insurance Verification</div>
+            <div class="sfl-row"><span class="sfl-check">✓</span> Treatment Consent</div>
+          </div>
+          <button type="button" class="btn-primary btn-full" onclick="sendLinkMock()">Send link →</button>
+          <p class="staff-disclaimer">Demo only — no SMS or email is sent. Tap to see what the patient gets.</p>
+
+          <div class="staff-queue" id="staffQueue" hidden>
+            <div class="sq-head">Patient activity</div>
+            <div class="sq-row" id="sqRow"><span class="sq-dot"></span><span class="sq-text">Link sent — waiting for patient…</span></div>
+          </div>
+        </div>
       </div>
+
+      <!-- PATIENT view (phone frame mirroring the real /fill/{token} page) -->
+      <div class="vt-pane vt-pane-patient" id="panePatient" hidden>
+        <div class="phone-frame" aria-label="Patient mobile view">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen" id="phoneScreen">
+
+            <!-- Step A: SMS / email preview -->
+            <div class="phone-step active" id="phStepInbox">
+              <div class="phone-statusbar">9:42</div>
+              <div class="phone-msg-app">
+                <div class="msg-from">Sorta · El Paso Eye Center</div>
+                <div class="msg-body">Hi Maria — please complete your intake before your 9 AM visit:<br><span class="msg-link" onclick="phoneStep('form')">getsorta.io/fill/aB3x9</span></div>
+                <div class="msg-time">10:14 AM</div>
+              </div>
+              <p class="phone-hint">Tap the link to continue →</p>
+            </div>
+
+            <!-- Step B: Fill form (mirrors real /fill/{token} layout) -->
+            <div class="phone-step" id="phStepForm" hidden>
+              <div class="phone-statusbar">9:43</div>
+              <div class="phone-topbar">
+                <div class="phone-brand"><span class="phone-brand-dot"></span>Sorta</div>
+                <span class="phone-save-pill" id="phSavePill">Saved</span>
+              </div>
+              <div class="phone-progress">
+                <div class="phone-progress-meta"><span><strong id="phProgressLabel">Form 1 of 3</strong></span><span id="phProgressPct">0%</span></div>
+                <div class="phone-progress-bar"><div class="phone-progress-fill" id="phProgressFill"></div></div>
+              </div>
+              <div class="phone-form-card">
+                <div class="phone-form-head">
+                  <h3 id="phFormTitle">Patient Intake</h3>
+                  <p>Tap any field. Your answers save automatically.</p>
+                </div>
+                <div class="phone-section">
+                  <h4>Your information</h4>
+                  <label class="phone-field-label">First name</label>
+                  <div class="phone-input-fake" data-fld="firstName" onclick="phoneFillField('firstName')">Maria</div>
+                  <label class="phone-field-label">Last name</label>
+                  <div class="phone-input-fake" data-fld="lastName" onclick="phoneFillField('lastName')">Gonzalez</div>
+                  <label class="phone-field-label">Date of birth</label>
+                  <div class="phone-input-fake" data-fld="dob" onclick="phoneFillField('dob')">03/12/1985</div>
+                </div>
+              </div>
+              <div class="phone-foot">
+                <button type="button" class="phone-btn" onclick="phoneStep('done')">Continue →</button>
+              </div>
+            </div>
+
+            <!-- Step C: Done -->
+            <div class="phone-step" id="phStepDone" hidden>
+              <div class="phone-done-card">
+                <div class="phone-done-icon">✓</div>
+                <h3>You're all set.</h3>
+                <p>Your packet is ready for your visit.</p>
+                <div class="snapshot-stamp">
+                  <span class="ss-label">Immutable submission</span>
+                  <span class="ss-time" id="phStamp">Saved · just now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="act-caption">
+        <span class="caption-dot"></span>
+        Same packet, two views. The patient fills it on their phone — you watch it land in the staff queue.
+      </div>
+
       <div class="nav-row">
         <button class="btn-ghost" onclick="goToScreen(3)">← Back</button>
-        <button class="btn-primary" onclick="goToScreen(5)">Next →</button>
+        <button class="btn-primary" onclick="goToScreen(5)">See the result →</button>
       </div>
     </div>
   </div>
 
-  <!-- ── Screen 5: PDF Ready ── -->
+  <!-- ── Screen 5: Result + CTA ── -->
   <div class="screen" id="screen-5">
-    <div class="screen-inner">
-      <h2 class="screen-title">Ready by the time the patient walks back.</h2>
-      <div class="pdf-preview-card">
-        <div class="pdf-header">
-          <div>
-            <div class="pdf-clinic-name" id="pdfClinicName">El Paso Eye Center</div>
-            <div class="pdf-subtitle">New Patient Intake — Completed</div>
-          </div>
-          <div class="pdf-timestamp" id="pdfTimestamp">Generated: —</div>
-        </div>
-        <table class="pdf-table">
-          <tbody>
-            <tr><td class="pdf-key">Patient Name</td><td class="pdf-val">Maria Gonzalez</td></tr>
-            <tr><td class="pdf-key">Date of Birth</td><td class="pdf-val">03/12/1985</td></tr>
-            <tr><td class="pdf-key">Insurance Provider</td><td class="pdf-val">Blue Cross Blue Shield</td></tr>
-            <tr><td class="pdf-key">Policy Number</td><td class="pdf-val">BCX-4892710</td></tr>
-            <tr><td class="pdf-key">Visit Date</td><td class="pdf-val" id="pdfVisitDate">—</td></tr>
-            <tr><td class="pdf-key">Clinic</td><td class="pdf-val" id="pdfClinicRow">El Paso Eye Center</td></tr>
-            <tr><td class="pdf-key">Status</td><td class="pdf-val pdf-status">✓ Complete</td></tr>
-          </tbody>
-        </table>
-        <div class="pdf-actions">
-          <button class="btn-outline">🖨 Print</button>
-          <button class="btn-outline accent">💾 Save PDF</button>
-        </div>
-      </div>
-      <div class="form-tooltip centered-tooltip">
-        <span class="tooltip-dot"></span>
-        Filled PDFs that match your originals exactly. On the chart before the visit starts.
-      </div>
-      <div class="nav-row">
-        <button class="btn-ghost" onclick="goToScreen(4)">← Back</button>
-        <button class="btn-primary" onclick="goToScreen(6)">Next →</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Screen 6: Result + CTA ── -->
-  <div class="screen" id="screen-6">
     <div class="screen-inner center-layout">
       <img src="/assets/sorta-logo.svg" alt="Sorta" class="logo" />
       <div class="big-stat">45 min → under 5</div>
       <p class="subtext">That's 40 minutes per patient your front desk gets back — every visit, every morning.</p>
-      <div style="max-width:480px;margin:8px auto 20px;padding:14px 18px;border-left:3px solid #02e3d3;background:rgba(2,227,211,0.08);border-radius:0 8px 8px 0;text-align:left">
-        <p style="margin:0;font-size:14px;color:#000054;font-weight:600;font-style:italic;line-height:1.5">"Running Sorta now."</p>
-        <p style="margin:6px 0 0;font-size:12px;color:#475569">— Bryan Williams OD · Optometry · Active 30-day pilot</p>
+      <div class="result-quote">
+        <p class="rq-body">"Running Sorta now."</p>
+        <p class="rq-attr">— Bryan Williams OD · Optometry · Active 30-day pilot</p>
       </div>
       <a class="btn-primary" href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener">Book a Pilot Call →</a>
-      <p style="margin:8px 0 0;font-size:13px;color:#64748b;font-weight:500">30 days free · no credit card · live in under 12 hours</p>
+      <p class="tiny-note">30 days free · no credit card · live in under 12 hours</p>
       <a class="secondary-link" href="mailto:contact@getsorta.io">Questions? Email us → contact@getsorta.io</a>
       <button class="btn-ghost restart-btn" onclick="goToScreen(1)">↩ Restart Demo</button>
     </div>
