@@ -26,7 +26,7 @@
     <div class="screen-inner center-layout">
       <img src="/assets/sorta-logo.svg" alt="Sorta" class="logo" />
       <h1 class="headline">See Sorta in 2 minutes.</h1>
-      <p class="subtext">No login. No setup. Just watch the paperwork disappear.</p>
+      <p class="subtext">You're about to watch 45 minutes of paperwork become under 5. No login. No setup.</p>
       <button class="btn-primary" onclick="goToScreen(2)">Start Demo →</button>
     </div>
   </div>
@@ -34,17 +34,17 @@
   <!-- ── Screen 2: The Problem ── -->
   <div class="screen" id="screen-2">
     <div class="screen-inner">
-      <h2 class="screen-title">The Problem with Today's Workflow</h2>
+      <h2 class="screen-title">This is how most clinics still do paperwork.</h2>
       <div class="split-layout">
         <div class="split-card split-bad">
           <div class="split-icon">✕</div>
           <div class="split-label bad">Without Sorta</div>
-          <p>Patient name typed into EHR. Then intake form. Then insurance form. Then consent form. <strong>Same name. Four times.</strong></p>
+          <p>Patient name typed into the EHR. Then the intake form. Then the insurance form. Then the consent form. <strong>Same name. Four times.</strong></p>
         </div>
         <div class="split-card split-good">
           <div class="split-icon">✓</div>
           <div class="split-label good">With Sorta</div>
-          <p>Patient data entered once. <strong>Every form fills itself instantly.</strong></p>
+          <p>Patient info entered once at check-in. <strong>Every form in the packet is done.</strong></p>
         </div>
       </div>
       <div class="nav-row">
@@ -57,17 +57,17 @@
   <!-- ── Screen 3: Two Paths ── -->
   <div class="screen" id="screen-3">
     <div class="screen-inner">
-      <h2 class="screen-title">Two ways in. One source of truth.</h2>
-      <p class="screen-sub">Pick whatever fits the visit — Sorta handles both.</p>
+      <h2 class="screen-title">Two visits. Same paperwork. Done either way.</h2>
+      <p class="screen-sub">Walk-in or scheduled — Sorta handles both.</p>
 
       <div class="paths-row">
 
         <!-- Path A: Staff entry -->
         <div class="path-card animated-field" style="--delay:0s">
-          <div class="path-badge">Option A</div>
+          <div class="path-badge">Walk-in</div>
           <div class="path-icon">💻</div>
           <h3 class="path-title">Staff enters data</h3>
-          <p class="path-desc">Front desk types patient info once at check-in. Every form fills itself instantly — no retyping across intake, insurance, or consent.</p>
+          <p class="path-desc">Front desk types the patient's info once at check-in. Intake, insurance, consent — every form in the packet picks it up automatically. Nobody retypes anything.</p>
           <div class="mini-form">
             <div class="mini-field"><span class="mini-label">Patient</span><span class="mini-val">Maria Gonzalez</span></div>
             <div class="mini-field"><span class="mini-label">DOB</span><span class="mini-val">03/12/1985</span></div>
@@ -82,10 +82,10 @@
 
         <!-- Path B: Patient self-serve link -->
         <div class="path-card animated-field" style="--delay:0.25s">
-          <div class="path-badge">Option B</div>
+          <div class="path-badge">Scheduled visit</div>
           <div class="path-icon">📱</div>
           <h3 class="path-title">Send patient a link</h3>
-          <p class="path-desc">Text or email a one-time link before the appointment. Patient fills their own info from any device — forms are waiting, complete, when they arrive.</p>
+          <p class="path-desc">Text or email a one-time link before the appointment. Patient fills their own info from any device — the whole packet is waiting, done, when they walk in.</p>
           <div class="sms-bubble-wrap">
             <div class="sms-bubble">
               <div class="sms-from">Sorta · El Paso Eye Center</div>
@@ -100,7 +100,7 @@
 
       <div class="form-tooltip centered-tooltip" style="margin-top:20px">
         <span class="tooltip-dot"></span>
-        Either way, data flows into every form automatically. Staff never types it twice.
+        Either way, the whole packet is ready by check-in. Nobody at your front desk retypes anything.
       </div>
 
       <div class="nav-row">
@@ -113,7 +113,7 @@
   <!-- ── Screen 4: Forms Fill ── -->
   <div class="screen" id="screen-4">
     <div class="screen-inner">
-      <h2 class="screen-title">Every Form Fills Itself.</h2>
+      <h2 class="screen-title">The whole packet. Done in seconds.</h2>
       <div class="forms-row" id="formsRow">
 
         <div class="form-card" id="card-intake">
@@ -161,7 +161,7 @@
       </div>
       <div class="form-tooltip centered-tooltip">
         <span class="tooltip-dot"></span>
-        Every form fills itself. No retyping. No errors.
+        Intake. Insurance. Consent. All ready at the same time — no retyping, no consent forms bouncing back for missing initials.
       </div>
       <div class="nav-row">
         <button class="btn-ghost" onclick="goToScreen(3)">← Back</button>
@@ -173,7 +173,7 @@
   <!-- ── Screen 5: PDF Ready ── -->
   <div class="screen" id="screen-5">
     <div class="screen-inner">
-      <h2 class="screen-title">Print-Ready in Seconds.</h2>
+      <h2 class="screen-title">Ready by the time the patient walks back.</h2>
       <div class="pdf-preview-card">
         <div class="pdf-header">
           <div>
@@ -200,7 +200,7 @@
       </div>
       <div class="form-tooltip centered-tooltip">
         <span class="tooltip-dot"></span>
-        Clean, ready-to-print PDFs in seconds.
+        Filled PDFs that match your originals exactly. On the chart before the visit starts.
       </div>
       <div class="nav-row">
         <button class="btn-ghost" onclick="goToScreen(4)">← Back</button>
@@ -214,8 +214,13 @@
     <div class="screen-inner center-layout">
       <img src="/assets/sorta-logo.svg" alt="Sorta" class="logo" />
       <div class="big-stat">45 min → under 5</div>
-      <p class="subtext">That's how much time independent clinics save on new patient intake with Sorta.</p>
+      <p class="subtext">That's 40 minutes per patient your front desk gets back — every visit, every morning.</p>
+      <div style="max-width:480px;margin:8px auto 20px;padding:14px 18px;border-left:3px solid #02e3d3;background:rgba(2,227,211,0.08);border-radius:0 8px 8px 0;text-align:left">
+        <p style="margin:0;font-size:14px;color:#000054;font-weight:600;font-style:italic;line-height:1.5">"Running Sorta now."</p>
+        <p style="margin:6px 0 0;font-size:12px;color:#475569">— Bryan Williams OD · Optometry · Active 30-day pilot</p>
+      </div>
       <a class="btn-primary" href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener">Book a Pilot Call →</a>
+      <p style="margin:8px 0 0;font-size:13px;color:#64748b;font-weight:500">30 days free · no credit card · live in under 12 hours</p>
       <a class="secondary-link" href="mailto:contact@getsorta.io">Questions? Email us → contact@getsorta.io</a>
       <button class="btn-ghost restart-btn" onclick="goToScreen(1)">↩ Restart Demo</button>
     </div>
