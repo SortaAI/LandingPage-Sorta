@@ -613,7 +613,7 @@
           </div>
           <div class="step-mock-export-btns">
             <button class="step-mock-export-btn step-mock-export-btn--primary" aria-hidden="true">Download ↓</button>
-            <button class="step-mock-export-btn step-mock-export-btn--ghost" aria-hidden="true">Send to EHR</button>
+            <button class="step-mock-export-btn step-mock-export-btn--ghost" aria-hidden="true">Save snapshot</button>
           </div>
         </div>
       </div>
@@ -879,6 +879,10 @@
           </ul>
         </div>
         <div class="demo-form-right">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;margin-bottom:14px;background:rgba(2,227,211,0.10);border:1px solid rgba(2,227,211,0.35);border-radius:9999px;font-size:13px;font-weight:600;color:#000054">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#02e3d3;flex-shrink:0" aria-hidden="true"></span>
+            Emi gets back to you within 24 hours. No auto-responders, no sales team.
+          </div>
           <form id="sorta-demo-form" class="sorta-form" action="/api/contact" method="POST" novalidate>
             <input type="hidden" name="source" value="homepage" />
             <input type="hidden" name="_subject" value="Sorta demo request (homepage)" />
@@ -1138,6 +1142,153 @@
     Apply for the pilot <i class="ph-bold ph-arrow-right"></i>
   </a>
 </div>
+
+<!-- Scroll-triggered demo nudge — appears once per session, after hero exit + idle, dismissable -->
+<div id="demo-nudge" aria-hidden="true" style="
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 80;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  max-width: calc(100vw - 48px);
+">
+  <div style="
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,84,0.10);
+    box-shadow: 0 10px 30px rgba(0,0,84,0.18);
+    border-radius: 9999px;
+    padding: 6px 8px 6px 18px;
+    font-family: 'Poppins', system-ui, sans-serif;
+  ">
+    <a href="/demo" data-track="demo_nudge_click" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #000054;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    ">
+      <span style="
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #02e3d3;
+        animation: dnPulse 1.6s ease-in-out infinite;
+        flex-shrink: 0;
+      "></span>
+      See the 2-min demo
+      <span style="
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #2740fc, #02e3d3);
+        color: #ffffff;
+        border-radius: 50%;
+        font-size: 14px;
+        font-weight: 700;
+      ">→</span>
+    </a>
+    <button id="demo-nudge-close" type="button" aria-label="Dismiss demo nudge" data-track="demo_nudge_dismiss" style="
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 10px;
+      cursor: pointer;
+      border-radius: 9999px;
+      transition: color 0.15s ease, background 0.15s ease;
+      font-family: inherit;
+    " onmouseover="this.style.color='#000054'; this.style.background='#f4f6fa'" onmouseout="this.style.color='#94a3b8'; this.style.background='transparent'">✕</button>
+  </div>
+</div>
+<style>
+@keyframes dnPulse { 0%, 100% { opacity: 0.45; transform: scale(0.9); } 50% { opacity: 1; transform: scale(1.1); } }
+@media (max-width: 640px) {
+  #demo-nudge { bottom: 16px !important; left: 16px !important; right: 16px !important; }
+  #demo-nudge > div { width: 100%; justify-content: space-between; }
+}
+</style>
+<script>
+(function () {
+  'use strict';
+  // Skip if user already dismissed it OR already clicked through to /demo this session
+  if (sessionStorage.getItem('sorta_demo_nudge_seen')) return;
+
+  var nudge = document.getElementById('demo-nudge');
+  var closeBtn = document.getElementById('demo-nudge-close');
+  var hero = document.querySelector('.hero-v2');
+  var formSection = document.getElementById('demo-form');
+  if (!nudge || !hero) return;
+
+  var heroExitedAt = null;
+  var shown = false;
+  var IDLE_MS = 25000;
+  var timer = null;
+
+  function show() {
+    if (shown) return;
+    shown = true;
+    nudge.style.display = 'block';
+    // Force reflow so transition plays
+    void nudge.offsetWidth;
+    nudge.style.opacity = '1';
+    nudge.style.transform = 'translateY(0)';
+    nudge.setAttribute('aria-hidden', 'false');
+  }
+
+  function hide(persist) {
+    nudge.style.opacity = '0';
+    nudge.style.transform = 'translateY(20px)';
+    nudge.setAttribute('aria-hidden', 'true');
+    setTimeout(function () { nudge.style.display = 'none'; }, 350);
+    if (persist) {
+      try { sessionStorage.setItem('sorta_demo_nudge_seen', '1'); } catch (e) {}
+    }
+  }
+
+  // Watch when hero exits the viewport
+  var heroObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) {
+        if (!heroExitedAt) {
+          heroExitedAt = Date.now();
+          // After IDLE_MS of being past the hero, show the pill
+          timer = setTimeout(function () { if (!shown) show(); }, IDLE_MS);
+        }
+      } else if (entry.isIntersecting && !shown && timer) {
+        // User scrolled back to hero before idle — reset
+        clearTimeout(timer);
+        heroExitedAt = null;
+        timer = null;
+      }
+    });
+  }, { threshold: 0.05 });
+  heroObserver.observe(hero);
+
+  // Hide once they reach the demo form (they're engaged — don't badger)
+  if (formSection) {
+    var formObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && shown) hide(true);
+      });
+    }, { threshold: 0.2 });
+    formObserver.observe(formSection);
+  }
+
+  closeBtn.addEventListener('click', function () { hide(true); });
+})();
+</script>
 
 <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
 <script src="js/lottie-init.js"></script>
