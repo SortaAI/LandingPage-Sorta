@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paperwork Automation for Dermatology Clinics | Sorta</title>
+    <meta name="description" content="Dermatology runs two practices at once — medical and cosmetic. Sorta automates both intake stacks: skin history, photo consent, biopsy auth, cosmetic procedure consent. Works on top of Modernizing Medicine, Nextech, EZDERM, or any EHR.">
+    <link rel="canonical" href="https://getsorta.io/specialties/dermatology" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paperwork Automation for Dermatology Clinics | Sorta" />
+    <meta property="og:description" content="Medical and cosmetic dermatology run different intake stacks. Sorta automates both — without changing EMA, Nextech, EZDERM, or your forms." />
+    <meta property="og:url" content="https://getsorta.io/specialties/dermatology" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Sorta" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paperwork Automation for Dermatology Clinics | Sorta" />
+    <meta name="twitter:description" content="Skin history. Photo consent. Biopsy auth. Cosmetic procedure consent. Sorta automates the whole derm packet — without replacing your EHR." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="../js/phosphor.min.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZPS6GNGPXD');
+    </script>
+
+    <!-- 2. Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wor9i7cm6t");
+    </script>
+
+    <!-- 3. Apollo Website Tracker -->
+    <script>
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+        document.head.appendChild(o)
+      }
+      initApollo();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Paperwork Automation for Dermatology Clinics | Sorta",
+      "description": "Dermatology clinics run two practices at once — medical and cosmetic. Sorta automates both intake stacks (skin history, photo consent, biopsy auth, cosmetic procedure consent) without replacing Modernizing Medicine EMA, Nextech, EZDERM, or any other dermatology EHR.",
+      "url": "https://getsorta.io/specialties/dermatology",
+      "specialty": "Dermatology"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I digitize patient intake for a dermatology clinic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Send Sorta the intake packet your clinic already uses — skin history, full-body photo consent, biopsy authorization, cosmetic procedure consent forms. Patients complete intake on a phone link before their appointment. The same demographic, insurance, and history information populates across every form automatically. Your medical and aesthetic teams receive the documents they already know." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with Modernizing Medicine EMA, Nextech, EZDERM, or other dermatology EHRs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta runs completely outside your EHR — no integration, no replacement, no connector to maintain. EMA, Nextech, EZDERM, Practice Fusion, and any other system keep doing what they do. Sorta handles the patient-facing PDF layer that sits on top: intake, consent, authorization, photo release." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sorta handle clinical photography consent and HIPAA photo release forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Clinical photo consent is one of the highest-leverage forms to automate in dermatology — it gets signed on almost every visit and the demographic block is identical to your intake form. Sorta pre-fills patient information on the photo consent at the same time it fills the rest of the packet, so a single sync covers the whole visit. The clinical photographs themselves stay in your EHR — Sorta only handles the consent document." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta handle cosmetic intake and pre-procedure consent forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cosmetic dermatology has its own intake stack — aesthetic goals questionnaire, allergy and medication review (including blood thinners), photo consent, and procedure-specific informed consent for Botox, fillers, lasers, chemical peels, or microneedling. Patients complete the aesthetic intake on their phone before the consult. The shared demographic and medical fields populate across every cosmetic consent automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does setup take for a dermatology practice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Under 12 hours from when you send us your forms. We map every field by hand — medical intake, photo consent, biopsy authorization, cosmetic consents, the works. Your staff learns the sync workflow in about 10 minutes. Most dermatology practices are running it within the week they sign up." }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      /* DERMATOLOGY — split hero + medical/cosmetic two-track layout */
+      :root {
+        --derm-blush: #fef0ee;
+        --derm-warm: #f9b6a8;
+        --derm-deep: #b04b3a;
+      }
+
+      /* HERO — split layout, asymmetric, with form-stack preview */
+      .derm-hero { padding: 130px 0 90px; background: linear-gradient(180deg, var(--color-bg-white) 0%, #fafbfc 100%); border-bottom: 1px solid var(--color-gray-100); overflow: hidden; }
+      .derm-hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: center; }
+      .derm-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--color-electric); font-weight: 700; letter-spacing: 0.1em; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 24px; }
+      .derm-hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--color-electric); display: inline-block; }
+      .derm-hero-h1 { font-size: 3rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.035em; line-height: 1.05; margin: 0 0 22px; }
+      .derm-hero-h1 em { font-style: normal; color: var(--color-electric); }
+      .derm-hero-sub { font-size: 1.125rem; color: var(--color-gray-500); line-height: 1.65; margin: 0 0 32px; max-width: 520px; }
+      .derm-hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+      .derm-hero-fine { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--color-gray-500); }
+      .derm-hero-fine i { color: var(--color-teal); font-size: 1.125rem; }
+
+      /* Hero visual: stacked form preview */
+      .derm-hero-visual { position: relative; min-height: 380px; }
+      .derm-form-card { position: absolute; background: #fff; border: 1px solid var(--color-gray-200); border-radius: 14px; box-shadow: 0 12px 32px rgba(0,0,84,0.08); padding: 20px 24px; }
+      .derm-form-card .fc-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; color: var(--color-gray-400); text-transform: uppercase; }
+      .derm-form-card .fc-title { font-size: 1rem; font-weight: 700; color: var(--color-navy); margin: 4px 0 12px; }
+      .derm-form-card .fc-rows { display: flex; flex-direction: column; gap: 7px; }
+      .derm-form-row { height: 9px; background: #e8edf3; border-radius: 4px; }
+      .derm-form-row.short { width: 60%; }
+      .derm-form-row.medium { width: 80%; }
+      .derm-form-row.filled { background: linear-gradient(90deg, var(--color-teal) 0%, var(--color-teal) 100%); opacity: 0.35; }
+      .derm-form-1 { top: 0; left: 0; width: 88%; z-index: 3; transform: rotate(-2deg); }
+      .derm-form-2 { top: 80px; left: 30px; width: 88%; z-index: 2; transform: rotate(1.5deg); }
+      .derm-form-3 { top: 170px; left: 60px; width: 88%; z-index: 1; transform: rotate(-1deg); }
+      .derm-sync-pill { position: absolute; bottom: -10px; right: 20px; background: var(--color-navy); color: #fff; padding: 10px 18px; border-radius: 9999px; font-size: 0.8125rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 20px rgba(2,227,211,0.4); z-index: 4; }
+      .derm-sync-pill i { color: var(--color-teal); }
+
+      /* TWO-TRACK PAIN SECTION — medical | cosmetic split */
+      .derm-tracks { padding: 110px 0; background: var(--color-bg-white); }
+      .derm-tracks-head { text-align: center; max-width: 680px; margin: 0 auto 60px; }
+      .derm-tracks-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-electric); background: rgba(39,64,252,0.08); padding: 5px 12px; border-radius: 9999px; display: inline-block; margin-bottom: 16px; }
+      .derm-tracks-h2 { font-size: 2.125rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; line-height: 1.2; margin: 0 0 14px; }
+      .derm-tracks-sub { font-size: 1.0625rem; color: var(--color-gray-500); line-height: 1.65; margin: 0; }
+
+      .derm-tracks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+      .derm-track { border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; }
+      .derm-track-medical { background: linear-gradient(160deg, #f0f6ff 0%, #e8eeff 100%); border: 1px solid #d8e3ff; }
+      .derm-track-cosmetic { background: linear-gradient(160deg, var(--derm-blush) 0%, #fde6e1 100%); border: 1px solid #f9d6cd; }
+      .derm-track-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 12px; border-radius: 9999px; margin-bottom: 18px; }
+      .derm-track-medical .derm-track-tag { background: var(--color-electric); color: #fff; }
+      .derm-track-cosmetic .derm-track-tag { background: var(--derm-deep); color: #fff; }
+      .derm-track-h3 { font-size: 1.5rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.02em; line-height: 1.25; margin: 0 0 14px; }
+      .derm-track p { font-size: 1rem; color: var(--color-gray-700, #334155); line-height: 1.7; margin: 0 0 18px; }
+      .derm-track p:last-of-type { margin-bottom: 24px; }
+      .derm-track-forms { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+      .derm-track-forms li { font-size: 0.875rem; color: var(--color-navy); background: rgba(255,255,255,0.7); padding: 9px 14px; border-radius: 8px; display: flex; align-items: center; gap: 10px; }
+      .derm-track-forms li i { color: var(--color-electric); flex-shrink: 0; }
+      .derm-track-cosmetic .derm-track-forms li i { color: var(--derm-deep); }
+
+      /* PHOTO CONSENT CALLOUT — derm-specific section */
+      .derm-photo-callout { padding: 100px 0; background: var(--color-navy); color: #fff; }
+      .derm-photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+      .derm-photo-icon-col { display: flex; justify-content: center; }
+      .derm-photo-icon-wrap { width: 220px; height: 220px; background: rgba(2,227,211,0.08); border: 2px solid rgba(2,227,211,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+      .derm-photo-icon-wrap i { font-size: 5.5rem; color: var(--color-teal); }
+      .derm-photo-tag { display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal); background: rgba(2,227,211,0.12); padding: 6px 12px; border-radius: 9999px; margin-bottom: 18px; }
+      .derm-photo-h2 { font-size: 1.875rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 16px; }
+      .derm-photo-body { font-size: 1.0625rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin: 0 0 14px; }
+      .derm-photo-body:last-child { margin-bottom: 0; }
+      .derm-photo-body strong { color: var(--color-teal); font-weight: 700; }
+
+      /* FORMS SECTION — feature card layout with hero form */
+      .derm-forms-section { padding: 110px 0; background: #fafbfc; }
+      .derm-forms-head { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+      .derm-forms-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-electric); background: rgba(39,64,252,0.08); padding: 5px 12px; border-radius: 9999px; display: inline-block; margin-bottom: 16px; }
+      .derm-forms-h2 { font-size: 2rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; margin: 0 0 12px; line-height: 1.2; }
+      .derm-forms-sub { font-size: 1rem; color: var(--color-gray-500); line-height: 1.6; margin: 0; }
+      .derm-forms-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; max-width: 980px; margin: 0 auto; }
+      .derm-form-hero { background: linear-gradient(135deg, var(--color-navy) 0%, #1a1a8a 100%); color: #fff; border-radius: 16px; padding: 32px 32px; display: flex; flex-direction: column; gap: 14px; }
+      .derm-form-hero-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-teal); }
+      .derm-form-hero h3 { font-size: 1.375rem; font-weight: 800; margin: 0; letter-spacing: -0.01em; }
+      .derm-form-hero p { font-size: 0.9375rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin: 0; }
+      .derm-form-hero-meta { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; gap: 10px; font-size: 0.8125rem; color: var(--color-teal); font-weight: 700; }
+      .derm-form-stack { display: flex; flex-direction: column; gap: 12px; }
+      .derm-form-mini { background: #fff; border: 1px solid var(--color-gray-200); border-radius: 12px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; }
+      .derm-form-mini-icon { width: 36px; height: 36px; background: rgba(39,64,252,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-electric); font-size: 1rem; flex-shrink: 0; }
+      .derm-form-mini h4 { font-size: 0.9375rem; font-weight: 700; color: var(--color-navy); margin: 0 0 3px; line-height: 1.2; }
+      .derm-form-mini p { font-size: 0.8125rem; color: var(--color-gray-500); margin: 0; line-height: 1.45; }
+      .derm-forms-fine { text-align: center; margin: 32px 0 0; font-size: 0.875rem; color: var(--color-gray-500); }
+
+      /* BENEFITS — 3 cards, derm-specific copy */
+      .derm-benefits { padding: 100px 0; background: var(--color-bg-white); }
+      .derm-benefits-h2 { font-size: 2rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; text-align: center; margin: 0 0 48px; line-height: 1.2; }
+      .derm-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+      .derm-benefit { padding: 32px 28px; border-radius: 16px; background: #fff; border: 1px solid var(--color-gray-200); box-shadow: 0 1px 2px rgba(0,0,84,0.03); display: flex; flex-direction: column; gap: 14px; }
+      .derm-benefit-num { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.14em; color: var(--color-electric); }
+      .derm-benefit h3 { font-size: 1.0625rem; font-weight: 700; color: var(--color-navy); margin: 0; line-height: 1.3; }
+      .derm-benefit p { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin: 0; }
+
+      /* EHR pills */
+      .derm-ehr { padding: 90px 0; background: #fafbfc; text-align: center; }
+      .derm-ehr-h2 { font-size: 1.875rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 14px; }
+      .derm-ehr-sub { font-size: 1rem; color: var(--color-gray-500); max-width: 540px; margin: 0 auto 32px; line-height: 1.65; }
+      .derm-ehr-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 18px; }
+      .derm-ehr-pill { background: var(--color-navy); color: #fff; border-radius: 9999px; padding: 8px 18px; font-size: 0.875rem; font-weight: 600; }
+      .derm-ehr-fine { font-size: 0.8125rem; color: var(--color-gray-400); font-style: italic; margin: 0; }
+
+      /* PROOF — stat + archetype (no fabricated quote) */
+      .derm-proof { padding: 100px 0; background: linear-gradient(160deg, var(--derm-blush) 0%, #fff 100%); }
+      .derm-proof-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; max-width: 1000px; margin: 0 auto; }
+      .derm-stat-card { background: #fff; border-radius: 24px; padding: 48px 36px; text-align: center; box-shadow: 0 10px 32px rgba(176,75,58,0.08); border: 1px solid #f9d6cd; }
+      .derm-stat-number { font-size: 5rem; font-weight: 800; color: var(--derm-deep); line-height: 1; letter-spacing: -0.04em; margin: 0; }
+      .derm-stat-label { font-size: 0.95rem; font-weight: 600; color: var(--color-navy); margin: 14px 0 0; line-height: 1.4; }
+      .derm-stat-source { font-size: 0.7rem; color: var(--color-gray-400); margin: 14px 0 0; font-style: italic; }
+      .derm-proof-tag { display: inline-block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--derm-deep); background: rgba(176,75,58,0.1); padding: 6px 12px; border-radius: 9999px; margin-bottom: 16px; }
+      .derm-proof-h2 { font-size: 1.75rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.02em; line-height: 1.25; margin: 0 0 16px; }
+      .derm-proof-body { font-size: 1rem; color: var(--color-gray-700, #334155); line-height: 1.7; margin: 0 0 14px; }
+      .derm-proof-body:last-child { margin-bottom: 0; }
+
+      /* INTAKE PROSE — SEO-rich long-form */
+      .derm-intake { padding: 100px 0; background: var(--color-bg-white); }
+      .derm-intake-inner { max-width: 760px; margin: 0 auto; }
+      .derm-intake h2 { font-size: 1.875rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; margin: 0 0 28px; line-height: 1.25; }
+      .derm-intake p { font-size: 1.0625rem; color: var(--color-gray-500); line-height: 1.75; margin: 0 0 22px; }
+      .derm-intake p:last-child { margin-bottom: 0; }
+
+      /* FAQ */
+      .derm-faq { padding: 100px 0; background: #fafbfc; }
+      .derm-faq-inner { max-width: 760px; margin: 0 auto; }
+      .derm-faq h2 { font-size: 1.875rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; margin: 0 0 12px; }
+      .derm-faq-sub { font-size: 1rem; color: var(--color-gray-500); margin: 0 0 36px; }
+      .derm-faq-list { display: flex; flex-direction: column; gap: 0; }
+      .derm-faq-item { padding: 24px 0; border-bottom: 1px solid var(--color-gray-200); }
+      .derm-faq-item:last-child { border-bottom: none; }
+      .derm-faq-q { font-size: 1.0625rem; font-weight: 700; color: var(--color-navy); margin: 0 0 10px; }
+      .derm-faq-a { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.7; margin: 0; }
+
+      /* RELATED */
+      .derm-related { padding: 80px 0; background: var(--color-bg-white); border-top: 1px solid var(--color-gray-100); }
+      .derm-related-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-electric); background: rgba(39,64,252,0.08); padding: 5px 12px; border-radius: 9999px; margin-bottom: 14px; }
+      .derm-related h2 { font-size: 1.625rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 8px; }
+      .derm-related p.sub { font-size: 0.9375rem; color: var(--color-gray-500); margin: 0 0 28px; max-width: 560px; line-height: 1.55; }
+      .derm-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .derm-related-card { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--color-gray-200); border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,84,0.03); padding: 22px; text-decoration: none; transition: box-shadow 0.18s, transform 0.18s; }
+      .derm-related-card:hover { box-shadow: 0 8px 24px rgba(0,0,84,0.08); transform: translateY(-2px); }
+      .derm-related-card i { font-size: 1.5rem; color: var(--color-electric); margin-bottom: 6px; }
+      .derm-related-card .name { font-size: 1rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.01em; }
+      .derm-related-card .desc { font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.55; }
+
+      /* CTA — softer than other pages, no dark gradient */
+      .derm-cta { padding: 100px 24px; background: linear-gradient(160deg, var(--color-navy) 0%, #0d0080 100%); text-align: center; }
+      .derm-cta-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.15); border: 1px solid rgba(2,227,211,0.3); border-radius: 9999px; padding: 8px 18px; font-size: 0.8125rem; color: var(--color-teal); margin-bottom: 24px; font-weight: 600; }
+      .derm-cta-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-teal); display: inline-block; }
+      .derm-cta h2 { font-size: 2.25rem; font-weight: 800; color: #fff; margin: 0 0 14px; letter-spacing: -0.025em; }
+      .derm-cta p { font-size: 1.0625rem; color: rgba(255,255,255,0.7); max-width: 540px; margin: 0 auto 30px; line-height: 1.65; }
+      .derm-cta-fine { margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.4); }
+
+      /* Mobile */
+      @media (max-width: 920px) {
+        .derm-hero-grid { grid-template-columns: 1fr; gap: 60px; }
+        .derm-hero-h1 { font-size: 2.25rem; }
+        .derm-hero-visual { min-height: 320px; margin-top: 20px; }
+        .derm-tracks-grid { grid-template-columns: 1fr; gap: 20px; }
+        .derm-tracks-h2, .derm-photo-h2, .derm-benefits-h2, .derm-cta h2 { font-size: 1.75rem; }
+        .derm-photo-grid { grid-template-columns: 1fr; gap: 36px; }
+        .derm-photo-icon-wrap { width: 160px; height: 160px; }
+        .derm-photo-icon-wrap i { font-size: 4rem; }
+        .derm-forms-layout { grid-template-columns: 1fr; }
+        .derm-benefits-grid { grid-template-columns: 1fr; }
+        .derm-proof-grid { grid-template-columns: 1fr; gap: 36px; }
+        .derm-related-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 580px) {
+        .derm-hero { padding: 90px 0 60px; }
+        .derm-hero-h1 { font-size: 1.875rem; }
+        .derm-tracks, .derm-photo-callout, .derm-forms-section, .derm-benefits, .derm-ehr, .derm-proof, .derm-intake, .derm-faq { padding: 64px 0; }
+        .derm-cta { padding: 64px 24px; }
+        .derm-stat-number { font-size: 3.5rem; }
+        .derm-track { padding: 28px 24px; }
+      }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="/" class="nav-brand" aria-label="Home">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="/how-it-works">How it Works</a></li>
+                <li><a href="/already-digital">Already Digital?</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="/specialties" class="nav-dropdown-trigger" aria-current="page">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-cols">
+                            <div class="nav-dropdown-col">
+                                <a href="/specialties/dermatology">Dermatology</a>
+                                <a href="/specialties/cardiology">Cardiology</a>
+                                <a href="/specialties/optometry">Ophthalmology</a>
+                                <a href="/specialties/nephrology">Nephrology</a>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <a href="/specialties/physical-therapy">Physical Therapy</a>
+                                <a href="/specialties/mental-health">Mental Health</a>
+                                <a href="/specialties/behavioral-health">Behavioral Health</a>
+                                <a href="/specialties">All Specialties →</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="/how-it-works">How it Works</a>
+        <a href="/already-digital">Already Digital?</a>
+        <div class="mobile-nav-group">
+          <button class="mobile-nav-expand" type="button" aria-expanded="false">
+            Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
+          </button>
+          <div class="mobile-nav-sub" hidden>
+            <a href="/specialties/dermatology">Dermatology</a>
+            <a href="/specialties/cardiology">Cardiology</a>
+            <a href="/specialties/optometry">Ophthalmology</a>
+            <a href="/specialties/nephrology">Nephrology</a>
+            <a href="/specialties/physical-therapy">Physical Therapy</a>
+            <a href="/specialties/mental-health">Mental Health</a>
+            <a href="/specialties/behavioral-health">Behavioral Health</a>
+            <a href="/specialties">All Specialties →</a>
+          </div>
+        </div>
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+        <!-- SPLIT HERO -->
+        <section class="derm-hero">
+            <div class="container">
+                <div class="derm-hero-grid">
+                    <div class="animate-on-scroll fade-up">
+                        <span class="derm-hero-eyebrow">DERMATOLOGY</span>
+                        <h1 class="derm-hero-h1">Two practices. One <em>intake layer.</em> Zero retyping.</h1>
+                        <p class="derm-hero-sub">Dermatology runs two clinics under one roof — medical and cosmetic. Each has its own intake stack, its own consents, its own auth paperwork. Sorta automates both without changing the EHR your providers already use.</p>
+                        <div class="derm-hero-actions">
+                            <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="derm_hero_cta">See it with your derm forms →</a>
+                            <span class="derm-hero-fine"><i class="ph-bold ph-check-circle"></i>Same-day setup</span>
+                        </div>
+                    </div>
+                    <div class="derm-hero-visual animate-on-scroll fade-up" aria-hidden="true">
+                        <div class="derm-form-card derm-form-1">
+                            <div class="fc-label">Form 01</div>
+                            <div class="fc-title">Skin History &amp; Symptom Intake</div>
+                            <div class="fc-rows"><div class="derm-form-row filled"></div><div class="derm-form-row filled medium"></div><div class="derm-form-row short"></div></div>
+                        </div>
+                        <div class="derm-form-card derm-form-2">
+                            <div class="fc-label">Form 02</div>
+                            <div class="fc-title">Clinical Photo Consent</div>
+                            <div class="fc-rows"><div class="derm-form-row filled"></div><div class="derm-form-row filled short"></div></div>
+                        </div>
+                        <div class="derm-form-card derm-form-3">
+                            <div class="fc-label">Form 03</div>
+                            <div class="fc-title">Biopsy Authorization</div>
+                            <div class="fc-rows"><div class="derm-form-row filled medium"></div><div class="derm-form-row filled"></div></div>
+                        </div>
+                        <div class="derm-sync-pill"><i class="ph-bold ph-lightning"></i>1 sync · 3 forms</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TWO-TRACK PAIN SECTION -->
+        <section class="derm-tracks">
+            <div class="container">
+                <div class="derm-tracks-head animate-on-scroll fade-up">
+                    <span class="derm-tracks-eyebrow">The dermatology problem</span>
+                    <h2 class="derm-tracks-h2">No other specialty runs two intake stacks side-by-side.</h2>
+                    <p class="derm-tracks-sub">Same waiting room. Same staff. Completely different paperwork.</p>
+                </div>
+                <div class="derm-tracks-grid">
+                    <div class="derm-track derm-track-medical animate-on-scroll fade-up">
+                        <span class="derm-track-tag"><i class="ph-bold ph-stethoscope"></i>Medical dermatology</span>
+                        <h3 class="derm-track-h3">Skin checks, biopsies, suspicious lesions, insurance authorizations.</h3>
+                        <p>The medical-side patient walks in for a full-body skin check or a follow-up on a flagged mole. They need a skin history form, a current medication list, a clinical photography consent, a biopsy authorization if anything looks off, and an insurance verification — usually before they sit in the exam chair.</p>
+                        <ul class="derm-track-forms">
+                            <li><i class="ph-bold ph-file-text"></i>Skin history &amp; symptom intake</li>
+                            <li><i class="ph-bold ph-file-text"></i>Full-body photo consent</li>
+                            <li><i class="ph-bold ph-file-text"></i>Biopsy &amp; pathology authorization</li>
+                            <li><i class="ph-bold ph-file-text"></i>Insurance + ROI from PCP</li>
+                        </ul>
+                    </div>
+                    <div class="derm-track derm-track-cosmetic animate-on-scroll fade-up">
+                        <span class="derm-track-tag"><i class="ph-bold ph-sparkle"></i>Cosmetic dermatology</span>
+                        <h3 class="derm-track-h3">Aesthetic goals, allergy review, procedure-specific consent on every visit.</h3>
+                        <p>The cosmetic patient comes in for Botox, fillers, lasers, peels, or microneedling. They fill out an aesthetic goals questionnaire, a blood-thinner and allergy review, a separate photo consent (different from the medical one), and a procedure-specific informed consent every single time. Most of these are signed on paper, in the waiting room, at the worst possible moment.</p>
+                        <ul class="derm-track-forms">
+                            <li><i class="ph-bold ph-file-text"></i>Aesthetic goals questionnaire</li>
+                            <li><i class="ph-bold ph-file-text"></i>Blood-thinner &amp; allergy review</li>
+                            <li><i class="ph-bold ph-file-text"></i>Procedure-specific consent (Botox / filler / laser)</li>
+                            <li><i class="ph-bold ph-file-text"></i>Aesthetic photo release</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTO CONSENT CALLOUT -->
+        <section class="derm-photo-callout">
+            <div class="container">
+                <div class="derm-photo-grid">
+                    <div class="derm-photo-icon-col animate-on-scroll fade-up" aria-hidden="true">
+                        <div class="derm-photo-icon-wrap">
+                            <i class="ph-bold ph-camera"></i>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll fade-up">
+                        <span class="derm-photo-tag">Derm-specific</span>
+                        <h2 class="derm-photo-h2">Clinical photography consent — signed correctly, every visit.</h2>
+                        <p class="derm-photo-body">Almost every derm visit produces clinical images. Almost every one requires a fresh consent. Patients sign a photo release on their first visit, then a procedure-specific release for cosmetic work, then a separate release if images go into a teaching deck or case study.</p>
+                        <p class="derm-photo-body">When intake lives on a clipboard, the photo consent is the one that gets skipped, signed in the wrong place, or filed in the wrong patient's chart. Sorta pre-fills the patient's name, date of birth, and visit context on every photo consent in your packet — so the form gets signed correctly the first time. <strong>The clinical photographs themselves stay in your EHR.</strong> Sorta only handles the consent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMS SECTION — hero form + mini stack -->
+        <section class="derm-forms-section">
+            <div class="container">
+                <div class="derm-forms-head animate-on-scroll fade-up">
+                    <span class="derm-forms-eyebrow">Day-one packet</span>
+                    <h2 class="derm-forms-h2">The dermatology packet we map on day one.</h2>
+                    <p class="derm-forms-sub">Every derm practice ships some version of these. Send us yours — we map every field by hand.</p>
+                </div>
+                <div class="derm-forms-layout">
+                    <div class="derm-form-hero animate-on-scroll fade-up">
+                        <span class="derm-form-hero-tag">★ Most-signed form</span>
+                        <h3>Clinical Photography Consent</h3>
+                        <p>Pre-filled with patient name, date of birth, visit date, and provider on every appointment. Signed digitally, attached to the visit, stored with audit-grade snapshot. Works for full-body skin checks, biopsies, and cosmetic before/afters.</p>
+                        <div class="derm-form-hero-meta"><i class="ph-bold ph-check-circle"></i>Signed at intake — not in the exam chair</div>
+                    </div>
+                    <div class="derm-form-stack">
+                        <div class="derm-form-mini animate-on-scroll fade-up">
+                            <div class="derm-form-mini-icon"><i class="ph-bold ph-file-text"></i></div>
+                            <div>
+                                <h4>Skin History Intake</h4>
+                                <p>Personal &amp; family Hx, current symptoms, sun exposure, prior treatments.</p>
+                            </div>
+                        </div>
+                        <div class="derm-form-mini animate-on-scroll fade-up">
+                            <div class="derm-form-mini-icon"><i class="ph-bold ph-file-text"></i></div>
+                            <div>
+                                <h4>Biopsy Authorization</h4>
+                                <p>Procedure consent + pathology routing — demographics already filled.</p>
+                            </div>
+                        </div>
+                        <div class="derm-form-mini animate-on-scroll fade-up">
+                            <div class="derm-form-mini-icon"><i class="ph-bold ph-file-text"></i></div>
+                            <div>
+                                <h4>Cosmetic Procedure Consent</h4>
+                                <p>Botox, fillers, lasers, chemical peels — per-procedure template, auto-populated.</p>
+                            </div>
+                        </div>
+                        <div class="derm-form-mini animate-on-scroll fade-up">
+                            <div class="derm-form-mini-icon"><i class="ph-bold ph-file-text"></i></div>
+                            <div>
+                                <h4>Aesthetic Intake &amp; Allergy Review</h4>
+                                <p>Goals, medications, blood thinners, prior aesthetic Hx — entered once.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="derm-forms-fine">Send us the packet you already use. We map every field by hand in under 12 hours.</p>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="derm-benefits">
+            <div class="container">
+                <h2 class="derm-benefits-h2 animate-on-scroll fade-up">What changes in a dermatology clinic running Sorta.</h2>
+                <div class="derm-benefits-grid">
+                    <div class="derm-benefit animate-on-scroll fade-up">
+                        <span class="derm-benefit-num">01</span>
+                        <h3>Photo consent stops being a paper problem.</h3>
+                        <p>Pre-filled at intake, signed digitally, attached to the visit. No more chasing signatures in the exam chair or filing a release in the wrong chart.</p>
+                    </div>
+                    <div class="derm-benefit animate-on-scroll fade-up">
+                        <span class="derm-benefit-num">02</span>
+                        <h3>Medical and cosmetic intake share one entry.</h3>
+                        <p>Demographics, allergies, medications — entered by the patient once. Populates across skin-history forms, photo consents, biopsy auth, and cosmetic procedure consents in a single sync.</p>
+                    </div>
+                    <div class="derm-benefit animate-on-scroll fade-up">
+                        <span class="derm-benefit-num">03</span>
+                        <h3>Front desk reclaims their morning.</h3>
+                        <p>The longest derm packets — full-body skin checks, post-biopsy follow-ups, multi-procedure cosmetic visits — get filled before the patient walks in. Staff signs them off; they don't type them up.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EHR PILLS -->
+        <section class="derm-ehr">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="derm-ehr-h2">Works on top of whatever derm EHR you already run.</h2>
+                <p class="derm-ehr-sub">Sorta doesn't integrate with your EHR — it sits completely outside it. Your EHR keeps doing what it does. Sorta handles the patient-facing PDF layer.</p>
+                <div class="derm-ehr-pills">
+                    <span class="derm-ehr-pill">Modernizing Medicine EMA</span>
+                    <span class="derm-ehr-pill">Nextech</span>
+                    <span class="derm-ehr-pill">EZDERM</span>
+                    <span class="derm-ehr-pill">Practice Fusion</span>
+                    <span class="derm-ehr-pill">eClinicalWorks</span>
+                    <span class="derm-ehr-pill">Any other system</span>
+                </div>
+                <p class="derm-ehr-fine">Don't see yours? If it runs on a computer, Sorta works on top of it.</p>
+            </div>
+        </section>
+
+        <!-- PROOF — stat + archetype (no fabricated quote) -->
+        <section class="derm-proof">
+            <div class="container">
+                <div class="derm-proof-grid">
+                    <div class="derm-stat-card animate-on-scroll fade-up">
+                        <p class="derm-stat-number">1 in 5</p>
+                        <p class="derm-stat-label">Americans will be diagnosed with skin cancer by age 70.</p>
+                        <p class="derm-stat-source">Source: Skin Cancer Foundation, 2024</p>
+                    </div>
+                    <div class="animate-on-scroll fade-up">
+                        <span class="derm-proof-tag">What we hear from derm clinics</span>
+                        <h2 class="derm-proof-h2">Volume keeps climbing. Intake stays on clipboards.</h2>
+                        <p class="derm-proof-body">Dermatology demand grows every year — skin-check volume, cosmetic procedure volume, post-biopsy follow-ups. The exam rooms scale. The front desk doesn't.</p>
+                        <p class="derm-proof-body">The clinic owners we talk to don't want a new EHR. They want the medical-cosmetic intake stack to stop swallowing the morning. That's the entire job Sorta is built for.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LONG-FORM INTAKE PROSE (SEO) -->
+        <section class="derm-intake">
+            <div class="container">
+                <div class="derm-intake-inner animate-on-scroll fade-up">
+                    <h2>What dermatology patient intake typically includes</h2>
+                    <p>Dermatology intake is unusual because most clinics run two distinct workflows from the same front desk. Medical dermatology patients — full-body skin checks, suspicious lesion follow-ups, acne, eczema, psoriasis — typically complete a skin and family history form, a current medication list, a clinical photography consent, a HIPAA notice, and an insurance authorization. Patients flagged for biopsy add a procedure consent and pathology routing form on the same visit.</p>
+                    <p>Cosmetic dermatology patients — Botox, fillers, lasers, chemical peels, microneedling — complete a separate aesthetic intake. That packet includes an aesthetic goals questionnaire, a blood-thinner and supplement review (anticoagulants change procedure scheduling), an aesthetic photo release distinct from the medical one, and a procedure-specific informed consent that gets re-signed on every visit. The shared fields across both stacks — name, date of birth, address, insurance details, allergies, current medications — get typed by staff into every form separately when intake lives on a clipboard.</p>
+                    <p>Sorta maps a single patient submission against every form in your packet — medical, cosmetic, photo consent, biopsy authorization, procedure consent — and populates all of them on a single sync. Patients arrive with everything done; your medical and aesthetic teams receive the documents they already know.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="derm-faq">
+            <div class="container">
+                <div class="derm-faq-inner animate-on-scroll fade-up">
+                    <h2>Common questions from dermatology practices</h2>
+                    <p class="derm-faq-sub">What clinic owners, practice managers, and medical aesthetic coordinators actually ask us.</p>
+                    <div class="derm-faq-list">
+                        <div class="derm-faq-item">
+                            <p class="derm-faq-q">How do I digitize patient intake for a dermatology clinic?</p>
+                            <p class="derm-faq-a">Send Sorta the intake packet your clinic already uses — skin history, full-body photo consent, biopsy authorization, cosmetic procedure consent forms. Patients complete intake on a phone link before their appointment. The same demographic, insurance, and history information populates across every form automatically. Your medical and aesthetic teams receive the documents they already know.</p>
+                        </div>
+                        <div class="derm-faq-item">
+                            <p class="derm-faq-q">Does Sorta work with Modernizing Medicine EMA, Nextech, EZDERM, or other dermatology EHRs?</p>
+                            <p class="derm-faq-a">Yes. Sorta runs completely outside your EHR — no integration, no replacement, no connector to maintain. EMA, Nextech, EZDERM, Practice Fusion, and any other system keep doing what they do. Sorta handles the patient-facing PDF layer that sits on top: intake, consent, authorization, photo release.</p>
+                        </div>
+                        <div class="derm-faq-item">
+                            <p class="derm-faq-q">Can Sorta handle clinical photography consent and HIPAA photo release forms?</p>
+                            <p class="derm-faq-a">Yes. Clinical photo consent is one of the highest-leverage forms to automate in dermatology — it gets signed on almost every visit and the demographic block is identical to your intake form. Sorta pre-fills patient information on the photo consent at the same time it fills the rest of the packet, so a single sync covers the whole visit. The clinical photographs themselves stay in your EHR — Sorta only handles the consent document.</p>
+                        </div>
+                        <div class="derm-faq-item">
+                            <p class="derm-faq-q">Does Sorta handle cosmetic intake and pre-procedure consent forms?</p>
+                            <p class="derm-faq-a">Yes. Cosmetic dermatology has its own intake stack — aesthetic goals questionnaire, allergy and medication review (including blood thinners), photo consent, and procedure-specific informed consent for Botox, fillers, lasers, chemical peels, or microneedling. Patients complete the aesthetic intake on their phone before the consult. The shared demographic and medical fields populate across every cosmetic consent automatically.</p>
+                        </div>
+                        <div class="derm-faq-item">
+                            <p class="derm-faq-q">How long does setup take for a dermatology practice?</p>
+                            <p class="derm-faq-a">Under 12 hours from when you send us your forms. We map every field by hand — medical intake, photo consent, biopsy authorization, cosmetic consents, the works. Your staff learns the sync workflow in about 10 minutes. Most dermatology practices are running it within the week they sign up.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELATED -->
+        <section class="derm-related">
+            <div class="container animate-on-scroll fade-up">
+                <span class="derm-related-tag">Related specialties</span>
+                <h2>Other paperwork-heavy outpatient specialties.</h2>
+                <p class="sub">Same outside-the-EHR problem. Different form stack.</p>
+                <div class="derm-related-grid">
+                    <a href="/specialties/cardiology" class="derm-related-card">
+                        <i class="ph-bold ph-heart"></i>
+                        <span class="name">Cardiology</span>
+                        <span class="desc">Cardiac history, risk factor questionnaires, prior auth packets.</span>
+                    </a>
+                    <a href="/specialties/optometry" class="derm-related-card">
+                        <i class="ph-bold ph-eye"></i>
+                        <span class="name">Optometry</span>
+                        <span class="desc">Vision history, contact lens, insurance auth, ROI.</span>
+                    </a>
+                    <a href="/specialties/mental-health" class="derm-related-card">
+                        <i class="ph-bold ph-brain"></i>
+                        <span class="name">Mental Health</span>
+                        <span class="desc">PHQ-9, GAD-7, biopsychosocial, consent forms.</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="derm-cta">
+            <div class="container animate-on-scroll fade-up">
+                <div class="derm-cta-badge">
+                    <span class="dot"></span>
+                    Free 30-day pilot — no credit card required
+                </div>
+                <h2>See it with your actual medical and cosmetic forms.</h2>
+                <p>We don't do generic demos. Send us your real skin-history, photo consent, and cosmetic procedure templates — we'll show you Sorta filling them on your first call.</p>
+                <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="derm_cta_demo" style="background: var(--color-teal); color: var(--color-navy); font-weight: 700; font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; border: none;">
+                    Book a demo <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <p class="derm-cta-fine">No contracts. Cancel anytime.</p>
+                <a href="/demo" class="cta-demo-secondary" data-track="derm_cta_see_demo">or watch the 2-minute demo →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-v2" aria-labelledby="footer-brand">
+      <div class="footer-v2-inner">
+        <div class="footer-v2-grid">
+          <div>
+            <div class="footer-v2-logo">
+              <img src="../assets/sorta-logo.svg" alt="Sorta logo" width="110" height="36" loading="lazy" />
+            </div>
+            <p class="footer-v2-blurb">The paperwork automation layer for independent outpatient clinics. Bootstrapped from El Paso, TX.</p>
+            <div class="footer-v2-contact">
+              <div><strong>hello@getsorta.io</strong></div>
+              <div style="margin-top:4px">El Paso, TX · USA</div>
+            </div>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Main pages</span>
+            <nav class="footer-v2-links" aria-label="Main pages">
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/how-it-works">How it Works</a>
+              <a href="/pricing">Pricing</a>
+              <a href="/blog">Blog</a>
+            </nav>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Product</span>
+            <nav class="footer-v2-links" aria-label="Product">
+              <a href="/how-it-works">How it works</a>
+              <a href="/already-digital">Already digital?</a>
+              <a href="/specialties">Specialties</a>
+              <a href="/pricing">Pricing</a>
+              <a href="/#faq">FAQ</a>
+            </nav>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Specialties</span>
+            <nav class="footer-v2-links" aria-label="Specialties">
+              <a href="/specialties/dermatology">Dermatology</a>
+              <a href="/specialties/cardiology">Cardiology</a>
+              <a href="/specialties/optometry">Optometry</a>
+              <a href="/specialties/physical-therapy">Physical Therapy</a>
+              <a href="/specialties/mental-health">Mental Health</a>
+              <a href="/specialties/nephrology">Nephrology</a>
+            </nav>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Legal</span>
+            <nav class="footer-v2-links" aria-label="Legal">
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms of Service</a>
+              <a href="/hipaa">HIPAA Compliance</a>
+              <a href="/cookies">Cookie Policy</a>
+              <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin">LinkedIn</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-v2-bottom">
+          <span>&#169; 2026 Sorta, Inc. All rights reserved.</span>
+          <div class="footer-v2-legal">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/hipaa">HIPAA</a>
+            <a href="/cookies">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.mobile-nav-expand').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var sub = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (sub) sub.hidden = expanded;
+          });
+        });
+      });
+    </script>
+<!-- Demo Popup -->
+<div class="popup-overlay" id="demo-popup-overlay" hidden aria-modal="true" role="dialog" aria-labelledby="popup-heading">
+  <div class="popup-modal" id="demo-popup-modal">
+    <button class="popup-close" id="popup-close-btn" aria-label="Close popup">✕</button>
+    <div class="popup-left">
+      <span class="popup-left-eyebrow">Pilot Program — Limited Spots</span>
+      <h2 id="popup-heading">Try it free for 30 days with your actual forms</h2>
+      <p>We're a small team onboarding our first clinics. We're not doing a generic demo and asking for a credit card — we want to earn it.</p>
+      <p>Here's what the pilot actually is: we take your real forms, configure everything ourselves, and your staff runs it for 30 days. At the end, if it didn't save your front desk real time, you walk away and owe us nothing. If it did, we talk about next steps then.</p>
+      <ul class="popup-trust-list">
+        <li><span class="popup-trust-check">✓</span> 30 days completely free</li>
+        <li><span class="popup-trust-check">✓</span> We configure your real forms — you don't touch anything</li>
+        <li><span class="popup-trust-check">✓</span> No credit card, no contract</li>
+        <li><span class="popup-trust-check">✓</span> Only pay if it genuinely saves your staff time</li>
+      </ul>
+    </div>
+    <div class="popup-right">
+      <form id="sorta-popup-form" class="sorta-form" novalidate>
+        <input type="hidden" name="source" value="specialties-dermatology" />
+        <input type="hidden" name="_subject" value="Sorta demo request (specialties-dermatology)" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pf-name">Your name</label>
+            <input type="text" id="pf-name" name="name" placeholder="Maria Torres" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="pf-clinic">Clinic name</label>
+            <input type="text" id="pf-clinic" name="clinic" placeholder="El Paso Dermatology" required autocomplete="organization" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pf-email">Work email</label>
+          <input type="email" id="pf-email" name="email" placeholder="you@yourclinic.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="pf-phone">Phone <span class="optional">(optional)</span></label>
+          <input type="tel" id="pf-phone" name="phone" placeholder="(915) 555-0100" autocomplete="tel" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-large pill popup-submit-btn demo-submit-btn" data-track="popup_form_submit">
+          <span class="submit-label">Apply for the pilot <i class="ph-bold ph-arrow-right"></i></span>
+          <span class="submit-sending" hidden><span class="btn-spinner" aria-hidden="true"></span> Sending…</span>
+          <span class="submit-sent" hidden><span class="btn-check" aria-hidden="true"></span> You're in — we'll reach out soon</span>
+        </button>
+        <p class="form-disclaimer">No credit card. No contracts. Emi will reach out personally within 24 hours.</p>
+        <p class="form-error hidden" id="pf-error" role="status">Something went wrong — please try again.</p>
+        <p class="form-success hidden" id="pf-success" role="status">✓ Got it! We will be in touch within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="../js/popup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paperwork Automation for Orthopedic &amp; Sports Medicine Clinics | Sorta</title>
+    <meta name="description" content="Orthopedics runs two paperwork stacks per surgical patient — pre-op clearance and post-op care plans. Sorta automates injury history, DME orders, prior auth packets, and surgical consent across both phases, on top of athenaOne Orthopedics, Modernizing Medicine, or any EHR.">
+    <link rel="canonical" href="https://getsorta.io/specialties/orthopedics" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Paperwork Automation for Orthopedic &amp; Sports Medicine Clinics | Sorta" />
+    <meta property="og:description" content="Pre-op clearance. Post-op care plans. DME orders. Imaging prior auth. Sorta automates the full orthopedic paperwork stack without replacing your EHR." />
+    <meta property="og:url" content="https://getsorta.io/specialties/orthopedics" />
+    <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Sorta" />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paperwork Automation for Orthopedic &amp; Sports Medicine Clinics | Sorta" />
+    <meta name="twitter:description" content="Pre-op + post-op packets, DME orders, prior auth for MRI/surgery — Sorta handles the whole orthopedic paperwork stack." />
+    <meta name="twitter:image" content="https://getsorta.io/assets/og-image.jpg" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="../js/phosphor.min.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPS6GNGPXD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZPS6GNGPXD');
+    </script>
+
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wor9i7cm6t");
+    </script>
+
+    <script>
+      function initApollo(){
+        var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+        o.onload=function(){window.trackingFunctions.onLoad({appId:"698ac18018aaac00157ed67f"})},
+        document.head.appendChild(o)
+      }
+      initApollo();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Paperwork Automation for Orthopedic & Sports Medicine Clinics | Sorta",
+      "description": "Orthopedics runs two paperwork phases per surgical patient — pre-op clearance and post-op care. Sorta automates injury history, DME orders, prior auth, surgical consent, and post-op packets across both phases, without replacing athenaOne Orthopedics, Modernizing Medicine, NextGen, or any other orthopedic EHR.",
+      "url": "https://getsorta.io/specialties/orthopedics",
+      "specialty": "Orthopedics"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I automate patient intake for an orthopedic or sports medicine clinic?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Send Sorta the intake packet your practice already uses — injury history, mechanism-of-injury form, pain/function scales, imaging order, DME order, surgical consent, post-op care plan. Patients complete intake on a phone link before their visit. Demographic, insurance, and history fields populate across every form on a single sync. Pre-op and post-op packets share the same underlying data, so you stop re-entering the same patient block at every phase of care." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta work with athenaOne Orthopedics, Modernizing Medicine, NextGen, or other orthopedic EHRs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sorta runs completely outside your EHR — no integration, no replacement. athenaOne Orthopedics, Modernizing Medicine ortho, NextGen, eClinicalWorks, Epic, and any other system keep doing clinical documentation, scheduling, and billing. Sorta handles the patient-facing PDF layer that sits on top: intake, consent, imaging orders, DME orders, prior auth, post-op." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sorta handle pre-op clearance packets and surgical consent forms?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The pre-op packet is one of the longest in outpatient medicine — surgical history, current medications including anticoagulants, allergy review, anesthesia screening, surgical consent, and the imaging and labs that have to be on file before the OR. Sorta pre-fills the patient demographic and medical history block across every form in the pre-op packet on a single sync, so your surgical coordinator only handles the clinical and scheduling pieces manually." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Sorta handle DME orders and prior authorization for MRI and surgery?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. DME orders (braces, walkers, boots, CPM machines) and imaging prior auth (MRI, MRA, CT, surgical prior auth) all share the same patient demographic and insurance block as your intake. Sorta pre-fills that block automatically. Your prior auth staff only writes the clinical justification — they stop typing names and member IDs onto every fresh form." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Sorta take to set up for an orthopedic practice?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Under 12 hours from when you send us your forms. We map every field by hand — intake, pre-op clearance, surgical consent, DME orders, post-op care plans. Your staff and surgical coordinators learn the workflow in about 10 minutes. Most orthopedic practices are running it the week they sign up." }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      /* ORTHOPEDICS — pre-op/post-op two-track hero + surgical timeline */
+      :root {
+        --ortho-steel: #2c3e58;
+        --ortho-accent: #f97316;
+        --ortho-bone: #fff7ed;
+        --ortho-mist: #edf2f7;
+      }
+
+      /* HERO — split two-track (pre-op | post-op) */
+      .ortho-hero { padding: 120px 0 80px; background: var(--color-bg-white); border-bottom: 1px solid var(--color-gray-100); position: relative; overflow: hidden; }
+      .ortho-hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(180deg, var(--ortho-bone) 0%, #fff 100%); z-index: 0; }
+      .ortho-hero .container { position: relative; z-index: 1; }
+      .ortho-hero-top { text-align: center; max-width: 760px; margin: 0 auto 56px; }
+      .ortho-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--ortho-accent); font-weight: 700; letter-spacing: 0.1em; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 20px; }
+      .ortho-hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--ortho-accent); display: inline-block; }
+      .ortho-hero-h1 { font-size: 3rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.03em; line-height: 1.08; margin: 0 0 18px; }
+      .ortho-hero-h1 em { font-style: normal; color: var(--ortho-accent); }
+      .ortho-hero-sub { font-size: 1.125rem; color: var(--color-gray-500); line-height: 1.65; margin: 0 0 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
+      .ortho-hero-cta-row { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+      .ortho-hero-fine { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--color-gray-500); }
+      .ortho-hero-fine i { color: var(--color-teal); font-size: 1.125rem; }
+
+      /* Two-track preview cards */
+      .ortho-hero-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 940px; margin: 0 auto; }
+      .ortho-track-card { background: #fff; border: 1px solid var(--color-gray-200); border-radius: 16px; padding: 28px 30px; box-shadow: 0 8px 24px rgba(44,62,88,0.06); display: flex; flex-direction: column; gap: 14px; }
+      .ortho-track-card-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 12px; border-radius: 9999px; align-self: flex-start; }
+      .ortho-track-card.preop .ortho-track-card-tag { background: var(--ortho-steel); color: #fff; }
+      .ortho-track-card.postop .ortho-track-card-tag { background: var(--ortho-accent); color: #fff; }
+      .ortho-track-card h3 { font-size: 1.125rem; font-weight: 800; color: var(--color-navy); margin: 0; letter-spacing: -0.01em; }
+      .ortho-track-card-forms { display: flex; flex-wrap: wrap; gap: 6px; }
+      .ortho-track-form-chip { font-size: 0.75rem; font-weight: 600; color: var(--color-navy); background: var(--ortho-mist); padding: 5px 11px; border-radius: 6px; }
+      .ortho-track-card.postop .ortho-track-form-chip { background: var(--ortho-bone); }
+
+      /* SURGICAL-COORDINATION PAIN SECTION */
+      .ortho-pain { padding: 110px 0; background: var(--ortho-mist); }
+      .ortho-pain-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+      .ortho-pain-tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ortho-accent); background: rgba(249,115,22,0.1); padding: 5px 12px; border-radius: 9999px; display: inline-block; margin-bottom: 16px; }
+      .ortho-pain-h2 { font-size: 2.125rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; line-height: 1.2; margin: 0 0 14px; }
+      .ortho-pain-sub { font-size: 1.0625rem; color: var(--color-gray-500); line-height: 1.65; margin: 0; }
+
+      .ortho-pain-narrative { max-width: 820px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 48px 52px; box-shadow: 0 12px 36px rgba(44,62,88,0.08); }
+      .ortho-pain-narrative p { font-size: 1.0625rem; color: var(--color-gray-700, #334155); line-height: 1.8; margin: 0 0 20px; }
+      .ortho-pain-narrative p:last-child { margin-bottom: 0; }
+      .ortho-pain-narrative strong { color: var(--color-navy); font-weight: 700; }
+      .ortho-pain-marker { display: inline-block; background: var(--ortho-accent); color: #fff; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; padding: 3px 9px; border-radius: 6px; vertical-align: middle; margin-right: 6px; }
+
+      /* PRE-OP PACKET TIMELINE */
+      .ortho-timeline { padding: 110px 0; background: var(--color-bg-white); }
+      .ortho-timeline-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+      .ortho-timeline-tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ortho-accent); background: rgba(249,115,22,0.1); padding: 5px 12px; border-radius: 9999px; display: inline-block; margin-bottom: 16px; }
+      .ortho-timeline h2 { font-size: 2rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; margin: 0 0 12px; line-height: 1.2; }
+      .ortho-timeline-sub { font-size: 1rem; color: var(--color-gray-500); line-height: 1.65; margin: 0; }
+
+      .ortho-timeline-wrap { position: relative; max-width: 880px; margin: 0 auto; padding-left: 40px; }
+      .ortho-timeline-wrap::before { content: ''; position: absolute; left: 18px; top: 18px; bottom: 18px; width: 2px; background: linear-gradient(180deg, var(--ortho-steel) 0%, var(--ortho-accent) 100%); }
+      .ortho-tl-step { position: relative; padding: 0 0 36px; }
+      .ortho-tl-step:last-child { padding-bottom: 0; }
+      .ortho-tl-dot { position: absolute; left: -32px; top: 8px; width: 18px; height: 18px; background: #fff; border: 4px solid var(--ortho-steel); border-radius: 50%; }
+      .ortho-tl-step.surgery .ortho-tl-dot { border-color: var(--ortho-accent); }
+      .ortho-tl-step.post .ortho-tl-dot { border-color: var(--ortho-accent); }
+      .ortho-tl-when { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ortho-steel); margin: 0 0 6px; }
+      .ortho-tl-step.surgery .ortho-tl-when, .ortho-tl-step.post .ortho-tl-when { color: var(--ortho-accent); }
+      .ortho-tl-title { font-size: 1.125rem; font-weight: 800; color: var(--color-navy); margin: 0 0 8px; letter-spacing: -0.01em; }
+      .ortho-tl-desc { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin: 0 0 12px; }
+      .ortho-tl-forms { display: flex; flex-wrap: wrap; gap: 6px; }
+      .ortho-tl-form { font-size: 0.75rem; font-weight: 600; color: var(--color-navy); background: var(--ortho-mist); padding: 5px 11px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; }
+      .ortho-tl-form i { font-size: 0.875rem; color: var(--ortho-steel); }
+      .ortho-tl-step.surgery .ortho-tl-form, .ortho-tl-step.post .ortho-tl-form { background: var(--ortho-bone); }
+      .ortho-tl-step.surgery .ortho-tl-form i, .ortho-tl-step.post .ortho-tl-form i { color: var(--ortho-accent); }
+      .ortho-tl-surgery-pill { display: inline-block; background: var(--ortho-accent); color: #fff; padding: 8px 16px; border-radius: 9999px; font-size: 0.8125rem; font-weight: 800; letter-spacing: 0.04em; }
+
+      /* BENEFITS */
+      .ortho-benefits { padding: 100px 0; background: var(--ortho-mist); }
+      .ortho-benefits-h2 { font-size: 2rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; text-align: center; margin: 0 0 48px; line-height: 1.2; }
+      .ortho-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1040px; margin: 0 auto; }
+      .ortho-benefit { background: #fff; border-radius: 16px; padding: 34px 30px; display: flex; flex-direction: column; gap: 14px; border-top: 4px solid var(--ortho-accent); }
+      .ortho-benefit:nth-child(1) { border-top-color: var(--ortho-steel); }
+      .ortho-benefit:nth-child(3) { border-top-color: var(--color-electric); }
+      .ortho-benefit h3 { font-size: 1.0625rem; font-weight: 800; color: var(--color-navy); margin: 0; line-height: 1.3; }
+      .ortho-benefit p { font-size: 0.9375rem; color: var(--color-gray-700, #334155); line-height: 1.65; margin: 0; }
+
+      /* EHR */
+      .ortho-ehr { padding: 90px 0; background: var(--color-bg-white); text-align: center; }
+      .ortho-ehr-h2 { font-size: 1.875rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 14px; }
+      .ortho-ehr-sub { font-size: 1rem; color: var(--color-gray-500); max-width: 560px; margin: 0 auto 32px; line-height: 1.65; }
+      .ortho-ehr-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 18px; }
+      .ortho-ehr-pill { background: var(--ortho-steel); color: #fff; border-radius: 9999px; padding: 8px 18px; font-size: 0.875rem; font-weight: 600; }
+      .ortho-ehr-fine { font-size: 0.8125rem; color: var(--color-gray-400); font-style: italic; margin: 0; }
+
+      /* PROOF — DME / prior-auth framing + stat */
+      .ortho-proof { padding: 110px 0; background: var(--ortho-steel); color: #fff; }
+      .ortho-proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1040px; margin: 0 auto; }
+      .ortho-proof-tag { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ortho-accent); background: rgba(249,115,22,0.15); padding: 6px 12px; border-radius: 9999px; margin-bottom: 18px; }
+      .ortho-proof h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; margin: 0 0 16px; }
+      .ortho-proof-body { font-size: 1.0625rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin: 0 0 14px; }
+      .ortho-proof-body:last-child { margin-bottom: 0; }
+      .ortho-proof-stats { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 36px; }
+      .ortho-proof-stat-big { font-size: 4.5rem; font-weight: 800; line-height: 1; color: var(--ortho-accent); letter-spacing: -0.04em; margin: 0; }
+      .ortho-proof-stat-label { font-size: 1rem; font-weight: 600; color: #fff; margin: 14px 0 0; line-height: 1.4; }
+      .ortho-proof-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 28px 0; }
+      .ortho-proof-mini-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .ortho-proof-mini-num { font-size: 1.5rem; font-weight: 800; color: var(--ortho-accent); letter-spacing: -0.02em; }
+      .ortho-proof-mini-label { font-size: 0.8125rem; color: rgba(255,255,255,0.6); margin: 4px 0 0; line-height: 1.4; }
+      .ortho-proof-source { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin: 24px 0 0; font-style: italic; }
+
+      /* INTAKE PROSE */
+      .ortho-intake { padding: 100px 0; background: var(--color-bg-white); }
+      .ortho-intake-inner { max-width: 760px; margin: 0 auto; }
+      .ortho-intake h2 { font-size: 1.875rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; margin: 0 0 28px; line-height: 1.25; }
+      .ortho-intake p { font-size: 1.0625rem; color: var(--color-gray-500); line-height: 1.75; margin: 0 0 22px; }
+      .ortho-intake p:last-child { margin-bottom: 0; }
+
+      /* FAQ */
+      .ortho-faq { padding: 100px 0; background: var(--ortho-mist); }
+      .ortho-faq-inner { max-width: 760px; margin: 0 auto; }
+      .ortho-faq h2 { font-size: 1.875rem; font-weight: 800; color: var(--color-navy); letter-spacing: -0.025em; margin: 0 0 12px; }
+      .ortho-faq-sub { font-size: 1rem; color: var(--color-gray-500); margin: 0 0 36px; }
+      .ortho-faq-list { display: flex; flex-direction: column; gap: 0; }
+      .ortho-faq-item { padding: 24px 0; border-bottom: 1px solid var(--color-gray-200); }
+      .ortho-faq-item:last-child { border-bottom: none; }
+      .ortho-faq-q { font-size: 1.0625rem; font-weight: 700; color: var(--color-navy); margin: 0 0 10px; }
+      .ortho-faq-a { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.7; margin: 0; }
+
+      /* RELATED */
+      .ortho-related { padding: 80px 0; background: var(--color-bg-white); border-top: 1px solid var(--color-gray-100); }
+      .ortho-related-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ortho-accent); background: rgba(249,115,22,0.1); padding: 5px 12px; border-radius: 9999px; margin-bottom: 14px; }
+      .ortho-related h2 { font-size: 1.625rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 8px; }
+      .ortho-related p.sub { font-size: 0.9375rem; color: var(--color-gray-500); margin: 0 0 28px; max-width: 560px; line-height: 1.55; }
+      .ortho-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .ortho-related-card { display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--color-gray-200); border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,84,0.03); padding: 22px; text-decoration: none; transition: box-shadow 0.18s, transform 0.18s; }
+      .ortho-related-card:hover { box-shadow: 0 8px 24px rgba(44,62,88,0.1); transform: translateY(-2px); }
+      .ortho-related-card i { font-size: 1.5rem; color: var(--ortho-accent); margin-bottom: 6px; }
+      .ortho-related-card .name { font-size: 1rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.01em; }
+      .ortho-related-card .desc { font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.55; }
+
+      /* CTA */
+      .ortho-cta { padding: 100px 24px; background: linear-gradient(135deg, var(--ortho-steel) 0%, var(--color-navy) 100%); text-align: center; }
+      .ortho-cta-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.3); border-radius: 9999px; padding: 8px 18px; font-size: 0.8125rem; color: var(--ortho-accent); margin-bottom: 24px; font-weight: 600; }
+      .ortho-cta-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ortho-accent); display: inline-block; }
+      .ortho-cta h2 { font-size: 2.25rem; font-weight: 800; color: #fff; margin: 0 0 14px; letter-spacing: -0.025em; }
+      .ortho-cta p { font-size: 1.0625rem; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto 30px; line-height: 1.65; }
+      .ortho-cta-fine { margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.4); }
+
+      @media (max-width: 920px) {
+        .ortho-hero::before { display: none; }
+        .ortho-hero-h1 { font-size: 2.25rem; }
+        .ortho-hero-tracks { grid-template-columns: 1fr; }
+        .ortho-pain-h2, .ortho-proof h2, .ortho-benefits-h2, .ortho-timeline h2, .ortho-cta h2 { font-size: 1.75rem; }
+        .ortho-pain-narrative { padding: 32px 28px; }
+        .ortho-benefits-grid { grid-template-columns: 1fr; }
+        .ortho-proof-grid { grid-template-columns: 1fr; gap: 36px; }
+        .ortho-related-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 580px) {
+        .ortho-hero { padding: 90px 0 60px; }
+        .ortho-hero-h1 { font-size: 1.875rem; }
+        .ortho-pain, .ortho-timeline, .ortho-benefits, .ortho-ehr, .ortho-proof, .ortho-intake, .ortho-faq { padding: 64px 0; }
+        .ortho-cta { padding: 64px 24px; }
+        .ortho-proof-stat-big { font-size: 3.25rem; }
+      }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar animate-on-scroll fade-down">
+        <div class="nav-container">
+            <a href="/" class="nav-brand" aria-label="Home">
+                <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="nav-logo-img" width="122" height="40" loading="eager" decoding="async" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="/how-it-works">How it Works</a></li>
+                <li><a href="/already-digital">Already Digital?</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="/specialties" class="nav-dropdown-trigger" aria-current="page">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-cols">
+                            <div class="nav-dropdown-col">
+                                <a href="/specialties/dermatology">Dermatology</a>
+                                <a href="/specialties/cardiology">Cardiology</a>
+                                <a href="/specialties/orthopedics">Orthopedics</a>
+                                <a href="/specialties/ob-gyn">OB-GYN</a>
+                                <a href="/specialties/optometry">Ophthalmology</a>
+                            </div>
+                            <div class="nav-dropdown-col">
+                                <a href="/specialties/nephrology">Nephrology</a>
+                                <a href="/specialties/physical-therapy">Physical Therapy</a>
+                                <a href="/specialties/mental-health">Mental Health</a>
+                                <a href="/specialties/behavioral-health">Behavioral Health</a>
+                                <a href="/specialties">All Specialties →</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
+                <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+                  <span class="mobile-menu-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" hidden></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <img src="../assets/sorta-logo.svg" alt="Sorta logo" class="mobile-drawer-logo" width="122" height="40" loading="eager" decoding="async" />
+        <button class="mobile-drawer-close" type="button" aria-label="Close menu">
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav" aria-label="Mobile">
+        <a href="/how-it-works">How it Works</a>
+        <a href="/already-digital">Already Digital?</a>
+        <div class="mobile-nav-group">
+          <button class="mobile-nav-expand" type="button" aria-expanded="false">
+            Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
+          </button>
+          <div class="mobile-nav-sub" hidden>
+            <a href="/specialties/dermatology">Dermatology</a>
+            <a href="/specialties/cardiology">Cardiology</a>
+            <a href="/specialties/orthopedics">Orthopedics</a>
+            <a href="/specialties/ob-gyn">OB-GYN</a>
+            <a href="/specialties/optometry">Ophthalmology</a>
+            <a href="/specialties/nephrology">Nephrology</a>
+            <a href="/specialties/physical-therapy">Physical Therapy</a>
+            <a href="/specialties/mental-health">Mental Health</a>
+            <a href="/specialties/behavioral-health">Behavioral Health</a>
+            <a href="/specialties">All Specialties →</a>
+          </div>
+        </div>
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+      </nav>
+      <div class="mobile-drawer-actions">
+        <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
+        <a href="https://linkedin.com/company/getsorta" class="mobile-drawer-linkedin" target="_blank" rel="noopener noreferrer" data-track="mobile_linkedin_click">LinkedIn</a>
+      </div>
+    </aside>
+
+    <main>
+        <!-- TWO-TRACK HERO -->
+        <section class="ortho-hero">
+            <div class="container">
+                <div class="ortho-hero-top animate-on-scroll fade-up">
+                    <span class="ortho-hero-eyebrow">ORTHOPEDICS &amp; SPORTS MEDICINE</span>
+                    <h1 class="ortho-hero-h1">Two paperwork phases per surgical patient. <em>One intake layer for both.</em></h1>
+                    <p class="ortho-hero-sub">Orthopedic patients carry paperwork through pre-op clearance and post-op recovery — and most clinics retype the same demographics across both. Sorta enters it once, then flows it through every form in every phase.</p>
+                    <div class="ortho-hero-cta-row">
+                        <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="ortho_hero_cta">See it with your ortho forms →</a>
+                        <span class="ortho-hero-fine"><i class="ph-bold ph-check-circle"></i>Same-day setup</span>
+                    </div>
+                </div>
+                <div class="ortho-hero-tracks">
+                    <div class="ortho-track-card preop animate-on-scroll fade-up">
+                        <span class="ortho-track-card-tag"><i class="ph-bold ph-clipboard"></i>Pre-op phase</span>
+                        <h3>Before the OR — clearance, consent, prior auth.</h3>
+                        <div class="ortho-track-card-forms">
+                            <span class="ortho-track-form-chip">Injury Hx</span>
+                            <span class="ortho-track-form-chip">Med &amp; anticoagulant review</span>
+                            <span class="ortho-track-form-chip">Anesthesia screening</span>
+                            <span class="ortho-track-form-chip">Surgical consent</span>
+                            <span class="ortho-track-form-chip">Imaging prior auth</span>
+                        </div>
+                    </div>
+                    <div class="ortho-track-card postop animate-on-scroll fade-up">
+                        <span class="ortho-track-card-tag"><i class="ph-bold ph-bandaids"></i>Post-op phase</span>
+                        <h3>After the OR — care plans, DME, return-to-activity.</h3>
+                        <div class="ortho-track-card-forms">
+                            <span class="ortho-track-form-chip">Post-op care plan</span>
+                            <span class="ortho-track-form-chip">DME order (brace / boot)</span>
+                            <span class="ortho-track-form-chip">PT/OT referral</span>
+                            <span class="ortho-track-form-chip">Return-to-activity</span>
+                            <span class="ortho-track-form-chip">Pain &amp; function follow-up</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SURGICAL-COORDINATION PAIN -->
+        <section class="ortho-pain">
+            <div class="container">
+                <div class="ortho-pain-head animate-on-scroll fade-up">
+                    <span class="ortho-pain-tag">The orthopedic problem</span>
+                    <h2 class="ortho-pain-h2">No other specialty asks one patient to fill out this much paperwork in this short a window.</h2>
+                    <p class="ortho-pain-sub">A typical surgical case touches 10+ forms across 6 weeks. Without automation, most of them get the same demographic block typed onto them, by hand, in the same office.</p>
+                </div>
+                <div class="ortho-pain-narrative animate-on-scroll fade-up">
+                    <p><span class="ortho-pain-marker">WEEK 1</span>A patient is referred in with a torn meniscus. Your front desk runs an intake packet — injury history, mechanism of injury, prior treatments, current medications, insurance verification, HIPAA. Demographics typed once for the first appointment.</p>
+                    <p><span class="ortho-pain-marker">WEEK 2</span>The same patient comes back for an MRI prior auth. Demographics, insurance ID, and clinical Hx get typed again onto the prior auth packet. <strong>Same person, same data, fresh paperwork.</strong></p>
+                    <p><span class="ortho-pain-marker">WEEK 3</span>MRI confirms a tear. Now there's a surgical consult, a pre-op clearance packet (anticoagulant review, anesthesia screening, anesthesia history, surgical consent), and a CMS/payer prior auth for the procedure. Demographics typed again on every page of the packet.</p>
+                    <p><span class="ortho-pain-marker">WEEK 5</span>Surgery happens. Post-op generates a DME order for a knee brace, a care plan, a PT/OT referral, and a return-to-activity form. <strong>Same patient. Same fields. Three more times.</strong> By the time the patient is discharged, your team has retyped the same demographic block on roughly twelve separate documents — across surgical coordination, prior auth, and post-op handoff.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRE-OP PACKET TIMELINE -->
+        <section class="ortho-timeline">
+            <div class="container">
+                <div class="ortho-timeline-head animate-on-scroll fade-up">
+                    <span class="ortho-timeline-tag">Surgical-case packet</span>
+                    <h2>The orthopedic paperwork timeline we map on day one.</h2>
+                    <p class="ortho-timeline-sub">Every surgical patient follows roughly this path. Send us the forms your clinic uses at each step — we map every field by hand.</p>
+                </div>
+                <div class="ortho-timeline-wrap animate-on-scroll fade-up">
+                    <div class="ortho-tl-step">
+                        <div class="ortho-tl-dot"></div>
+                        <p class="ortho-tl-when">Initial consult</p>
+                        <p class="ortho-tl-title">New patient intake</p>
+                        <p class="ortho-tl-desc">Demographic and history block entered by the patient on a phone link before the visit.</p>
+                        <div class="ortho-tl-forms">
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Injury &amp; mechanism Hx</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Pain &amp; function scale (VAS / KOOS / SANE)</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Insurance + HIPAA</span>
+                        </div>
+                    </div>
+                    <div class="ortho-tl-step">
+                        <div class="ortho-tl-dot"></div>
+                        <p class="ortho-tl-when">+1 week · imaging workup</p>
+                        <p class="ortho-tl-title">Imaging order + prior auth</p>
+                        <p class="ortho-tl-desc">MRI / MRA / CT order + payer prior auth packet — demographics and clinical Hx pre-filled from intake.</p>
+                        <div class="ortho-tl-forms">
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Imaging order</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>MRI prior auth packet</span>
+                        </div>
+                    </div>
+                    <div class="ortho-tl-step">
+                        <div class="ortho-tl-dot"></div>
+                        <p class="ortho-tl-when">+2-3 weeks · surgical decision</p>
+                        <p class="ortho-tl-title">Pre-op clearance packet</p>
+                        <p class="ortho-tl-desc">The longest packet in the case. Medication and anticoagulant review, anesthesia screening, surgical consent, payer prior auth for procedure — all populated from the same intake.</p>
+                        <div class="ortho-tl-forms">
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Med + anticoagulant review</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Anesthesia screening</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Surgical consent</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Procedure prior auth</span>
+                        </div>
+                    </div>
+                    <div class="ortho-tl-step surgery">
+                        <div class="ortho-tl-dot"></div>
+                        <p class="ortho-tl-when">Surgery day</p>
+                        <p class="ortho-tl-title"><span class="ortho-tl-surgery-pill">OR</span></p>
+                        <p class="ortho-tl-desc">Patient arrives with the full packet on file. Day-of forms (final consent verification, anesthesia consent) are signed digitally, pre-filled.</p>
+                    </div>
+                    <div class="ortho-tl-step post">
+                        <div class="ortho-tl-dot"></div>
+                        <p class="ortho-tl-when">+0-7 days post-op</p>
+                        <p class="ortho-tl-title">DME orders + care plan</p>
+                        <p class="ortho-tl-desc">Brace, boot, walker, CPM machine — DME order pre-filled with demographics and insurance. Post-op care plan + PT/OT referral attached.</p>
+                        <div class="ortho-tl-forms">
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>DME order</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Post-op care plan</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>PT/OT referral</span>
+                        </div>
+                    </div>
+                    <div class="ortho-tl-step post">
+                        <div class="ortho-tl-dot"></div>
+                        <p class="ortho-tl-when">+2-6 weeks · recovery</p>
+                        <p class="ortho-tl-title">Return-to-activity &amp; outcome tracking</p>
+                        <p class="ortho-tl-desc">Pain &amp; function follow-up scales, return-to-activity clearance, sports clearance — entered by the patient between visits.</p>
+                        <div class="ortho-tl-forms">
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Pain / function follow-up</span>
+                            <span class="ortho-tl-form"><i class="ph-bold ph-file-text"></i>Return-to-activity clearance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="ortho-benefits">
+            <div class="container">
+                <h2 class="ortho-benefits-h2 animate-on-scroll fade-up">What changes in an orthopedic clinic running Sorta.</h2>
+                <div class="ortho-benefits-grid">
+                    <div class="ortho-benefit animate-on-scroll fade-up">
+                        <h3>Pre-op clearance stops blocking the OR.</h3>
+                        <p>Med review, anticoagulant Hx, anesthesia screening, surgical consent — all pre-populated from intake. Surgical coordinators chase clinical info, not name and date of birth.</p>
+                    </div>
+                    <div class="ortho-benefit animate-on-scroll fade-up">
+                        <h3>Prior auth speeds up.</h3>
+                        <p>Imaging, DME, and procedure prior auth all share the demographic and insurance block. Sorta pre-fills it. Staff writes the clinical justification — they don't retype patient names.</p>
+                    </div>
+                    <div class="ortho-benefit animate-on-scroll fade-up">
+                        <h3>Post-op coordination stays clean.</h3>
+                        <p>DME orders, care plans, and PT/OT referrals carry forward the same patient block. The hand-off to physical therapy and home-health is one click, not a packet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EHR -->
+        <section class="ortho-ehr">
+            <div class="container animate-on-scroll fade-up">
+                <h2 class="ortho-ehr-h2">Works on top of whatever orthopedic EHR your practice already runs.</h2>
+                <p class="ortho-ehr-sub">Sorta doesn't integrate with your EHR — it sits completely outside it. Your EHR keeps doing what it does. Sorta handles the patient-facing PDF layer across pre-op and post-op.</p>
+                <div class="ortho-ehr-pills">
+                    <span class="ortho-ehr-pill">athenaOne Orthopedics</span>
+                    <span class="ortho-ehr-pill">Modernizing Medicine</span>
+                    <span class="ortho-ehr-pill">NextGen</span>
+                    <span class="ortho-ehr-pill">eClinicalWorks</span>
+                    <span class="ortho-ehr-pill">Epic</span>
+                    <span class="ortho-ehr-pill">SRS Health</span>
+                    <span class="ortho-ehr-pill">Any other system</span>
+                </div>
+                <p class="ortho-ehr-fine">Don't see yours? If it runs on a computer, Sorta works on top of it.</p>
+            </div>
+        </section>
+
+        <!-- PROOF — DME / prior-auth framing + stat -->
+        <section class="ortho-proof">
+            <div class="container">
+                <div class="ortho-proof-grid">
+                    <div class="animate-on-scroll fade-up">
+                        <span class="ortho-proof-tag">What we hear from orthopedic ops</span>
+                        <h2>Prior auth and DME orders are where the morning disappears.</h2>
+                        <p class="ortho-proof-body">Practice managers we talk to describe the same pattern: a surgical coordinator who spends most of their week retyping the same patient demographic block onto imaging prior auths, DME orders, and pre-op clearance forms. The clinical complexity belongs to the surgeon. The retyping belongs to nobody.</p>
+                        <p class="ortho-proof-body">Orthopedics is the highest-volume surgical paperwork specialty in outpatient care — and one of the highest prior-auth burdens in any setting. That's the entire job Sorta is built for.</p>
+                    </div>
+                    <div class="ortho-proof-stats animate-on-scroll fade-up">
+                        <p class="ortho-proof-stat-big">~1.5B</p>
+                        <p class="ortho-proof-stat-label">visits per year for musculoskeletal conditions in the US — leading cause of disability.</p>
+                        <div class="ortho-proof-divider"></div>
+                        <div class="ortho-proof-mini-stats">
+                            <div>
+                                <div class="ortho-proof-mini-num">~790K</div>
+                                <div class="ortho-proof-mini-label">Knee replacements per year</div>
+                            </div>
+                            <div>
+                                <div class="ortho-proof-mini-num">~450K</div>
+                                <div class="ortho-proof-mini-label">Hip replacements per year</div>
+                            </div>
+                        </div>
+                        <p class="ortho-proof-source">Sources: AAOS (Bone &amp; Joint Initiative USA); CDC NHIS musculoskeletal data; HCUP procedure statistics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTAKE PROSE -->
+        <section class="ortho-intake">
+            <div class="container">
+                <div class="ortho-intake-inner animate-on-scroll fade-up">
+                    <h2>What orthopedic patient intake typically includes</h2>
+                    <p>Orthopedic intake is structurally different from most outpatient specialties because the same patient generates paperwork through multiple distinct phases of care. The initial visit produces an injury history, mechanism-of-injury form, pain and function scales (VAS, KOOS, SANE, or specialty-specific outcome measures), current medication list, and insurance verification. Patients heading toward imaging add an MRI, MRA, or CT order plus a payer prior authorization. Surgical patients add a full pre-op clearance packet — medication and anticoagulant review, anesthesia screening, anesthesia history, surgical consent, and procedure-specific prior auth.</p>
+                    <p>Post-op, the same patient generates a DME order (knee brace, boot, walker, CPM machine), a post-operative care plan, a PT or OT referral, return-to-activity clearance, and follow-up outcome scales. Across all of that paperwork, the patient's name, date of birth, address, insurance, allergies, and current medications appear repeatedly. Without automation, surgical coordinators and front-desk staff retype the same demographic block onto every form in every phase.</p>
+                    <p>Sorta maps the patient's intake submission across every form in your orthopedic packet — pre-op, surgical, post-op, DME, prior auth — so a single sync pre-fills the entire pathway. The clinical work belongs to your surgeons. The administrative retyping goes away.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="ortho-faq">
+            <div class="container">
+                <div class="ortho-faq-inner animate-on-scroll fade-up">
+                    <h2>Common questions from orthopedic &amp; sports medicine practices</h2>
+                    <p class="ortho-faq-sub">What surgical coordinators, practice managers, and orthopedic ops leads actually ask us.</p>
+                    <div class="ortho-faq-list">
+                        <div class="ortho-faq-item">
+                            <p class="ortho-faq-q">How do I automate patient intake for an orthopedic or sports medicine clinic?</p>
+                            <p class="ortho-faq-a">Send Sorta the intake packet your practice already uses — injury history, mechanism-of-injury form, pain/function scales, imaging order, DME order, surgical consent, post-op care plan. Patients complete intake on a phone link before their visit. Demographic, insurance, and history fields populate across every form on a single sync. Pre-op and post-op packets share the same underlying data, so you stop re-entering the same patient block at every phase of care.</p>
+                        </div>
+                        <div class="ortho-faq-item">
+                            <p class="ortho-faq-q">Does Sorta work with athenaOne Orthopedics, Modernizing Medicine, NextGen, or other orthopedic EHRs?</p>
+                            <p class="ortho-faq-a">Yes. Sorta runs completely outside your EHR — no integration, no replacement. athenaOne Orthopedics, Modernizing Medicine ortho, NextGen, eClinicalWorks, Epic, and any other system keep doing clinical documentation, scheduling, and billing. Sorta handles the patient-facing PDF layer that sits on top: intake, consent, imaging orders, DME orders, prior auth, post-op.</p>
+                        </div>
+                        <div class="ortho-faq-item">
+                            <p class="ortho-faq-q">Can Sorta handle pre-op clearance packets and surgical consent forms?</p>
+                            <p class="ortho-faq-a">Yes. The pre-op packet is one of the longest in outpatient medicine — surgical history, current medications including anticoagulants, allergy review, anesthesia screening, surgical consent, and the imaging and labs that have to be on file before the OR. Sorta pre-fills the patient demographic and medical history block across every form in the pre-op packet on a single sync, so your surgical coordinator only handles the clinical and scheduling pieces manually.</p>
+                        </div>
+                        <div class="ortho-faq-item">
+                            <p class="ortho-faq-q">Does Sorta handle DME orders and prior authorization for MRI and surgery?</p>
+                            <p class="ortho-faq-a">Yes. DME orders (braces, walkers, boots, CPM machines) and imaging prior auth (MRI, MRA, CT, surgical prior auth) all share the same patient demographic and insurance block as your intake. Sorta pre-fills that block automatically. Your prior auth staff only writes the clinical justification — they stop typing names and member IDs onto every fresh form.</p>
+                        </div>
+                        <div class="ortho-faq-item">
+                            <p class="ortho-faq-q">How long does Sorta take to set up for an orthopedic practice?</p>
+                            <p class="ortho-faq-a">Under 12 hours from when you send us your forms. We map every field by hand — intake, pre-op clearance, surgical consent, DME orders, post-op care plans. Your staff and surgical coordinators learn the workflow in about 10 minutes. Most orthopedic practices are running it the week they sign up.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RELATED -->
+        <section class="ortho-related">
+            <div class="container animate-on-scroll fade-up">
+                <span class="ortho-related-tag">Related specialties</span>
+                <h2>Other paperwork-heavy outpatient specialties.</h2>
+                <p class="sub">Same outside-the-EHR problem. Different form stack.</p>
+                <div class="ortho-related-grid">
+                    <a href="/specialties/physical-therapy" class="ortho-related-card">
+                        <i class="ph-bold ph-person-arms-spread"></i>
+                        <span class="name">Physical Therapy</span>
+                        <span class="desc">Post-op rehab intake, plan of care, functional outcomes — Sorta handles the PT hand-off too.</span>
+                    </a>
+                    <a href="/specialties/cardiology" class="ortho-related-card">
+                        <i class="ph-bold ph-heart"></i>
+                        <span class="name">Cardiology</span>
+                        <span class="desc">Pre-op cardiac clearance, risk factor questionnaires, prior auth packets.</span>
+                    </a>
+                    <a href="/specialties/dermatology" class="ortho-related-card">
+                        <i class="ph-bold ph-drop-half"></i>
+                        <span class="name">Dermatology</span>
+                        <span class="desc">Skin history, photo consent, biopsy auth, cosmetic intake.</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="ortho-cta">
+            <div class="container animate-on-scroll fade-up">
+                <div class="ortho-cta-badge">
+                    <span class="dot"></span>
+                    Free 30-day pilot — no credit card required
+                </div>
+                <h2>See it with your actual pre-op and post-op packets.</h2>
+                <p>We don't do generic demos. Send us your real injury history, pre-op clearance, surgical consent, DME, and post-op forms — we'll show you Sorta filling all of them on your first call.</p>
+                <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="ortho_cta_demo" style="background: var(--ortho-accent); color: #fff; font-weight: 700; font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; border: none;">
+                    Book a demo <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <p class="ortho-cta-fine">No contracts. Cancel anytime.</p>
+                <a href="/demo" class="cta-demo-secondary" data-track="ortho_cta_see_demo">or watch the 2-minute demo →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-v2" aria-labelledby="footer-brand">
+      <div class="footer-v2-inner">
+        <div class="footer-v2-grid">
+          <div>
+            <div class="footer-v2-logo">
+              <img src="../assets/sorta-logo.svg" alt="Sorta logo" width="110" height="36" loading="lazy" />
+            </div>
+            <p class="footer-v2-blurb">The paperwork automation layer for independent outpatient clinics. Bootstrapped from El Paso, TX.</p>
+            <div class="footer-v2-contact">
+              <div><strong>hello@getsorta.io</strong></div>
+              <div style="margin-top:4px">El Paso, TX · USA</div>
+            </div>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Main pages</span>
+            <nav class="footer-v2-links" aria-label="Main pages">
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/how-it-works">How it Works</a>
+              <a href="/pricing">Pricing</a>
+              <a href="/blog">Blog</a>
+            </nav>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Product</span>
+            <nav class="footer-v2-links" aria-label="Product">
+              <a href="/how-it-works">How it works</a>
+              <a href="/already-digital">Already digital?</a>
+              <a href="/specialties">Specialties</a>
+              <a href="/pricing">Pricing</a>
+              <a href="/#faq">FAQ</a>
+            </nav>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Specialties</span>
+            <nav class="footer-v2-links" aria-label="Specialties">
+              <a href="/specialties/dermatology">Dermatology</a>
+              <a href="/specialties/orthopedics">Orthopedics</a>
+              <a href="/specialties/ob-gyn">OB-GYN</a>
+              <a href="/specialties/cardiology">Cardiology</a>
+              <a href="/specialties/optometry">Optometry</a>
+              <a href="/specialties/physical-therapy">Physical Therapy</a>
+            </nav>
+          </div>
+          <div>
+            <span class="footer-v2-col-header">Legal</span>
+            <nav class="footer-v2-links" aria-label="Legal">
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms of Service</a>
+              <a href="/hipaa">HIPAA Compliance</a>
+              <a href="/cookies">Cookie Policy</a>
+              <a href="https://linkedin.com/company/getsorta" target="_blank" rel="noopener noreferrer" data-track="footer_linkedin">LinkedIn</a>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-v2-bottom">
+          <span>&#169; 2026 Sorta, Inc. All rights reserved.</span>
+          <div class="footer-v2-legal">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/hipaa">HIPAA</a>
+            <a href="/cookies">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.mobile-nav-expand').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var sub = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            if (sub) sub.hidden = expanded;
+          });
+        });
+      });
+    </script>
+<div class="popup-overlay" id="demo-popup-overlay" hidden aria-modal="true" role="dialog" aria-labelledby="popup-heading">
+  <div class="popup-modal" id="demo-popup-modal">
+    <button class="popup-close" id="popup-close-btn" aria-label="Close popup">✕</button>
+    <div class="popup-left">
+      <span class="popup-left-eyebrow">Pilot Program — Limited Spots</span>
+      <h2 id="popup-heading">Try it free for 30 days with your actual forms</h2>
+      <p>We're a small team onboarding our first clinics. We're not doing a generic demo and asking for a credit card — we want to earn it.</p>
+      <p>Here's what the pilot actually is: we take your real forms, configure everything ourselves, and your staff runs it for 30 days. At the end, if it didn't save your front desk real time, you walk away and owe us nothing. If it did, we talk about next steps then.</p>
+      <ul class="popup-trust-list">
+        <li><span class="popup-trust-check">✓</span> 30 days completely free</li>
+        <li><span class="popup-trust-check">✓</span> We configure your real forms — you don't touch anything</li>
+        <li><span class="popup-trust-check">✓</span> No credit card, no contract</li>
+        <li><span class="popup-trust-check">✓</span> Only pay if it genuinely saves your staff time</li>
+      </ul>
+    </div>
+    <div class="popup-right">
+      <form id="sorta-popup-form" class="sorta-form" novalidate>
+        <input type="hidden" name="source" value="specialties-orthopedics" />
+        <input type="hidden" name="_subject" value="Sorta demo request (specialties-orthopedics)" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pf-name">Your name</label>
+            <input type="text" id="pf-name" name="name" placeholder="Maria Torres" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="pf-clinic">Clinic name</label>
+            <input type="text" id="pf-clinic" name="clinic" placeholder="El Paso Orthopedics" required autocomplete="organization" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pf-email">Work email</label>
+          <input type="email" id="pf-email" name="email" placeholder="you@yourclinic.com" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="pf-phone">Phone <span class="optional">(optional)</span></label>
+          <input type="tel" id="pf-phone" name="phone" placeholder="(915) 555-0100" autocomplete="tel" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-large pill popup-submit-btn demo-submit-btn" data-track="popup_form_submit">
+          <span class="submit-label">Apply for the pilot <i class="ph-bold ph-arrow-right"></i></span>
+          <span class="submit-sending" hidden><span class="btn-spinner" aria-hidden="true"></span> Sending…</span>
+          <span class="submit-sent" hidden><span class="btn-check" aria-hidden="true"></span> You're in — we'll reach out soon</span>
+        </button>
+        <p class="form-disclaimer">No credit card. No contracts. Emi will reach out personally within 24 hours.</p>
+        <p class="form-error hidden" id="pf-error" role="status">Something went wrong — please try again.</p>
+        <p class="form-success hidden" id="pf-success" role="status">✓ Got it! We will be in touch within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="../js/popup.js"></script>
+
+</body>
+</html>
