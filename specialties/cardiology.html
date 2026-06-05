@@ -101,61 +101,7 @@
     }
     </script>
 
-    <style>
-      .spec-hero { padding: 140px 0 80px; background: var(--color-bg); border-bottom: 1px solid var(--color-gray-100); }
-      .spec-hero-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-      .spec-hero-eyebrow { color: var(--color-electric); font-weight: 700; letter-spacing: 0.1em; font-size: 0.75rem; text-transform: uppercase; display: block; margin-bottom: 20px; }
-      .spec-hero-h1 { font-size: 2.75rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.03em; line-height: 1.15; margin: 0 0 20px; }
-      .spec-hero-sub { font-size: 1.125rem; color: var(--color-gray-500); line-height: 1.65; margin: 0 0 32px; }
-      .spec-trust-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
-      .spec-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.1); border: 1px solid rgba(2,227,211,0.3); color: var(--color-navy); padding: 9px 18px; border-radius: var(--radius-pill); font-size: 0.875rem; font-weight: 600; }
-      .spec-pain-section { padding: 100px 0; background: var(--color-bg-white); }
-      .spec-pain-grid { display: grid; grid-template-columns: 1fr 240px; gap: 64px; align-items: start; }
-      .spec-pain-h2 { font-size: 2rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 32px; line-height: 1.25; }
-      .spec-pain-body p { font-size: 1.0625rem; color: var(--color-gray-500); line-height: 1.75; margin: 0 0 20px; }
-      .spec-pain-body p:last-child { margin-bottom: 0; }
-      .spec-pain-icon { display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
-      .spec-pain-icon i { font-size: 9rem; color: var(--color-teal); opacity: 0.18; line-height: 1; }
-      .spec-benefits-section { padding: 100px 0; background: #f5f5f5; }
-      .spec-benefits-h2 { font-size: 2rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; text-align: center; margin: 0 0 48px; line-height: 1.25; }
-      .spec-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-      .spec-benefit-card { background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 32px 28px; display: flex; flex-direction: column; gap: 16px; }
-      .spec-benefit-icon { width: 44px; height: 44px; background: rgba(39,64,252,0.08); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--color-electric); font-size: 1.375rem; }
-      .spec-benefit-card h3 { font-size: 1rem; font-weight: 700; color: var(--color-navy); margin: 0; line-height: 1.3; }
-      .spec-benefit-card p { font-size: 0.9375rem; color: var(--color-gray-500); line-height: 1.65; margin: 0; }
-      .spec-ehr-section { padding: 100px 0; background: var(--color-bg-white); text-align: center; }
-      .spec-ehr-h2 { font-size: 2rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 16px; line-height: 1.25; }
-      .spec-ehr-sub { font-size: 1rem; color: var(--color-gray-500); max-width: 560px; margin: 0 auto 40px; line-height: 1.65; }
-      .spec-ehr-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px; }
-      .spec-ehr-pill { background: var(--color-navy); color: #fff; border-radius: var(--radius-pill); padding: 8px 18px; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.01em; }
-      .spec-ehr-fine { font-size: 0.8125rem; color: var(--color-gray-400); font-style: italic; margin: 0; }
-      .spec-quote-section { padding: 100px 0; background: var(--color-navy); text-align: center; }
-      .spec-quote-inner { max-width: 680px; margin: 0 auto; }
-      .spec-quote-text { font-size: 1.375rem; font-weight: 400; color: var(--color-white); line-height: 1.6; font-style: italic; margin: 0 0 28px; }
-      .spec-quote-attr { display: flex; flex-direction: column; gap: 4px; }
-      .spec-quote-attr strong { font-size: 0.9375rem; font-weight: 700; color: var(--color-teal); }
-      .spec-quote-attr span { font-size: 0.8125rem; color: rgba(255,255,255,0.55); }
-      .spec-cta-section { background: linear-gradient(135deg, var(--color-navy) 0%, #0d0080 100%); padding: 100px 24px; text-align: center; }
-      .spec-cta-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.15); border: 1px solid rgba(2,227,211,0.3); border-radius: 9999px; padding: 8px 18px; font-size: 0.8125rem; color: var(--color-teal); margin-bottom: 28px; }
-      .spec-cta-badge span.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-teal); display: inline-block; }
-      .spec-cta-h2 { font-size: 2.25rem; font-weight: 800; color: #fff; margin: 0 0 16px; letter-spacing: -0.02em; }
-      .spec-cta-sub { font-size: 1.0625rem; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto 32px; line-height: 1.65; }
-      .spec-cta-fine { margin-top: 16px; font-size: 0.8125rem; color: rgba(255,255,255,0.35); }
-      @media (max-width: 900px) {
-        .spec-pain-grid { grid-template-columns: 1fr; }
-        .spec-pain-icon { display: none; }
-        .spec-benefits-grid { grid-template-columns: 1fr; }
-        .spec-hero-h1 { font-size: 2rem; }
-        .spec-pain-h2, .spec-benefits-h2, .spec-ehr-h2, .spec-cta-h2 { font-size: 1.625rem; }
-      }
-      @media (max-width: 580px) {
-        .spec-hero { padding: 100px 0 60px; }
-        .spec-hero-h1 { font-size: 1.75rem; }
-        .spec-pain-section, .spec-benefits-section, .spec-ehr-section, .spec-quote-section { padding: 72px 0; }
-        .spec-cta-section { padding: 72px 24px; }
-        .spec-quote-text { font-size: 1.125rem; }
-      }
-    </style>
+    <link rel="stylesheet" href="../css/specialties.css" />
 </head>
 <body class="grid-bg">
 
