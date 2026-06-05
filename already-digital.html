@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Already Using Athenahealth or Epic? Here's What It Still Doesn't Handle | Sorta</title>
-    <meta name="description" content="Fully digitized clinics still have a stack of forms outside their EHR — consent, prior auth, specialty questionnaires. Sorta handles exactly that layer. No switching, no IT.">
+    <title>Your Athena Portal Handles Intake. So Why Is Someone Still Printing Consent Forms? | Sorta</title>
+    <meta name="description" content="Every EHR handles what happens inside the chart. None of them handle the forms that live on your front desk — consent, HIPAA, prior auth, specialty questionnaires. Sorta automates that layer on top of any EHR.">
     <link rel="canonical" href="https://getsorta.io/already-digital" />
-    <meta property="og:title" content="Already Using Athenahealth or Epic? Here's What It Still Doesn't Handle | Sorta" />
-    <meta property="og:description" content="Fully digitized clinics still have a stack of forms outside their EHR — consent, prior auth, specialty questionnaires. Sorta handles exactly that layer." />
+    <meta property="og:title" content="Your Athena Portal Handles Intake. So Why Is Someone Still Printing Consent Forms? | Sorta" />
+    <meta property="og:description" content="Every EHR handles what happens inside the chart. None of them handle the forms that live on your front desk. Sorta automates that layer." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://getsorta.io/already-digital" />
     <meta property="og:image" content="https://getsorta.io/assets/og-image.jpg" />
@@ -89,10 +89,16 @@
   .dig-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(2,227,211,0.1); border: 1px solid rgba(2,227,211,0.3); color: var(--color-navy); padding: 9px 18px; border-radius: var(--radius-pill); font-size: 0.875rem; font-weight: 600; }
 
   .dig-question-section { padding: 100px 0; background: var(--color-bg-white); }
-  .dig-question-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .dig-question-inner { max-width: 780px; margin: 0 auto; text-align: center; }
   .dig-question-h2 { font-size: 2rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 20px; line-height: 1.25; }
   .dig-question-body { font-size: 1.0625rem; color: var(--color-gray-500); line-height: 1.75; margin: 0 0 20px; }
   .dig-question-body strong { color: var(--color-navy); }
+
+  .dig-forms-list { list-style: none; padding: 0; margin: 40px auto 18px; max-width: 720px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+  .dig-forms-list li { display: flex; align-items: center; gap: 12px; background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-md); padding: 14px 18px; font-size: 0.9375rem; color: var(--color-navy); font-weight: 600; box-shadow: var(--shadow-card); }
+  .dig-forms-list li i { color: var(--color-electric); font-size: 1.125rem; flex-shrink: 0; }
+  .dig-forms-note { text-align: center; font-size: 0.9375rem; color: var(--color-gray-500); font-style: italic; max-width: 560px; margin: 0 auto; line-height: 1.65; }
+  @media (max-width: 700px) { .dig-forms-list { grid-template-columns: 1fr; } }
 
   .dig-gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 860px; margin: 56px auto 0; text-align: left; }
   .dig-gap-card { border-radius: var(--radius-lg); padding: 36px 32px; border: 1px solid var(--color-gray-200); }
@@ -250,6 +256,7 @@
             </a>
                     <ul class="nav-links">
             <li><a href="/how-it-works">How it Works</a></li>
+            <li><a href="/already-digital" aria-current="page">Already Digital?</a></li>
             <li class="nav-item-dropdown">
                 <a href="/specialties" class="nav-dropdown-trigger">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
                 <div class="nav-dropdown">
@@ -270,8 +277,6 @@
             </li>
             <li><a href="/pricing">Pricing</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/already-digital" aria-current="page">Already Digital?</a></li>
         </ul>
                     <div class="nav-actions">
             <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
@@ -293,6 +298,7 @@
       </div>
             <nav class="mobile-drawer-nav" aria-label="Mobile">
         <a href="/how-it-works">How it Works</a>
+        <a href="/already-digital" aria-current="page">Already Digital?</a>
         <div class="mobile-nav-group">
           <button class="mobile-nav-expand" type="button" aria-expanded="false">
             Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
@@ -309,8 +315,6 @@
         </div>
         <a href="/pricing">Pricing</a>
         <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        <a href="/already-digital" aria-current="page">Already Digital?</a>
       </nav>
             <div class="mobile-drawer-actions">
         <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
@@ -322,17 +326,29 @@
 <section class="dig-hero">
   <div class="container">
     <div class="dig-hero-inner animate-on-scroll fade-up">
-      <span class="dig-hero-eyebrow">Already digitized?</span>
-      <h1 class="dig-hero-h1">Your EHR handles a lot.<br><strong>It doesn't handle this.</strong></h1>
-      <p class="dig-hero-sub">Athenahealth, Epic, and every other major system handle intake inside their platform. But every clinic still has a stack of forms that live outside it — filled manually, every single day. That's the gap Sorta closes.</p>
+      <span class="dig-hero-eyebrow">For digitized clinics</span>
+      <h1 class="dig-hero-h1">Your Athena portal handles intake.<br><strong>So why is someone still printing consent forms every morning?</strong></h1>
+      <p class="dig-hero-sub">Epic, Athenahealth, eClinicalWorks — they all handle what happens inside the chart. None of them handle the stack of forms that lives on your front desk. That stack is what we automate.</p>
       <div class="dig-trust-pills">
-        <span class="dig-trust-pill">✓ We are not competing with your EHR</span>
+        <span class="dig-trust-pill">✓ Works on top of your existing EHR</span>
         <span class="dig-trust-pill">✓ No switching, no migration</span>
         <span class="dig-trust-pill">✓ Same day setup</span>
       </div>
       <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="dig_hero_cta" style="background: var(--color-teal); color: var(--color-navy); font-weight: 700; border-color: var(--color-teal);">
-        Show me the gap <i class="ph-bold ph-arrow-right"></i>
+        Show me what my EHR is missing <i class="ph-bold ph-arrow-right"></i>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="dig-quote-section">
+  <div class="container">
+    <div class="dig-quote-inner animate-on-scroll fade-up">
+      <blockquote class="dig-quote-text">"Everyone hates their EHR but nobody leaves. The question isn't whether to replace it — it's what to layer on top of it."</blockquote>
+      <div class="dig-quote-attr">
+        <strong>Perry Hall</strong>
+        <span>MED3000 Revenue Cycle Management</span>
+      </div>
     </div>
   </div>
 </section>
@@ -340,14 +356,33 @@
 <section class="dig-question-section">
   <div class="container">
     <div class="dig-question-inner animate-on-scroll fade-up">
+      <h2 class="dig-question-h2">Every EHR handles what happens inside the chart.<br>None of them handle what happens before the patient gets there.</h2>
+      <p class="dig-question-body">The forms that live <strong>outside</strong> your EHR — on your front desk, your printer, your filing cabinet — are the ones nobody automates. Every clinic we talk to has the same stack:</p>
+    </div>
+    <ul class="dig-forms-list animate-on-scroll fade-up">
+      <li><i class="ph-bold ph-file-text"></i><span>Consent for treatment</span></li>
+      <li><i class="ph-bold ph-file-text"></i><span>HIPAA notice of privacy practices</span></li>
+      <li><i class="ph-bold ph-file-text"></i><span>Prior authorization packets</span></li>
+      <li><i class="ph-bold ph-file-text"></i><span>Specialty questionnaires</span></li>
+      <li><i class="ph-bold ph-file-text"></i><span>Release of records</span></li>
+      <li><i class="ph-bold ph-file-text"></i><span>Insurance authorization</span></li>
+      <li><i class="ph-bold ph-file-text"></i><span>Any custom form your clinic uses</span></li>
+    </ul>
+    <p class="dig-forms-note animate-on-scroll fade-up">Every name, date of birth, and insurance ID gets typed onto each of these manually. Same data, seven times.</p>
+  </div>
+</section>
+
+<section class="dig-question-section" style="background: var(--color-gray-50);">
+  <div class="container">
+    <div class="dig-question-inner animate-on-scroll fade-up">
       <h2 class="dig-question-h2">One question your EHR vendor can't answer yes to.</h2>
       <p class="dig-question-body">When a patient fills out intake in your portal, does that data <strong>automatically flow into every other form they need</strong> — consent, HIPAA, insurance authorization, specialty questionnaires — or does someone on your staff still move it manually?</p>
-      <p class="dig-question-body">Almost every digitized clinic answers the same way: <strong>someone still moves it manually.</strong> That's not a failure of your EHR. It's just what your EHR wasn't built to handle. Sorta was.</p>
+      <p class="dig-question-body">We've asked this to dozens of clinic managers. Almost every single one answers the same way: <strong>someone still moves it manually.</strong> Not because their EHR is broken — because their EHR was never built to handle the forms outside it. Sorta was.</p>
     </div>
     <div class="dig-gap-grid animate-on-scroll fade-up">
       <div class="dig-gap-card ehr">
         <span class="dig-gap-label">What your EHR handles</span>
-        <h3>Inside the system</h3>
+        <h3>Inside the chart</h3>
         <ul class="dig-gap-list">
           <li><i class="ph-bold ph-check"></i> Patient intake inside the portal</li>
           <li><i class="ph-bold ph-check"></i> Scheduling and appointments</li>
@@ -358,13 +393,13 @@
       </div>
       <div class="dig-gap-card sorta">
         <span class="dig-gap-label">What Sorta handles</span>
-        <h3>Outside the system</h3>
+        <h3>Outside the chart</h3>
         <ul class="dig-gap-list">
-          <li><i class="ph-bold ph-check"></i> Consent forms and HIPAA notices</li>
-          <li><i class="ph-bold ph-check"></i> Prior authorization packets</li>
-          <li><i class="ph-bold ph-check"></i> Insurance authorization documents</li>
-          <li><i class="ph-bold ph-check"></i> Specialty questionnaires</li>
-          <li><i class="ph-bold ph-check"></i> Any custom form your clinic already uses</li>
+          <li><i class="ph-bold ph-check"></i> The consent form your front desk prints every morning</li>
+          <li><i class="ph-bold ph-check"></i> The HIPAA notice every new patient signs</li>
+          <li><i class="ph-bold ph-check"></i> The prior auth packets your staff types one field at a time</li>
+          <li><i class="ph-bold ph-check"></i> The specialty questionnaire only your clinic uses</li>
+          <li><i class="ph-bold ph-check"></i> Any custom PDF your clinic already runs on</li>
         </ul>
       </div>
     </div>
@@ -412,27 +447,16 @@
   </div>
 </section>
 
-<section class="dig-quote-section">
-  <div class="container">
-    <div class="dig-quote-inner animate-on-scroll fade-up">
-      <blockquote class="dig-quote-text">"Everyone hates their EHR but nobody leaves. The question isn't whether to replace it — it's what to layer on top of it."</blockquote>
-      <div class="dig-quote-attr">
-        <strong>Perry Hall</strong>
-        <span>MED3000 Revenue Cycle Management</span>
-      </div>
-    </div>
-  </div>
-</section>
 <section class="dig-cta-section">
   <div class="container animate-on-scroll fade-up">
     <div class="dig-cta-badge">
       <span class="dot"></span>
       Free 30-day pilot — no credit card required
     </div>
-    <h2 class="dig-cta-h2">See what your EHR is leaving on the table.</h2>
-    <p class="dig-cta-sub">Book a 15-minute demo. We'll show you Sorta working with the actual forms your clinic uses outside your EHR — not a generic template, not fake data.</p>
+    <h2 class="dig-cta-h2">Show me what my EHR is missing.</h2>
+    <p class="dig-cta-sub">Send us the forms your clinic prints outside your EHR. In 15 minutes we'll show you the same forms running on Sorta — automated end-to-end, with nothing retyped.</p>
     <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="dig_cta_demo" style="background: var(--color-teal); color: var(--color-navy); font-weight: 700; font-size: 1.0625rem; padding: 16px 36px; display: inline-flex; align-items: center; gap: 10px; border: none;">
-      Book a demo <i class="ph-bold ph-arrow-right"></i>
+      Show me what my EHR is missing <i class="ph-bold ph-arrow-right"></i>
     </a>
     <p class="dig-cta-fine">No contracts. Cancel anytime.</p>
   </div>

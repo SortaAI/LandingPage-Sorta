@@ -89,6 +89,11 @@
         },
         {
           "@type": "Question",
+          "name": "Can Sorta handle prior auth prep for cardiology procedures?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Echo, stress test, cardiac cath, Holter and event monitor prior auths all share the same patient-demographic and insurance fields as your intake forms. Sorta pre-fills the prior auth worksheet from the same intake submission so staff only handles the clinical justification manually." }
+        },
+        {
+          "@type": "Question",
           "name": "How long does Sorta take to set up for a cardiology practice?",
           "acceptedAnswer": { "@type": "Answer", "text": "Under 12 hours from when you send us your forms. We handle all configuration — field mapping, testing, and delivery. Your staff learns the sync workflow in about 10 minutes. Most cardiology practices are running it by the end of the week they sign up." }
         }
@@ -161,6 +166,7 @@
             </a>
                     <ul class="nav-links">
             <li><a href="/how-it-works">How it Works</a></li>
+            <li><a href="/already-digital">Already Digital?</a></li>
             <li class="nav-item-dropdown">
                 <a href="/specialties" class="nav-dropdown-trigger" aria-current="page">Specialties <i class="ph-bold ph-caret-down nav-caret"></i></a>
                 <div class="nav-dropdown">
@@ -181,8 +187,6 @@
             </li>
             <li><a href="/pricing">Pricing</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/already-digital">Already Digital?</a></li>
         </ul>
                     <div class="nav-actions">
             <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="nav_cta_book_demo">Book a demo</a>
@@ -203,6 +207,7 @@
       </div>
             <nav class="mobile-drawer-nav" aria-label="Mobile">
         <a href="/how-it-works">How it Works</a>
+        <a href="/already-digital">Already Digital?</a>
         <div class="mobile-nav-group">
           <button class="mobile-nav-expand" type="button" aria-expanded="false">
             Specialties <i class="ph-bold ph-caret-down mobile-caret"></i>
@@ -219,8 +224,6 @@
         </div>
         <a href="/pricing">Pricing</a>
         <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        <a href="/already-digital">Already Digital?</a>
       </nav>
             <div class="mobile-drawer-actions">
         <a href="https://calendly.com/getsorta/sorta-15-minute-demo" target="_blank" rel="noopener" class="btn btn-primary pill" data-track="mobile_nav_cta_book_demo">Book a demo</a>
@@ -233,13 +236,13 @@
             <div class="container">
                 <div class="spec-hero-inner animate-on-scroll fade-up">
                     <span class="spec-hero-eyebrow">CARDIOLOGY</span>
-                    <h1 class="spec-hero-h1">Cardiology patient intake software that works with your forms — not instead of them.</h1>
-                    <p class="spec-hero-sub">Cardiac history, risk factors, medications, prior procedures — cardiology intake is detailed by necessity. Sorta makes sure your staff never has to type any of it twice.</p>
+                    <h1 class="spec-hero-h1">Cardiac history. Risk factor questionnaires. Device history. Prior auth packets. <span style="color: var(--color-electric);">Automated.</span></h1>
+                    <p class="spec-hero-sub">No cardiology EHR fills the paperwork that lives outside the chart. Sorta does — on top of Epic, Athenahealth, or whatever your clinic already runs.</p>
                     <div class="spec-trust-pills">
                         <span class="spec-trust-pill">✓ Works on top of your existing EHR</span>
                         <span class="spec-trust-pill">✓ Same day setup</span>
                     </div>
-                    <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="spec_hero_cta">See it with your forms →</a>
+                    <a href="#" data-popup-trigger="true" class="btn btn-primary btn-large pill" data-track="spec_hero_cta">See it with your cardiology forms →</a>
                 </div>
             </div>
         </section>
@@ -248,10 +251,10 @@
             <div class="container">
                 <div class="spec-pain-grid animate-on-scroll fade-up">
                     <div class="spec-pain-body">
-                        <h2 class="spec-pain-h2">The paperwork problem that never goes away.</h2>
-                        <p>A new cardiology patient fills out a detailed cardiac history, a medication list, a family history questionnaire, an insurance authorization, and consent forms. The same name, DOB, and insurance information appears across most of them.</p>
-                        <p>For patients being referred from a primary care physician, the clinic often already has some of this information — but it still has to be manually entered into your system because the referral document doesn't connect to your intake forms.</p>
-                        <p>Cardiology practices deal with some of the highest prior authorization volume in outpatient medicine. The administrative burden starts at intake and compounds from there. Fixing the intake layer is where the most time gets recovered.</p>
+                        <h2 class="spec-pain-h2">8:15 AM at a cardiology clinic.</h2>
+                        <p>A new patient checks in for their consult. Before they see the cardiologist they need to complete a cardiac history, a cardiovascular risk factor questionnaire, a current medication and supplement list, an insurance authorization, a HIPAA notice, and a release of records from their referring PCP.</p>
+                        <p>Their name, date of birth, and insurance ID appears on every single one. Someone at your front desk is typing it into each form separately while the patient sits in the waiting room — and the prior auth for yesterday's echo still hasn't been started.</p>
+                        <p>Cardiology runs on more outside-EHR paperwork than almost any other outpatient specialty. The administrative load starts at intake and compounds from there. Fixing the intake layer is where the most time gets recovered.</p>
                     </div>
                     <div class="spec-pain-icon" aria-hidden="true">
                         <i class="ph-bold ph-heart"></i>
@@ -371,7 +374,11 @@
                     </div>
                     <div class="spec-faq-item">
                         <p class="spec-faq-q">Can Sorta handle cardiology risk factor questionnaires and device history forms?</p>
-                        <p class="spec-faq-a">Yes. Sorta works with any PDF form your practice uses. Patients complete the questionnaire as part of intake, and the data maps automatically to every document that needs it. Nothing gets retyped.</p>
+                        <p class="spec-faq-a">Yes. Sorta works with any PDF form your practice uses — cardiovascular risk factor questionnaires, pacemaker/ICD device history, anticoagulation tracking, family cardiac history. Patients complete the questionnaire as part of intake, and the data maps automatically to every document that needs it. Nothing gets retyped.</p>
+                    </div>
+                    <div class="spec-faq-item">
+                        <p class="spec-faq-q">Can Sorta handle prior auth prep for cardiology procedures?</p>
+                        <p class="spec-faq-a">Yes. Echo, stress test, cardiac cath, Holter and event monitor prior auths all share the same patient-demographic and insurance fields as your intake forms. Sorta pre-fills the prior auth worksheet from the same intake submission — so the only thing your staff still does manually is the clinical justification. Most cardiology clinics tell us this is where they recover the most hours per week.</p>
                     </div>
                     <div class="spec-faq-item">
                         <p class="spec-faq-q">How long does Sorta take to set up for a cardiology practice?</p>
@@ -380,6 +387,32 @@
                 </div>
             </div>
         </section>
+
+<!-- Related specialties -->
+<section style="padding: 80px 0; background: var(--color-gray-50); border-top: 1px solid var(--color-gray-100);">
+    <div class="container animate-on-scroll fade-up">
+        <span style="display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-electric);background:rgba(39,64,252,0.08);padding:5px 12px;border-radius:9999px;margin-bottom:14px">Related specialties</span>
+        <h2 style="font-size: 1.625rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.02em; margin: 0 0 8px;">Other paperwork-heavy specialties Sorta handles.</h2>
+        <p style="font-size: 0.9375rem; color: var(--color-gray-500); margin: 0 0 28px; max-width: 560px; line-height: 1.55;">Same outside-the-EHR problem. Different form stack.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <a href="/specialties/nephrology" style="display: flex; flex-direction: column; gap: 6px; background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 22px 22px; text-decoration: none;">
+                <i class="ph-bold ph-drop" style="font-size: 1.5rem; color: var(--color-electric); margin-bottom: 6px;"></i>
+                <span style="font-size: 1rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.01em;">Nephrology</span>
+                <span style="font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.55;">Recurring dialysis visits, renal history, lab authorizations.</span>
+            </a>
+            <a href="/specialties/physical-therapy" style="display: flex; flex-direction: column; gap: 6px; background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 22px 22px; text-decoration: none;">
+                <i class="ph-bold ph-person-arms-spread" style="font-size: 1.5rem; color: var(--color-electric); margin-bottom: 6px;"></i>
+                <span style="font-size: 1rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.01em;">Physical Therapy</span>
+                <span style="font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.55;">Cardiac rehab intake, LEFS, FOTO, insurance auth.</span>
+            </a>
+            <a href="/specialties/mental-health" style="display: flex; flex-direction: column; gap: 6px; background: var(--color-bg-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 22px 22px; text-decoration: none;">
+                <i class="ph-bold ph-brain" style="font-size: 1.5rem; color: var(--color-electric); margin-bottom: 6px;"></i>
+                <span style="font-size: 1rem; font-weight: 700; color: var(--color-navy); letter-spacing: -0.01em;">Mental Health</span>
+                <span style="font-size: 0.8125rem; color: var(--color-gray-500); line-height: 1.55;">PHQ-9, GAD-7, biopsychosocial assessment, ROI.</span>
+            </a>
+        </div>
+    </div>
+</section>
 
 <section style="padding: 64px 0; border-top: 1px solid var(--color-gray-100); background: var(--color-bg-white);">
     <div class="container animate-on-scroll fade-up">
