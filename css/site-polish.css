@@ -1,0 +1,49 @@
+/* Shared fixes and an explicit route to our primary market. */
+:root { --region-bar-height: 44px; }
+body { padding-top: var(--region-bar-height); }
+.mexico-notice { position: fixed; top: 0; left: 0; right: 0; z-index: 150; height: var(--region-bar-height); display: flex; align-items: center; justify-content: center; gap: 16px; padding: 6px 16px; background: #e7f7f4; color: #123f43; border-bottom: 1px solid #c5e7df; font: 500 13px/1.3 system-ui, sans-serif; }
+.mexico-notice a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; color: #07534c; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.navbar { top: var(--region-bar-height); }
+:focus-visible { outline: 3px solid #2740fc; outline-offset: 4px; }
+[id] { scroll-margin-top: 150px; }
+.locale-switcher { white-space: nowrap; }
+.nav-container { gap: 16px; }
+.nav-links { gap: clamp(14px, 2vw, 28px); }
+.nav-item-dropdown:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-item-dropdown::after { content: ""; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
+.mobile-drawer { visibility: hidden; height: 100dvh; overflow-y: auto; overscroll-behavior: contain; }
+.mobile-drawer.open { visibility: visible; }
+.mobile-drawer-nav, .mobile-drawer-header, .mobile-drawer-actions { flex-shrink: 0; }
+.us-legal-main { --us-navy: #07194a; --us-blue: #2946f6; --us-line: #dce3ed; --us-mist: #f2f5fa; width: min(1100px, calc(100% - 40px)); }
+.us-legal-placeholder { white-space: normal; overflow-wrap: anywhere; }
+.us-legal-article, .us-legal-banner > div { min-width: 0; }
+.us-legal-toc { top: 68px; }
+.us-legal-article h2 { scroll-margin-top: 72px; }
+@media (max-width: 1200px) {
+ .nav-links { display: none; }
+ .nav-actions .btn { display: none; }
+ .mobile-menu-btn { display: inline-flex; }
+ .mobile-drawer { display: flex; flex-direction: column; }
+}
+@media (max-width: 760px) {
+ :root { --region-bar-height: 60px; }
+ .mexico-notice { flex-direction: column; gap: 0; font-size: 12px; }
+ .mexico-notice a { min-height: 30px; font-size: 13px; }
+ .site-header.menu-open .language-link { display: inline-flex; }
+ .cardiology-benefits, .cardiology-steps { grid-template-columns: 1fr !important; }
+ .us-legal-body { grid-template-columns: minmax(0, 1fr); }
+ .us-legal-callout { padding: 22px 18px; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto !important; }
+ *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+ .animate-on-scroll { opacity: 1; transform: none; }
+}
+.opt-hero-grid > *, .pricing-cards-grid > * { min-width: 0; }
+.opt-hero-h1 { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+ .about-team-grid { grid-template-columns: minmax(0, 1fr); }
+ .pricing-cards-grid { grid-template-columns: minmax(0, 1fr); }
+ .pricing-tier { padding: 28px 22px; }
+}
+.opt-flow-step-tag { white-space: normal; }

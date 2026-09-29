@@ -56,22 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
     function openDrawer() {
         if (!drawer || !overlay || !menuBtn) return;
         overlay.hidden = false;
+        drawer.inert = false;
         drawer.classList.add('open');
         drawer.setAttribute('aria-hidden', 'false');
         menuBtn.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
+        closeBtn?.focus();
     }
 
     function closeDrawer() {
         if (!drawer || !overlay || !menuBtn) return;
+        const wasOpen = drawer.classList.contains('open');
         drawer.classList.remove('open');
+        drawer.inert = true;
         drawer.setAttribute('aria-hidden', 'true');
         menuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
         overlay.hidden = true;
+        if (wasOpen) menuBtn.focus();
     }
 
     if (menuBtn && drawer && overlay) {
+        drawer.inert = true;
         menuBtn.addEventListener('click', () => {
             if (drawer.classList.contains('open')) closeDrawer();
             else openDrawer();
@@ -84,7 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.addEventListener('keydown', (e) => {
+            if (!drawer.classList.contains('open')) return;
             if (e.key === 'Escape') closeDrawer();
+            if (e.key === 'Tab') {
+                const items = [...drawer.querySelectorAll('a[href], button:not([disabled])')].filter(el => el.getClientRects().length);
+                const first = items[0], last = items[items.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+            }
         });
     }
 });
